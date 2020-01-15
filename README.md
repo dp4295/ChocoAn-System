@@ -1,2 +1,2 @@
-# ChoccAn System
+# ChocoAn System
 CS300 project 
