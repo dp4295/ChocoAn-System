@@ -9,5 +9,10 @@ public class Provider extends Person {
   
   public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
+  public Provider() {
+    this.date = null;
+    this.time = null;
+    this.service_type = null;      
+  }
 
 }
