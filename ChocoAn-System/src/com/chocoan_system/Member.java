@@ -10,5 +10,12 @@ public class Member extends Person {
   
   public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
+  
+  public Member() {
+    this.date = null;
+    this.time = null;
+    this.service_type = null;
+    this.my_histories = null;
+  }
 
 }
