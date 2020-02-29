@@ -16,4 +16,6 @@ public class History {
     this.time = "__:__";
     this-service_type = null;
     this.next = null;
+  }
+  
 }
