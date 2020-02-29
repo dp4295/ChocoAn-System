@@ -10,6 +10,7 @@ public class Person {
   protected String city;
   protected String state;
   protected int zip;
+  protected Person next;
   
   //protected Scanner input;
   public Person() {
@@ -19,6 +20,7 @@ public class Person {
     this.city = "";
     this.state = "--";
     this.zip = 00000;
+    this.next = null;
   }
   
 }
