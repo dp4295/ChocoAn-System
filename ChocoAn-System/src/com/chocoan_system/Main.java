@@ -38,6 +38,37 @@ public class Main {
                 //Member
                 break;
         }
+		     
+	
+	int flake;
+	System.out.println("\tEnter a number between 1-6");
+        flake = input.nextInt();
+	input.nextLine();
+		     
+	switch(flake) {
+	case 1:
+		System.out.println("Deep is a flake and a slacker :P");
+		break;
+	case 2:
+		System.out.println("Iris is a flake and a cookie thief :P");
+		break;
+	case 3:
+		System.out.println("Chris is a flake and a scrub :P");
+		break;
+	case 4:
+		System.out.println("Darika is a flake and a cat lady :P");
+		break;
+	case 5:
+		System.out.println("Minjin is a flake and a night owl :P");
+		break;
+	case 6:
+		System.out.println("Tenzin is a flake and is really flaky :P");
+		break;
+	case:
+		System.out.println("y u block m3h from teh group text >:(");
+	}
+}
+		     
 
  	
     }
