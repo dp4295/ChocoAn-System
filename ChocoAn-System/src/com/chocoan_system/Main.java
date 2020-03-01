@@ -13,6 +13,7 @@ public class Main {
         int role;
 
         //random!
+			 //hello!
 
         System.out.println("\n* WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM *");
         System.out.println("\tChoose your role:");
