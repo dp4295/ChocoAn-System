@@ -11,6 +11,8 @@ public class Main {
 
         int role;
 
+
+
         System.out.println("\n* WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM *");
         System.out.println("\tChoose your role:");
         System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
