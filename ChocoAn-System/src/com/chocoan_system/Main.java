@@ -20,6 +20,7 @@ public class Main {
         role = input.nextInt();
         input.nextLine();
 
+        //pause for a little bit
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e){
