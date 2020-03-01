@@ -12,20 +12,20 @@ public class Person {
   protected int zip;
   protected Person next;
   
-  public final const int name_size = 25;
-  public final const int ID_size = 9;
-  public final const int street_size = 25;
-  public final const int city_size = 14;
-  public final const int zip_size = 5;
+  public final int name_size = 25; //java has no const - only finals so i deleted the consts
+  public final int ID_size = 9;
+  public final int street_size = 25;
+  public final int city_size = 14;
+  public final int zip_size = 5;
   
   //protected Scanner input;
   public Person() {
     this.name = null;
-    this.ID = null;
+    //this.ID = null; //ints an int
     this.street = null;
     this.city = null;
     this.state = "--";
-    this.zip = null;
+    //this.zip = null; - int
     this.next = null;
   }
   
