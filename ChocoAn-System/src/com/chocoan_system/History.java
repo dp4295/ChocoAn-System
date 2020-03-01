@@ -14,7 +14,7 @@ public class History {
   public History() {
     this.date = "__-__-____";
     this.time = "__:__";
-    this-service_type = null;
+    this.service_type = null;
     this.next = null;
   }
   
