@@ -15,4 +15,11 @@ public class Provider extends Person {
     this.service_type = null;      
   }
 
+  //constructor w/ arg
+  public Provider(String date, String time, String service_type)
+  {
+    this.date = date;
+    this.time = time;
+    this.service_type = service_type;
+  }
 }
