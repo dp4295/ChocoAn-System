@@ -2,17 +2,27 @@ package com.chocoan_system;
 
 public class ARR_node {
 
-    protected ARR_node()
+    protected int type;
+    protected ARR_node next;
+    ARR_node()
     {
         int type = 0;
-        Person obj = null;
         ARR_node next = null;
 
     }
 
-    protected ARR_node(int type, Person obj)
+    ARR_node(int type)
     {
-        int type = type;
-        Person obj = obj;
+        type = type;
+    }
+
+    public ARR_node getNext()
+    {
+        return next;
+    }
+
+    public void setNext(ARR_node obj)
+    {
+       next = obj.next;
     }
 }
