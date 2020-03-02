@@ -15,16 +15,25 @@ public class ARR
         }
     }
 
+    //Base case, create node if it doesn't exist. If it does, call recursive function.
     protected int createNode(int flag)
     {
         if(this.head[flag] == null)
         {
-            return 0;
+            this.head[flag] = new ARR_node();
+            this.head[flag].create(flag);
+            return 1;
         }
 
-        return 0;
+        else
+            return createNode(this.head[flag]);
     }
 
+    //Recursive function, inserts into the list in order of last name.
+    protected int createNode(ARR_node head)
+    {
+
+    }
 
 
 
