@@ -15,14 +15,14 @@ public class ARR
         }
     }
 
-    protected int createNode()
+    protected int createNode(int flag)
     {
         if(this.head[flag] == null)
         {
             return 0;
         }
 
-
+        return 0;
     }
 
 
