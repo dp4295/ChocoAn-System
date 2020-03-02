@@ -2,11 +2,7 @@ package com.chocoan_system;
 
 import java.util.Scanner; 
 
-//FINAL TESTING PLEASE WORK
 
-// Deep testing
-
-// iris testing ...................
 public class Main {
 
     public static void main(String[] args) {
