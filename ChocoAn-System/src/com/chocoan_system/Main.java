@@ -16,7 +16,7 @@ public class Main {
         System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
         System.out.println("\t2 - Provider (Access Provider Interface)");
         System.out.println("\t3 - Member (Access Member Interface");
-
+        System.out.print("\tEnter: ");
         role = input.nextInt();
         input.nextLine();
 

@@ -10,8 +10,7 @@ public class Person {
   protected String city;
   protected String state;
   protected int zip;
-  protected Person next;
-  
+  // protected Person next;
   public final int name_size = 25; //java has no const - only finals so i deleted the consts
   public final int ID_size = 9;
   public final int street_size = 25;
@@ -21,12 +20,28 @@ public class Person {
   //protected Scanner input;
   public Person() {
     this.name = null;
-    //this.ID = null; //ints an int
+    this.ID = 0;
     this.street = null;
     this.city = null;
     this.state = "--";
-    //this.zip = null; - int
-    this.next = null;
+    this.zip = 0;
+    // this.next = null;
   }
-  
+
+  public Person(String name, int ID, String street, String city, String state, int zip)
+  {
+
+  }
+
+
+  public Person(Provider copy) {
+    name = copy.name;
+    street = copy.street;
+    ID = copy.ID;
+    street = copy.street; city = copy.city;
+    state = copy.state;
+    zip = copy.zip;
+  }
+
+
 }
