@@ -31,13 +31,13 @@ public class ARR_node {
 
     public int create(int type)
     {
-        if(type == 1)
+        if(type == 0)
         {
             obj = new Member();
             obj.build();
             obj.display();     //this is display func from the derived classes: member & provider, tentatively called display
         }
-        if(type == 2)
+        if(type == 1)
         {
             obj = new Provider();
             obj.build();
