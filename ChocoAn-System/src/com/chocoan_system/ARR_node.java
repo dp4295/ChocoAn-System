@@ -35,20 +35,20 @@ public class ARR_node {
         {
             obj = new Member();
             obj.build();
-            obj.display();     //this is display func from the derived classes: member & provider, tentatively called display
+  //          obj.display();     //this is display func from the derived classes: member & provider, tentatively called display
         }
         if(type == 1)
         {
             obj = new Provider();
             obj.build();
-            obj.display();      //this is display func from the derived classes: member & provider, tentatively called display
+   //         obj.display();      //this is display func from the derived classes: member & provider, tentatively called display
         }
         return 1;
     }
      public int disp_ARR_node()
      {
         System.out.println(" The person you added is: ");
-        obj.display();
+    //    obj.display();
         return 1;
      }
 }
