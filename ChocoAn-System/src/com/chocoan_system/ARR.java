@@ -6,11 +6,34 @@ import java.util.Scanner;
 
 public class ARR {
     protected ARR_node[] head = new ARR_node[2];
+    protected Scanner input;
 
     public ARR() {
         for (int i = 0; i < 2; ++i) {
             this.head[i] = null;
         }
+        input = new Scanner(System.in);
+    }
+
+    protected int adminUI(){
+        System.out.println("Please choose an option\n");
+        System.out.println("1. Add a member");
+        System.out.println("2. Add a provider");
+        int role = input.nextInt();
+        int flag;
+        switch (role){
+            case 1: //Member
+                flag = 0;
+                createNode(flag);
+                break;
+            case 2: //Provider
+                flag = 1;
+                createNode(flag);
+                break;
+            case 3:
+                break;
+        }
+        return 0;
     }
 
     //Base case, create node if it doesn't exist. If it does, call recursive function.
@@ -32,7 +55,6 @@ public class ARR {
     int compare(ARR_node head, ARR_node temp) {
         return temp.obj.name.compareTo(head.obj.name);
     }
-
 
     //Recursive function, inserts into the list in order of last name?????????.
     protected int createNode(ARR_node head, ARR_node temp) {
