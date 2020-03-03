@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+        ARR ARR1 = new ARR();
         Scanner input;
         input = new Scanner(System.in);
 
@@ -30,6 +30,7 @@ public class Main {
         switch (role) {
             case 1: //Admin
                 //admin interface
+                ARR1.adminUI();
                 break;
             case 2:
                 //provider interface
