@@ -26,13 +26,21 @@ public class ARR
         }
 
         else
-            return createNode(this.head[flag]);
+            return createNode(this.head[flag], flag);
     }
 
     //Recursive function, inserts into the list in order of last name.
-    protected int createNode(ARR_node head)
+    protected int createNode(ARR_node head, int flag)
     {
+        ARR_node temp = new ARR_node();
+        temp.create(flag);
+        String str1 = head.obj.name;
+        String str2 = head.getNext().obj.name;
 
+
+        if(str1.compareTo(str2) == 0 ) {
+
+        }
     }
 
 
