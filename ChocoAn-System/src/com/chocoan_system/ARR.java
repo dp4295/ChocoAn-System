@@ -16,6 +16,8 @@ public class ARR
     }
 
     //Base case, create node if it doesn't exist. If it does, call recursive function.
+    //The flag is the choice the user makes when adding a member or provider.
+    //Members will be stored in index 0, providers will be stored in index 1.
     protected int createNode(int flag)
     {
         if(this.head[flag] == null)
@@ -30,16 +32,26 @@ public class ARR
     }
 
     //Recursive function, inserts into the list in order of last name.
-    protected int createNode(ARR_node head, int flag)
+    protected int createNode(ARR_node head, int type)
     {
-        ARR_node temp = new ARR_node();
-        temp.create(flag);
-        String str1 = head.obj.name;
-        String str2 = head.getNext().obj.name;
+       if(head.getNext() == null)
+       {
+           ARR_node temp = new ARR_node();
+           temp.create(type);
+           head.setNext(temp);
+           temp.setNext(null);
+           return 2;
+       }
 
+        String str1 = temp.obj.name;
+        String str2 = head.obj.name;
 
+        //If names are equal, check ID number, if ID number is the same return failure
+        //If ID number is different, sort by ID number
         if(str1.compareTo(str2) == 0 ) {
 
+            ARR_node temp = new ARR_node();
+            temp.create(type);
         }
     }
 
