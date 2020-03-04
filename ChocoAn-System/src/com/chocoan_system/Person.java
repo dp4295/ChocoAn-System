@@ -1,9 +1,9 @@
 package com.chocoan_system;
 // Base class for Objects containing Data
 
+
 import java.util.Scanner;
 
-// import java.util.Scanner;
 public class Person {
 
       // public static void main(String[] args) {
@@ -35,7 +35,12 @@ public class Person {
 
   public Person(String name, int ID, String street, String city, String state,int zip)
     {
-
+            this.name = name;
+            this.ID = ID;
+            this.street = street;
+            this.city = city;
+            this.state = state;
+            this.zip = zip;
     }
 
     public void build()
@@ -63,7 +68,7 @@ public class Person {
         input.nextLine();
 
         System.out.println("\tZip ");
-        ID = input.nextInt();
+        zip = input.nextInt();
         input.nextLine();
 
 
@@ -79,5 +84,5 @@ public class Person {
       zip = copy.zip;
     }
 
-  // }
+
 }
