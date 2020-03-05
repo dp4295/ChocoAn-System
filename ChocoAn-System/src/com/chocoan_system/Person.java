@@ -84,5 +84,15 @@ public class Person {
       zip = copy.zip;
     }
 
+    // putting subunit test code here
+    // ID length bounds check [may be redundant?]
+    protected int find_ID(int check) {
+        // check for length- must be exactly 9 digits
+        int length = (int) (Math.log10(check) + 1);
+        if (length == ID_size)
+            return 0;
+        return -1;
+    }
+
 
 }
