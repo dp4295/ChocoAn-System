@@ -65,4 +65,22 @@ public class Provider extends Person {
     System.out.println("\n");
   }
 
+  //Provider UI
+  protected int providerUI(){
+    System.out.println("Please choose an option\n");
+    System.out.println("1. Member is requesting health services");
+    System.out.println("2. Display service codes");
+    System.out.println("3. Print weekly service report");
+    int option = input.nextInt();
+    int flag;
+    switch (option){
+      case 1: //Member
+        break;
+      case 2: //Provider
+        break;
+      case 3:
+        break;
+    }
+    return 0;
+  }
 }
