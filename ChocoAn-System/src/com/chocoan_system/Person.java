@@ -94,5 +94,42 @@ public class Person {
         return -1;
     }
 
+    // generic string length bounds check
+    // we want the actual string length to be under or at the limit
+    protected int check_length(String target, final int limit) {
+        if (target.length() <= limit)
+            return 0;
+        return -1;
+    }
+
+    // series of tests to check that the date format is entered properly?
+    // 1) check if the string is exactly 10 chars long
+    // 2) check if the 3rd and 6th chars are dashes "__-__-____"
+    // 3) [if there is time] check if the remaining chars are non-alphabetic
+
+    protected boolean check_date_length(String test) {
+      if (test.length() == 10)
+          return true;
+      return false;
+    }
+
+    protected boolean contains_dashes(String test) {
+      char[] temp = test.toCharArray();
+      if (temp[2] == '-' && temp[5] == '-')
+          return true;
+      return false;
+    }
+
+    // idk if the regex here is accurate but i want it to check if the contents of the string are either numeric or '-'
+    protected boolean is_numeric(String test) {
+      if (test.matches("[0-9-]+"))
+          return true;
+      return false;
+    }
+
+    protected boolean verify_date(String sample) {
+        return (check_date_length(sample) && contains_dashes(sample) && is_numeric(sample));
+    }
+
 
 }
