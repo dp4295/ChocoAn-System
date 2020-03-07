@@ -13,14 +13,14 @@ public class readFile {
 
   public static void main(String[] args) {
     try {
-      File myObj = new File("provider_directory.txt");
-      Scanner myReader = new Scanner(myObj);
+      File Obj = new File("provider_directory.txt");
+      Scanner scanner = new Scanner(Obj);
       //scanner.useDelimiter("|");
-      while (myReader.hasNextLine()) {
-        String data = myReader.nextLine();
+      while (scanner.hasNextLine()) {
+        String data = scanner.nextLine();
         System.out.println(data);//replace with code to store values
       }
-      myReader.close();
+      scanner.close();
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
