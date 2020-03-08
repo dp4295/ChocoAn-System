@@ -43,7 +43,7 @@ public class Person {
             this.zip = zip;
     }
 
-    public void build()
+    public void build(Provider obj)
     {
         input = new Scanner(System.in);
 
