@@ -42,7 +42,7 @@ public class Person {
             this.state = state;
             this.zip = zip;
     }
-
+/*
     public void build(Provider obj)
     {
         input = new Scanner(System.in);
@@ -70,7 +70,7 @@ public class Person {
         System.out.println("\tZip ");
         zip = input.nextInt();
         input.nextLine();
-
+*/
 
 
     }
@@ -83,7 +83,7 @@ public class Person {
       state = copy.state;
       zip = copy.zip;
     }
-
+/*
     // putting subunit test code here
     // ID length bounds check [may be redundant?]
     protected int find_ID(int check) {
@@ -133,3 +133,4 @@ public class Person {
 
 
 }
+*/

@@ -1,5 +1,5 @@
 package com.chocoan_system;
-
+/*
 public class ARR_node {
 
     protected int type;
@@ -52,3 +52,4 @@ public class ARR_node {
         return 1;
      }
 }
+*/
