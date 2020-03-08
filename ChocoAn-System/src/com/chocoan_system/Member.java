@@ -5,7 +5,7 @@ package com.chocoan_system;
 public class Member extends Person {
   // protected String date;
  //  protected String time;
-  protected History_node my_histories;
+  protected History_node head;
 
   
   public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
@@ -14,7 +14,7 @@ public class Member extends Person {
   public Member() {
    // this.date = null;
     // this.time = null;
-    this.my_histories = null;
+    this.head = null;
 
   }
 
@@ -25,7 +25,7 @@ public class Member extends Person {
     super(name, ID, street, city, state, zip);
     // this.date = date;
     // this.time = time;
-    this.my_histories = null;
+    this.head = null;
   }
 
 
@@ -45,10 +45,21 @@ public class Member extends Person {
     System.out.println("\tZip code: "+ zip);
     System.out.println("\n");
   }
-  public void add_service()
+
+  // adding a new History_node to the list of History_nodes for the member
+  public void add_service(History_node temp)
   {
-
-
+    add_service(head, temp);
+  }
+  // recursive helper function for adding History_node to the LLL
+  private void add_service(History_node myHead, History_node temp2) {
+    if (myHead == null) {
+      myHead = new History_node();
+      // need to populate the newly created History_node object with the contents of temp2
+    }
+    else {
+      add_service(myHead.get_Next(), temp2);
+    }
   }
 
 

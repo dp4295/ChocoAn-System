@@ -25,17 +25,19 @@ public class History_node {
     this.comments = null;
     this.next = null;
   }
- public History_node get_Next()
-    {
-        return next;
-    }
 
-    public void set_Next(History_node object)
-    {
-       next = object.next;
-    }
+  public History_node get_Next()
+  {
+      return next;
+  }
 
- public history_disp()
+  public void set_Next(History_node object)
+  {
+      next = object.next;
+  }
+
+
+ public void history_disp()
  {
      System.out.println("\t Date:" + date);
      System.out.println("\t Time:" + time);
