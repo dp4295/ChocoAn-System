@@ -14,13 +14,17 @@ public class readFile {
   // Scanner input; //???1604
 
 
-  public static void main(String[] args) {
+  public void provider_readin(){
     try {
       File Obj = new File("provider_directory.txt");
       Scanner scanner = new Scanner(Obj);
       //scanner.useDelimiter("|");
       while (scanner.hasNextLine()) {
-        String data = scanner.nextLine();
+        //String data = scanner.nextLine();
+        String data = scanner.useDelimiter("|");
+        provider.name = data;
+        String data = scanner.useDelimiter("|");
+
         System.out.println(data);//replace with code to store values(how are we storing?)
         //provider.name = data;
         //provider.ID = data; //Error:(26, 17) java: cannot find symbol [typo]
