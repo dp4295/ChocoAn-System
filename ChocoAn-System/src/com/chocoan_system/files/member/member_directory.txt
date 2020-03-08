@@ -2,3 +2,6 @@ John Doe|111111111|1604 SE Clay St|Portland|OR|97201
 Anna Jay|222222222|1564 SE Jefferson St|Portland|OR|97345
 Deep Patel|129445991|1604 SW Clay St #201|Portland|OR|97102
 Srini Lakha|495124543|1604 SW Clay St #402|Portland|OR|97102
+Leila Peterson|121212121|1607 SW Clay St #102|Portland|OR|97102
+Lilya Morrison|123123981|1607 SW Clay St #202|Portland|OR|97102
+Theo Lee|122122137|1607 SW Clay St #303|Portland|OR|97102
