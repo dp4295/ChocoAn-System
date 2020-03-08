@@ -76,7 +76,7 @@ public class Member {
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
 
-        String filename = "/home/deep/IdeaProjects/ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name +date + ".txt";
         try{
             File file  = new File(filename);
             if(file.createNewFile()) {
@@ -90,11 +90,6 @@ public class Member {
             System.out.println("Error occurred while creating a file");
             e.printStackTrace();
         }
-
-
-
-
-
     }
 
 
