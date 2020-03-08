@@ -77,10 +77,19 @@ public class Provider extends Person {
       }
   }
 
+  //add service function is to be used by the provider UI
+  //member requests service from provider
+  //provider asks for all info and verifies id is correct
+  //use case 2.1.1
   protected int add_service() {
 
       System.out.println("Enter in your member ID: ");
       int mem_id = input.nextInt();
+
+      //if verified
+      System.out.println("What service would you like today: ");
+
+    //
 
 
 
