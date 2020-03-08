@@ -32,6 +32,7 @@ public class Provider extends Person {
 
   @Override
 
+
   // This function will ask provider to enter their information.
   // Who use this function: This function can be used by ARR_node class.
   // If admin want to create a new member
@@ -51,6 +52,7 @@ public class Provider extends Person {
     service_code = input.nextLine();
     input.nextLine();
   }
+
 
 
   // Display provider Directory
@@ -73,6 +75,15 @@ public class Provider extends Person {
               System.out.println(line);
           }
       }
+  }
+
+  protected int add_service() {
+
+      System.out.println("Enter in your member ID: ");
+      int mem_id = input.nextInt();
+
+
+
   }
 
   //Provider UI
