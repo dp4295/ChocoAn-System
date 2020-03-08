@@ -1,7 +1,7 @@
 package com.chocoan_system;
 // Derived class of Person
 //import java.util.Scanner;
-
+/*
 public class Member extends Person {
   // protected String date;
  //  protected String time;
@@ -61,6 +61,18 @@ public class Member extends Person {
       add_service(myHead.get_Next(), temp2);
     }
   }
+  */
+
+public class Member extends Person {
+
+    writeout_member_directory(){
+
+
+    }
+
+    writeout_member_reports(){
+
+    }
 
 
 
