@@ -3,6 +3,7 @@ package com.chocoan_system;
 //import java.util.Scanner;
 
 // import java.time.LocalTime;
+/*
 
 public class Provider extends Person {
   protected String date;
@@ -94,4 +95,22 @@ public class Provider extends Person {
     }
     return 0;
   }
+}
+*/
+
+public class Provider extends Person {
+
+  writeout_provider_directory(){
+
+  }
+
+  writeout_provider_reports(){
+
+  }
+
+  writeout_EFT(){
+
+  }
+
+
 }

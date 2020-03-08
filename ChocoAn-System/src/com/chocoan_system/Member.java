@@ -65,6 +65,15 @@ public class Member extends Person {
 
 public class Member extends Person {
 
+    writeout_member_directory(){
+
+
+    }
+
+    writeout_member_reports(){
+
+    }
+
 
 
 

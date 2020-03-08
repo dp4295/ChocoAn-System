@@ -2,7 +2,7 @@ package com.chocoan_system;
 // Class for storing data about a treatment session
 //import java.util.Scanner;
 
-
+/*
 public class History_node {
     protected String date;
     protected String time;
@@ -57,3 +57,13 @@ public class History_node {
     }
 
 }
+
+*/
+
+public class history{
+
+    writeout_archive(){
+
+    }
+}
+
