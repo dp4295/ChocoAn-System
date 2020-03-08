@@ -84,7 +84,7 @@ public class Provider extends Person {
     int option = input.nextInt();
     int flag;
     switch (option){
-      case 1: //Member
+      case 1: //request services
         break;
       case 2: //view service codes
           display_codes();
