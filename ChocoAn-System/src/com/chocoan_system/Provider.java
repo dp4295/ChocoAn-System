@@ -150,7 +150,19 @@ public class Provider{
     }
   }
 
-
+/*
+• Provider name (25 characters).
+• Provider number (9 digits).
+• Provider street address (25 characters).
+• Provider city (14 characters).
+• Provider state (2 letters).
+• Provider zip code (5 digits).
+• For each service provided, the following details are required:
+o Date of service (MM-DD-YYYY). o Date and time data were received by the computer (MM-DD-YYYY
+HH:MM:SS). o Member name (25 characters). o Member number (9 digits). o Service code (6 digits). o Fee to be paid (up to $999.99).
+• Total number of consultations with members (3 digits).
+• Total fee for the week (up to $99,999.99).
+ */
 
   writeout_provider_directory(){
 
