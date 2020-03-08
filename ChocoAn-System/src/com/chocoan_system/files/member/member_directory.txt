@@ -1,2 +1,4 @@
 john|111111111|1604 SE Clay St|Portland|OR|97201
 anna|222222222|1564 SE Jefferson St|Portland|OR|97345
+Deep Patel|129445991|1604 SW Clay St #201|Portland|OR|97102
+Srini Lakha|495124543|1604 SW Clay St #402|Portland|OR|97102
