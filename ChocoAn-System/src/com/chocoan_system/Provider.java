@@ -67,6 +67,7 @@ public class Provider extends Person {
     System.out.println("\n");
   }
 
+  /*
   public void display_codes()
   {
       try (BufferedReader br = new BufferedReader(new FileReader("service_codes.txt"))) {
@@ -76,6 +77,7 @@ public class Provider extends Person {
           }
       }
   }
+   */
 
   //add service function is to be used by the provider UI
   //member requests service from provider
