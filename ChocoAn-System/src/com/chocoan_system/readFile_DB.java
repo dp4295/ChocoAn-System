@@ -1,4 +1,4 @@
-package com.chocoan_system.files;
+package com.chocoan_system;
 
 import java.io.File;
 import java.util.Scanner;
