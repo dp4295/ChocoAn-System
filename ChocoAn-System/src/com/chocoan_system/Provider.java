@@ -40,6 +40,7 @@ public class Provider extends Person {
 
   @Override
 
+
   // This function will ask provider to enter their information.
   // Who use this function: This function can be used by ARR_node class.
   // If admin want to create a new member
@@ -61,6 +62,7 @@ public class Provider extends Person {
   }
 
 
+
   // Display provider Directory
   public void display()
   {
@@ -73,6 +75,7 @@ public class Provider extends Person {
     System.out.println("\n");
   }
 
+  /*
   public void display_codes()
   {
       try (BufferedReader br = new BufferedReader(new FileReader("service_codes.txt"))) {
@@ -81,6 +84,25 @@ public class Provider extends Person {
               System.out.println(line);
           }
       }
+  }
+   */
+
+  //add service function is to be used by the provider UI
+  //member requests service from provider
+  //provider asks for all info and verifies id is correct
+  //use case 2.1.1
+  protected int add_service() {
+
+      System.out.println("Enter in your member ID: ");
+      int mem_id = input.nextInt();
+
+      //if verified
+      System.out.println("What service would you like today: ");
+
+    //
+
+
+
   }
 
   //Provider UI
@@ -128,7 +150,19 @@ public class Provider{
     }
   }
 
-
+/*
+• Provider name (25 characters).
+• Provider number (9 digits).
+• Provider street address (25 characters).
+• Provider city (14 characters).
+• Provider state (2 letters).
+• Provider zip code (5 digits).
+• For each service provided, the following details are required:
+o Date of service (MM-DD-YYYY). o Date and time data were received by the computer (MM-DD-YYYY
+HH:MM:SS). o Member name (25 characters). o Member number (9 digits). o Service code (6 digits). o Fee to be paid (up to $999.99).
+• Total number of consultations with members (3 digits).
+• Total fee for the week (up to $99,999.99).
+ */
 
   writeout_provider_directory(){
 
