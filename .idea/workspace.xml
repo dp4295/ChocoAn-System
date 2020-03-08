@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4378547d-ec16-4ae0-9346-56eb2f7e2e73" name="Default Changelist" comment="added test for checking date format [got JDK error when tried to build- are we all using the same Java JDK version?]">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/History_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/History_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/readFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/readFile.java" afterDir="false" />
+    <list default="true" id="4378547d-ec16-4ae0-9346-56eb2f7e2e73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/readFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/readFile.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +75,14 @@
       <workItem from="1583474556266" duration="23000" />
       <workItem from="1583479826978" duration="6894000" />
     </task>
+    <task id="LOCAL-00001" summary="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)">
+      <created>1583627651974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583627651974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +104,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added bounds check for ID (int)" />
     <MESSAGE value="added test for checking date format [got JDK error when tried to build- are we all using the same Java JDK version?]" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test for checking date format [got JDK error when tried to build- are we all using the same Java JDK version?]" />
+    <MESSAGE value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
