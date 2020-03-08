@@ -1,7 +1,8 @@
 package com.chocoan_system;
 import java.io.File;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.io.IOException;
 
 
 //Scanner read = new Scanner (new File("provider_directory.txt"));
@@ -11,6 +12,7 @@ import java.util.Scanner;
         //while (read.hasNext())
 //readfile looks at file input
 //tests should be for file input
+/*
 public class readFile {
   //public void provider_readin()
   public static void main(String[] args) {
@@ -19,9 +21,10 @@ public class readFile {
       Scanner scanner = new Scanner (new File("provider_directory.txt"));
       //Scanner scanner = new Scanner(Obj);
       scanner.useDelimiter("|");
-      while (scanner.hasNext()) {
+      while (scanner.hasNextLine()) {
         //String data = scanner.nextLine();
         String provider_name = scanner.next();
+        //parseData(provider_name);
         System.out.println("name: "+provider_name);
         String provider_id = scanner.next();
         System.out.println("id "+provider_id);
@@ -42,4 +45,43 @@ public class readFile {
     }
   }
 }
+*/
 
+public class readFile {
+  public static void main(String[] args) {
+    Scanner scanner = null;
+    try {
+      scanner = new Scanner( new File("provider_directory.txt"));
+
+      // Check if there is another line of input
+      while(scanner.hasNextLine()){
+        String str = scanner.nextLine();
+        // parse each line using delimiter
+        parseData(str);
+      }
+
+    } catch (IOException  exp) {
+      exp.printStackTrace();
+    }finally{
+      if(scanner != null)
+        scanner.close();
+    }
+  }
+
+  private static void parseData(String str){
+    String name, id, address, city, state, zip;
+    Scanner lineScanner = new Scanner(str);
+    lineScanner.useDelimiter("\\|");
+    while(lineScanner.hasNext()){
+      name = lineScanner.next();
+      id= lineScanner.next();
+      address = lineScanner.next();
+      city = lineScanner.next();
+      state = lineScanner.next();
+      zip = lineScanner.next();
+      System.out.println("name: " + name + " id:  " + id +
+              " address:  " + address + city + state + zip);
+    }
+    lineScanner.close();
+  }
+}
