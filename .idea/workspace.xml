@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4378547d-ec16-4ae0-9346-56eb2f7e2e73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/readFile_DB.java" beforeDir="false" />
-    </list>
+    <list default="true" id="4378547d-ec16-4ae0-9346-56eb2f7e2e73" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,8 @@
     <MESSAGE value="added to text files" />
     <MESSAGE value="Updated member list" />
     <MESSAGE value="example reading from file class" />
-    <option name="LAST_COMMIT_MESSAGE" value="example reading from file class" />
+    <MESSAGE value="write out class" />
+    <option name="LAST_COMMIT_MESSAGE" value="write out class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="214" width="800" height="677" key="#Notifications" timestamp="1583653334853">
