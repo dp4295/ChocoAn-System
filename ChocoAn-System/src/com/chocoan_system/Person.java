@@ -16,7 +16,7 @@ public class Person {
     protected String state;
     protected int zip;
     // protected Person next;
-    public final int name_size = 25; //java has no const - only finals so i deleted the consts
+    public final int name_size = 25;
     public final int ID_size = 9;
     public final int street_size = 25;
     public final int city_size = 14;

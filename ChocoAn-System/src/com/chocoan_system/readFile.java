@@ -22,12 +22,12 @@ public class readFile {
       while (scanner.hasNextLine()) {
         String data = scanner.nextLine();
         System.out.println(data);//replace with code to store values(how are we storing?)
-        provider.name = data;
-        provider.id = data;
-        provider.street = data;
-        provider.city = data;
-        provider.state = data;
-        provider.zip = data;
+        //provider.name = data;
+        //provider.ID = data; //Error:(26, 17) java: cannot find symbol [typo]
+        //provider.street = data;
+        //provider.city = data;
+        //provider.state = data;
+        //provider.zip = data; //Error:(30, 24) java: incompatible types: java.lang.String cannot be converted to int
 
 
 
