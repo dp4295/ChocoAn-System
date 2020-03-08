@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4378547d-ec16-4ae0-9346-56eb2f7e2e73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <workItem from="1583467714693" duration="282000" />
       <workItem from="1583474556266" duration="23000" />
       <workItem from="1583479826978" duration="6894000" />
-      <workItem from="1583631714620" duration="2101000" />
+      <workItem from="1583631714620" duration="2691000" />
     </task>
     <task id="LOCAL-00001" summary="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)">
       <created>1583627651974</created>
@@ -98,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583631989422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modified add_service function in Member class">
+      <created>1583633963474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583633963474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +127,8 @@
     <MESSAGE value="added bounds check for ID (int)" />
     <MESSAGE value="added test for checking date format [got JDK error when tried to build- are we all using the same Java JDK version?]" />
     <MESSAGE value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
+    <MESSAGE value="modified add_service function in Member class" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified add_service function in Member class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
