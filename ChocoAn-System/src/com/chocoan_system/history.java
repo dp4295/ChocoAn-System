@@ -50,11 +50,7 @@ public class History_node {
 
  }
 
-  public int build_history(int mem_id)
-    {
 
-        return 1;
-    }
 
 }
 
