@@ -65,4 +65,33 @@ public class Provider extends Person {
     System.out.println("\n");
   }
 
+  public void display_codes()
+  {
+      try (BufferedReader br = new BufferedReader(new FileReader("service_codes.txt"))) {
+          String line;
+          while ((line = br.readLine()) != null) {
+              System.out.println(line);
+          }
+      }
+  }
+
+  //Provider UI
+  protected int providerUI(){
+    System.out.println("Please choose an option\n");
+    System.out.println("1. Member is requesting health services");
+    System.out.println("2. Display service codes");
+    System.out.println("3. Print weekly service report");
+    int option = input.nextInt();
+    int flag;
+    switch (option){
+      case 1: //request services
+        break;
+      case 2: //view service codes
+          display_codes();
+          break;
+      case 3:
+        break;
+    }
+    return 0;
+  }
 }
