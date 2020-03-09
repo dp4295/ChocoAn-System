@@ -76,7 +76,7 @@ public class Provider {
 
     String line = null;
 
-    try (FileReader fr = new FileReader("services_codes.txt")) {
+    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/services_codes.txt")) {
 
       BufferedReader br = new BufferedReader(fr);
 
@@ -89,8 +89,7 @@ public class Provider {
       System.out.println("Error reading file.");
     }
 
-/*
-    // This function will be used to create a provider file
+/*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
       String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + name +date + ".txt";
@@ -109,8 +108,8 @@ public class Provider {
       }
 
     }
-
 */
+
 /*
     public int writeout_provider_directory(String name, String id, String address, String city, String state, String zip){
 
