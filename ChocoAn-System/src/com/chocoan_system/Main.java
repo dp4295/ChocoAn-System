@@ -1,10 +1,11 @@
 package com.chocoan_system;
 
-import java.util.Scanner; 
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner input;
         input = new Scanner(System.in);
@@ -34,7 +35,8 @@ public class Main {
         switch (role) {
             case 1: //Admin
                 //admin interface
-                user_admin.adminUI();
+                //user_admin.adminUI();
+                user_member.writeout_member_directory();
                 break;
             case 2:
                 //provider interface

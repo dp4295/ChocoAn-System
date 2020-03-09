@@ -3,9 +3,19 @@ package com.chocoan_system;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 
 public class Member {
+
+    String first_name;
+    String last_name;
+    int ID;
+    String street;
+    String city;
+    String state;
+    int zip;
 
     Scanner input = new Scanner(System.in);
 
@@ -44,9 +54,35 @@ public class Member {
         }
     }
 
-    public void writeout_member_directory() {
+    public void writeout_member_directory() throws IOException {
+        try {
+            File file = new File("./files/member/member_directory.txt");
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
 
-        return;
+            System.out.println("Enter the first name of the member: ");
+            first_name = input.nextLine();
+            input.nextLine();
+
+            fw.write(first_name);
+
+            System.out.println("Enter the LAST name of the member: ");
+            last_name = input.nextLine();
+            input.nextLine();
+
+            fw.write(last_name);
+
+            System.out.println("Enter the ");
+            last_name = input.nextLine();
+            input.nextLine();
+
+            fw.close();
+
+        } catch (IOException e) {
+            System.out.println("Error!");
+            e.printStackTrace();
+        }
+
     }
 
     public void writeout_member_reports() {

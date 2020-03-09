@@ -46,7 +46,7 @@ public class Provider {
         break;
 
       case 2: //view service codes
-        display_codes();
+        //display_codes();
         break;
 
       case 3:
@@ -68,7 +68,7 @@ public class Provider {
     System.out.println("\tZip code: "+ zip);
     System.out.println("\n");
   }
-
+/*
 
   public void display_codes()
   {
@@ -81,7 +81,7 @@ public class Provider {
       }
 
   }
-
+*/
   protected int prompt_service_info() {
 
     System.out.println("Enter in your member ID: ");
