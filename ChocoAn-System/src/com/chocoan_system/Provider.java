@@ -35,12 +35,15 @@ public class Provider {
 
   //PROVIDER UI
   protected int providerUI(){
-    System.out.println("Please choose an option\n");
-    System.out.println("1. Member is requesting health services");
-    System.out.println("2. Display service codes");
-    System.out.println("3. Print weekly service report");
+    System.out.println();
+    System.out.println("\tChoose an option:");
+    System.out.println("\t1 - Member is requesting health services");
+    System.out.println("\t2 - Display service codes");
+    System.out.println("\t3 - Print weekly service report");
+    System.out.println("\tEnter: ");
+
     int option = input.nextInt();
-    int flag;
+
     switch (option){
       case 1: //request services
         break;
@@ -73,13 +76,21 @@ public class Provider {
   public void display_codes()
   {
 
-      try (BufferedReader br = new BufferedReader(new FileReader("service_codes.txt"))) {
-          String line;
-          while ((line = br.readLine()) != null) {
-              System.out.println(line);
-          }
-      }
+      String line = null;
+      try (FileReader fr = new FileReader("./files/provider/weekly_reports/service_codes.txt")) {
 
+        BufferedReader br = new BufferedReader(fr);
+
+        while ((line = br.readLine()) != null) {
+              System.out.println(line);
+        }
+
+        br.close();
+      }
+      catch(IOException ex)
+      {
+        System.out.println("Error reading file.");
+      }
   }
 */
   protected int prompt_service_info() {
