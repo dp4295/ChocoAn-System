@@ -9,7 +9,6 @@ public class Member {
 
     Scanner input;
 
-
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
 
@@ -27,21 +26,15 @@ public class Member {
             System.out.println("Error occurred while creating a file");
             e.printStackTrace();
         }
-
-        public void writeout_member_directory() {
-
-
-        }
-
-        public void writeout_member_reports() {
-
-        }
-
-
     }
 
+    public void writeout_member_directory() {
 
+        return;
+    }
 
+    public void writeout_member_reports() {
 
-
+        return;
+    }
 }

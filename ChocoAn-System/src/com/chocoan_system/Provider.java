@@ -1,6 +1,5 @@
 package com.chocoan_system;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -32,7 +31,7 @@ public class Provider {
   public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
 
-  //Provider UI
+  //PROVIDER UI
   protected int providerUI(){
     System.out.println("Please choose an option\n");
     System.out.println("1. Member is requesting health services");
@@ -43,12 +42,15 @@ public class Provider {
     switch (option){
       case 1: //request services
         break;
+
       case 2: //view service codes
         display_codes();
         break;
+
       case 3:
         break;
     }
+
     return 0;
   }
 
@@ -75,8 +77,7 @@ public class Provider {
               System.out.println(line);
           }
       }
-
-     */
+    */
   }
 
   protected int prompt_service_info() {
@@ -111,6 +112,7 @@ public class Provider {
         System.out.println("Error occurred while creating a file");
         e.printStackTrace();
       }
+
     }
 
 
