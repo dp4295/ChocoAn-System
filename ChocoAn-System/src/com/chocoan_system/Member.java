@@ -12,15 +12,15 @@ public class Member {
 
     String first_name;
     String last_name;
-    int ID;
-    String street;
+    int member_ID;
+    String street_name;
     String city;
     String state;
     int zip;
 
     Scanner input = new Scanner(System.in);
 
-    protected int member_UI() {
+    protected void member_UI() {
         int id;
 
         System.out.println("Enter your member ID to log in: ");
@@ -29,10 +29,6 @@ public class Member {
         input.nextLine();
 
         System.out.println("Welcome, your ID is: " + id);
-
-
-        return 0;
-
     }
 
     // This function will useful to create
@@ -87,26 +83,53 @@ public class Member {
     }
 
 */
-    public void appendToFile() throws IOException {
-            System.out.println("Enter the first name of the member: ");
-            first_name =input.nextLine();
-            input.nextLine();
+    public void appendTo_memberDirectory() throws IOException {
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
 
         writer.newLine();
-            writer.write(first_name);
 
+        System.out.println("Enter the first name of the member: ");
+        first_name =input.nextLine();
+        writer.write(first_name);
 
-            System.out.println("Enter the LAST name of the member: ");
-            last_name =input.nextLine();
-            input.nextLine();
+        writer.write(" ");
 
-            writer.newLine();
-            writer.write(last_name);
+        System.out.println("Enter the LAST name of the member: ");
+        last_name = input.nextLine();
+        writer.write(last_name);
 
-            writer.close();
+        writer.write("|");
 
+        System.out.println("Enter the 8 digit ID number of the member: ");
+        member_ID = input.nextInt();
+        writer.write(member_ID);
+
+        writer.write("|");
+
+        System.out.println("Enter the street address of the member: ");
+        street_name = input.nextLine();
+        writer.write(street_name);
+
+        writer.write("|");
+
+        System.out.println("Enter the CITY of the member's address: ");
+        city = input.nextLine();
+        writer.write(city);
+
+        writer.write("|");
+
+        System.out.println("Enter the STATE abbreviation of the member's address: ");
+        state = input.nextLine();
+        writer.write(state);
+
+        writer.write("|");
+
+        System.out.println("Enter the zip code of the member's address: ");
+        zip = input.nextInt();
+        writer.write(zip);
+
+        writer.close();
 }
 
     public void writeout_member_reports() {
