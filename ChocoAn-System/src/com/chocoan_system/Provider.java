@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Provider {
 
-  Scanner input;
+  Scanner input = new Scanner(System.in);
 
   protected String date;
   protected String time;

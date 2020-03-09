@@ -7,7 +7,23 @@ import java.util.Scanner;
 
 public class Member {
 
-    Scanner input;
+    Scanner input = new Scanner(System.in);
+
+    protected int member_UI()
+    {
+        int id;
+
+        System.out.println("Enter your member ID to log in: ");
+        System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
+        id = input.nextInt();
+        input.nextLine();
+
+        System.out.println("Welcome, your ID is: " + id);
+
+
+        return 0;
+
+    }
 
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {

@@ -56,10 +56,5 @@ public class History_node {
 
 */
 
-public class history{
 
-    writeout_archive(){
-
-    }
-}
 

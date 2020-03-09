@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        ARR ARR1 = new ARR();
+
         Scanner input;
         input = new Scanner(System.in);
+
+        Admin user_admin = new Admin();
+        Member user_member = new Member();
+        Provider user_provider = new Provider();
 
         int role;
 
@@ -30,13 +34,16 @@ public class Main {
         switch (role) {
             case 1: //Admin
                 //admin interface
-                ARR1.adminUI();
+                user_admin.adminUI();
                 break;
             case 2:
                 //provider interface
+                user_provider.providerUI();
                 break;
             case 3:
                 //Member
+                System.out.println("You chose 3");
+                user_member.member_UI();
                 break;
         }
 
