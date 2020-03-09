@@ -21,7 +21,8 @@ public class Member {
     protected void member_UI() {
         int id;
 
-        System.out.println("Enter your member ID to log in: ");
+        System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
+        System.out.println("\tEnter your member ID to log in: ");
         System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
         id = input.nextInt();
         input.nextLine();

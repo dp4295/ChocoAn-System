@@ -13,3 +13,8 @@ Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266
 Darika Batbayar|991893849||Beavearton|OR|84394
 Darika Batbayar|93299232||Beaverton|OR|97006
+Jason Momaa|4989539||Honolulu|HW|98432
+Darika batbayar|7472992||Beaveton|98494|94289
+Darika Batbayar|89482923||Portland|OR|97092
+Johnny Depp|9293892||Pirates|CA|92942
+Darika Batbayar|92942||Beaverton|OOR|97006

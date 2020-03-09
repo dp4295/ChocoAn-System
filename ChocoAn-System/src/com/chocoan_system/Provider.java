@@ -36,13 +36,14 @@ public class Provider {
 
 
   //PROVIDER UI
-  protected int providerUI() {
-    System.out.println();
+  protected void providerUI() {
+    System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
     System.out.println("\tChoose an option:");
     System.out.println("\t1 - Member is requesting health services");
     System.out.println("\t2 - Display service codes");
     System.out.println("\t3 - Print weekly service report");
-    System.out.println("\tEnter: ");
+    System.out.println("\t4 - Go back to the menu of roles");
+    System.out.println("\tEnter number the corresponding number to the action of your choice: ");
 
     int option = input.nextInt();
 
@@ -55,10 +56,12 @@ public class Provider {
         break;
 
       case 3:
+          //print weekly services
+        break;
+
+      case 4:
         break;
     }
-
-    return 0;
   }
 
 /*
