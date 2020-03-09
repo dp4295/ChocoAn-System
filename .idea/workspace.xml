@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65881770-4731-47ad-ab46-5e2d69a00a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/ARR.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/ARR_node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/history.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/history.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="153">
+              <caret line="9" column="34" selection-start-line="9" selection-end-line="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+            <state relative-caret-position="153">
+              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -51,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1913">
-              <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+            <state relative-caret-position="1241">
+              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="289">
+              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -131,19 +126,19 @@
       <list>
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Person.java" />
-        <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/ARR_node.java" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/ARR.java" />
-        <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/history.java" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" />
+        <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" />
+        <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="750" />
-    <option name="y" value="-20" />
+    <option name="x" value="735" />
+    <option name="y" value="240" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -353,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583718114075</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="admin, prov, member classes cleaned up">
+      <created>1583720019528</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583720019528</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -460,7 +462,8 @@
     <MESSAGE value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
     <MESSAGE value="modified add_service function in Member class" />
     <MESSAGE value="new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="new files" />
+    <MESSAGE value="admin, prov, member classes cleaned up" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin, prov, member classes cleaned up" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/service_codes.txt">
@@ -510,10 +513,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1913">
-          <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="34" selection-start-line="9" selection-end-line="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -522,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="289">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -534,17 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Main.java">
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        <state relative-caret-position="1241">
+          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

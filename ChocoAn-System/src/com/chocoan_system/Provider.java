@@ -1,6 +1,8 @@
 package com.chocoan_system;
 
 import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -70,14 +72,14 @@ public class Provider {
 
   public void display_codes()
   {
-    /*
+
       try (BufferedReader br = new BufferedReader(new FileReader("service_codes.txt"))) {
           String line;
           while ((line = br.readLine()) != null) {
               System.out.println(line);
           }
       }
-    */
+
   }
 
   protected int prompt_service_info() {
