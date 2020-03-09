@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
+import java.io.PrintWriter;
 
 
 public class Member {
@@ -54,6 +55,8 @@ public class Member {
         }
     }
 
+    /*
+ //this function appends new members to the member directory
     public void writeout_member_directory() throws IOException {
         try {
             File file = new File("./files/member/member_directory.txt");
@@ -85,6 +88,7 @@ public class Member {
 
     }
 
+*/
     public void writeout_member_reports() {
 
         return;
