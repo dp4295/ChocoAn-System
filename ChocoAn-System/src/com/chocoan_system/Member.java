@@ -5,18 +5,16 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
-import java.io.PrintWriter;
-
 
 public class Member {
 
-    String first_name;
-    String last_name;
-    int member_ID;
-    String street_name;
-    String city;
-    String state;
-    int zip;
+    protected String first_name;
+    protected String last_name;
+    protected int member_ID;
+    protected String street_name;
+    protected String city;
+    protected String state;
+    protected int zip;
 
     Scanner input = new Scanner(System.in);
 
@@ -83,6 +81,9 @@ public class Member {
     }
 
 */
+    //this function appends to the member directory text file located in the member folder
+    //This function acts as an add function
+    //The admin can use this to add new members to the database
     public void appendTo_memberDirectory() throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
@@ -90,7 +91,7 @@ public class Member {
         writer.newLine();
 
         System.out.println("Enter the first name of the member: ");
-        first_name =input.nextLine();
+        first_name = input.nextLine();
         writer.write(first_name);
 
         writer.write(" ");
@@ -103,7 +104,7 @@ public class Member {
 
         System.out.println("Enter the 8 digit ID number of the member: ");
         member_ID = input.nextInt();
-        writer.write(member_ID);
+        writer.write(member_ID + "");
 
         writer.write("|");
 
@@ -127,9 +128,11 @@ public class Member {
 
         System.out.println("Enter the zip code of the member's address: ");
         zip = input.nextInt();
-        writer.write(zip);
+        writer.write(zip + "");
 
         writer.close();
+
+        System.out.println("** Member is added to the database. **");
 }
 
     public void writeout_member_reports() {

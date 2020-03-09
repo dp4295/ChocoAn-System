@@ -5,9 +5,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 
 
 public class Provider {
+
+    protected String first_name;
+    protected String last_name;
+    protected int member_ID;
+    protected String street_name;
+    protected String city;
+    protected String state;
+    protected int zip;
 
   Scanner input = new Scanner(System.in);
 
@@ -15,14 +25,6 @@ public class Provider {
   protected String time;
   protected int num_consult;
   protected String service_code;
-
-
-  protected String name;
-  protected int ID;
-  protected String street;
-  protected String city;
-  protected String state;
-  protected int zip;
 
   public final int name_size = 25;
   public final int ID_size = 9;
@@ -49,7 +51,7 @@ public class Provider {
         break;
 
       case 2: //view service codes
-        display_codes();
+        //display_codes();
         break;
 
       case 3:
@@ -59,7 +61,7 @@ public class Provider {
     return 0;
   }
 
-
+/*
   // Display provider Directory
   public void display() {
     System.out.println("\n\n");
@@ -70,9 +72,10 @@ public class Provider {
     System.out.println("\tZip code: " + zip);
     System.out.println("\n");
   }
+*/
 
-
-  public void display_codes() {
+/*
+  public void display_codes() throws IOException {
 
     String line = null;
 
@@ -88,7 +91,7 @@ public class Provider {
     } catch (IOException ex) {
       System.out.println("Error reading file.");
     }
-
+*/
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
@@ -110,11 +113,58 @@ public class Provider {
     }
 */
 
-/*
-    public int writeout_provider_directory(String name, String id, String address, String city, String state, String zip){
+      //This function appends to the provider directory text file
+      //The admin can add new providers by using this function
+        public void appendTo_providerDirectory() throws IOException {
 
-      return 0;
-    }
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt", true));
+
+        writer.newLine();
+
+        System.out.println("Enter the FIRST name of the provider: ");
+        first_name = input.nextLine();
+        writer.write(first_name);
+
+        writer.write(" ");
+
+        System.out.println("Enter the LAST name of the provider: ");
+        last_name = input.nextLine();
+        writer.write(last_name);
+
+        writer.write("|");
+
+        System.out.println("Enter the 8 digit ID number of the provider: ");
+        member_ID = input.nextInt();
+        writer.write(member_ID + "");
+
+        writer.write("|");
+
+        System.out.println("Enter the STREET address of the provider: ");
+        street_name = input.nextLine();
+        writer.write(street_name);
+
+        writer.write("|");
+
+        System.out.println("Enter the CITY of the provider's address: ");
+        city = input.nextLine();
+        writer.write(city);
+
+        writer.write("|");
+
+        System.out.println("Enter the STATE abbreviation of the provider's address: ");
+        state = input.nextLine();
+        writer.write(state);
+
+        writer.write("|");
+
+        System.out.println("Enter the zip code of the provider's address: ");
+        zip = input.nextInt();
+        writer.write(zip + "");
+
+        writer.close();
+
+        System.out.println("** Provider is added to the database. **");
+}
 
     public int writeout_provider_reports(){
 
@@ -125,8 +175,8 @@ public class Provider {
 
       return 0;
     }
-*/
+
 
 
   }
-}
+

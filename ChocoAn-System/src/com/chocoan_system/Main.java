@@ -16,18 +16,20 @@ public class Main {
 
         int role;
 
-        System.out.println("\n* WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM *");
+        System.out.println("\n** WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM **");
         System.out.println("\tChoose your role:");
         System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
         System.out.println("\t2 - Provider (Access Provider Interface)");
         System.out.println("\t3 - Member (Access Member Interface");
-        System.out.print("\tEnter: ");
+        System.out.println("\t4 - Quit program\n");
+        System.out.println("\tEnter the corresponding number to the role of your choice: ");
+
         role = input.nextInt();
         input.nextLine();
 
         //pause for a little bit
         try {
-            Thread.sleep(1000);
+            Thread.sleep(800);
         } catch (InterruptedException e){
             e.printStackTrace();
         }
@@ -35,8 +37,14 @@ public class Main {
         switch (role) {
             case 1: //Admin
                 //admin interface
-                //user_admin.adminUI();
-                user_member.appendTo_memberDirectory();
+
+                try {
+                    Thread.sleep(800);
+                } catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+
+                user_admin.adminUI();
                 break;
             case 2:
                 //provider interface
@@ -49,8 +57,9 @@ public class Main {
                 //System.out.println("You chose 3");
                 user_member.member_UI();
                 break;
+            case 4: //exit program
+                System.out.println("GOODBYE!");
+                break;
         }
-
-
     }
 }
