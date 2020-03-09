@@ -116,17 +116,18 @@ public class Provider {
 
     public int writeout_provider_directory(String name, String id, String address, String city, String state, String zip){
 
+      return 0;
     }
-
 
     public int writeout_provider_reports(String ){
 
+      return 0;
     }
 
     public int writeout_EFT(){
 
+      return 0;
     }
-
 
   }
 
