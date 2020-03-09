@@ -167,7 +167,19 @@ HH:MM:SS). o Member name (25 characters). o Member number (9 digits). o Service 
   writeout_provider_directory(){
 
   }
-
+/*
+FORMAT OF PROVIDER REPORT
+Kaiser group|239356092|5432 NW 5th Ave|Portland|OR|97004
+140
+/
+03-07-2020
+03-07-2020 | 12:36:18
+John Doe|111111111
+222222
+70
+2
+/
+ */
   writeout_provider_reports(){
 
   }
