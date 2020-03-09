@@ -49,7 +49,7 @@ public class Provider {
         break;
 
       case 2: //view service codes
-        //display_codes();
+        display_codes();
         break;
 
       case 3:
@@ -71,13 +71,14 @@ public class Provider {
     System.out.println("\tZip code: "+ zip);
     System.out.println("\n");
   }
-/*
+
 
   public void display_codes()
   {
-
+/*
       String line = null;
-      try (FileReader fr = new FileReader("./files/provider/weekly_reports/service_codes.txt")) {
+
+      try (FileReader fr = new FileReader("services_codes.txt")) {
 
         BufferedReader br = new BufferedReader(fr);
 
@@ -90,21 +91,7 @@ public class Provider {
       catch(IOException ex)
       {
         System.out.println("Error reading file.");
-      }
-  }
-*/
-  protected int prompt_service_info() {
-
-    System.out.println("Enter in your member ID: ");
-    int mem_id = input.nextInt();
-
-    //if verified
-    System.out.println("What service would you like today: ");
-
-    //
-
-    return 0;
-
+  */
   }
 
 
