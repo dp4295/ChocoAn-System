@@ -5,34 +5,29 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
-import java.io.PrintWriter;
-
 
 public class Member {
 
-    String first_name;
-    String last_name;
-    int ID;
-    String street;
-    String city;
-    String state;
-    int zip;
+    protected String first_name;
+    protected String last_name;
+    protected int member_ID;
+    protected String street_name;
+    protected String city;
+    protected String state;
+    protected int zip;
 
     Scanner input = new Scanner(System.in);
 
-    protected int member_UI() {
+    protected void member_UI() {
         int id;
 
-        System.out.println("Enter your member ID to log in: ");
+        System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
+        System.out.println("\tEnter your member ID to log in: ");
         System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
         id = input.nextInt();
         input.nextLine();
 
         System.out.println("Welcome, your ID is: " + id);
-
-
-        return 0;
-
     }
 
     // This function will useful to create
@@ -87,26 +82,60 @@ public class Member {
     }
 
 */
-    public void appendToFile() throws IOException {
-            System.out.println("Enter the first name of the member: ");
-            first_name =input.nextLine();
-            input.nextLine();
+    //this function appends to the member directory text file located in the member folder
+    //This function acts as an add function
+    //The admin can use this to add new members to the database
+    public void appendTo_memberDirectory() throws IOException {
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
 
         writer.newLine();
-            writer.write(first_name);
 
+        System.out.println("Enter the first name of the member: ");
+        first_name = input.nextLine();
+        writer.write(first_name);
 
-            System.out.println("Enter the LAST name of the member: ");
-            last_name =input.nextLine();
-            input.nextLine();
+        writer.write(" ");
 
-            writer.newLine();
-            writer.write(last_name);
+        System.out.println("Enter the LAST name of the member: ");
+        last_name = input.nextLine();
+        writer.write(last_name);
 
-            writer.close();
+        writer.write("|");
 
+        System.out.println("Enter the 8 digit ID number of the member: ");
+        member_ID = input.nextInt();
+        input.nextLine();
+        writer.write(member_ID + "");
+
+        writer.write("|");
+
+        System.out.println("Enter the street address of the member: ");
+        street_name = input.nextLine();
+        writer.write(street_name);
+
+        writer.write("|");
+
+        System.out.println("Enter the CITY of the member's address: ");
+        city = input.nextLine();
+        writer.write(city);
+
+        writer.write("|");
+
+        System.out.println("Enter the STATE abbreviation of the member's address: ");
+        state = input.nextLine();
+        writer.write(state);
+
+        writer.write("|");
+
+        System.out.println("Enter the zip code of the member's address: ");
+        zip = input.nextInt();
+        input.nextLine();
+        writer.write(zip + "");
+
+        writer.close();
+
+        System.out.println("** Member is added to the database. **");
 }
 
     public void writeout_member_reports() {

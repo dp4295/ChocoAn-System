@@ -14,42 +14,122 @@ public class Main {
         Member user_member = new Member();
         Provider user_provider = new Provider();
 
-        int role;
+        int role, stay;
 
-        System.out.println("\n* WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM *");
-        System.out.println("\tChoose your role:");
-        System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
-        System.out.println("\t2 - Provider (Access Provider Interface)");
-        System.out.println("\t3 - Member (Access Member Interface");
-        System.out.print("\tEnter: ");
-        role = input.nextInt();
-        input.nextLine();
+        System.out.println("\n** WELCOME TO THE CHOCAN DATA PROCESSING SYSTEM **");
 
-        //pause for a little bit
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e){
-            e.printStackTrace();
-        }
+        do {
 
-        switch (role) {
-            case 1: //Admin
-                //admin interface
-                //user_admin.adminUI();
-                user_member.appendToFile();
-                break;
-            case 2:
-                //provider interface
+            System.out.println("\tChoose your role:");
+            System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
+            System.out.println("\t2 - Provider (Access Provider Interface)");
+            System.out.println("\t3 - Member (Access Member Interface");
+            System.out.println("\t4 - Quit program\n");
+            System.out.println("\tEnter the corresponding number to the role of your choice: ");
 
-                user_provider.providerUI();
-                break;
-            case 3:
-                //Member
-                System.out.println("You chose 3");
-                user_member.member_UI();
-                break;
-        }
+            role = input.nextInt();
+            input.nextLine();
 
+            //pause for a little bit
+            try {
+                Thread.sleep(800);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
+            switch (role) {
+                case 1: //Admin interface
+
+                    do {
+
+                        try {
+                            Thread.sleep(800);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        user_admin.adminUI();
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        System.out.println("\nWould you like to stay in the Admin Interface? ");
+                        System.out.println("1 - Yes");
+                        System.out.println("2 - No, go back to the menu of roles.");
+                        System.out.println("\nEnter your decision here: ");
+
+                        stay = input.nextInt();
+                        input.nextLine();
+
+                    } while (stay != 2);
+
+                    break;
+                case 2: //provider interface
+
+                    do {
+
+                        try {
+                            Thread.sleep(800);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        user_provider.providerUI();
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        System.out.println("\nWould you like to stay in the Provider Interface? ");
+                        System.out.println("1 - Yes");
+                        System.out.println("2 - No, go back to the menu of roles.");
+                        System.out.println("\nEnter your decision here: ");
+
+                        stay = input.nextInt();
+                        input.nextLine();
+
+                    } while (stay != 2);
+
+                    //user_provider.display_codes();
+                    break;
+                case 3: //member interface
+
+                    do {
+
+                        try {
+                            Thread.sleep(800);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        user_member.member_UI();
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        System.out.println("\nWould you like to stay in the Provider Interface? ");
+                        System.out.println("1 - Yes");
+                        System.out.println("2 - No, go back to the menu of roles.");
+                        System.out.println("\nEnter your decision here: ");
+
+                        stay = input.nextInt();
+                        input.nextLine();
+
+                    } while (stay != 2);
+
+                    break;
+                case 4: //exit program
+                    System.out.println("GOODBYE!");
+                    break;
+            }
+        } while (role != 4);
     }
 }
