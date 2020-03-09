@@ -34,7 +34,7 @@ public class Provider {
 
 
   //PROVIDER UI
-  protected int providerUI(){
+  protected int providerUI() {
     System.out.println();
     System.out.println("\tChoose an option:");
     System.out.println("\t1 - Member is requesting health services");
@@ -44,7 +44,7 @@ public class Provider {
 
     int option = input.nextInt();
 
-    switch (option){
+    switch (option) {
       case 1: //request services
         break;
 
@@ -61,40 +61,35 @@ public class Provider {
 
 
   // Display provider Directory
-  public void display()
-  {
+  public void display() {
     System.out.println("\n\n");
-    System.out.println("\tProvider name: "+ name);
+    System.out.println("\tProvider name: " + name);
     System.out.println("\tService code:" + service_code);
     System.out.println("\tStreet: " + street);
     System.out.println("\tState: " + state);
-    System.out.println("\tZip code: "+ zip);
+    System.out.println("\tZip code: " + zip);
     System.out.println("\n");
   }
 
 
-  public void display_codes()
-  {
-/*
-      String line = null;
+  public void display_codes() {
 
-      try (FileReader fr = new FileReader("services_codes.txt")) {
+    String line = null;
 
-        BufferedReader br = new BufferedReader(fr);
+    try (FileReader fr = new FileReader("services_codes.txt")) {
 
-        while ((line = br.readLine()) != null) {
-              System.out.println(line);
-        }
+      BufferedReader br = new BufferedReader(fr);
 
-        br.close();
+      while ((line = br.readLine()) != null) {
+        System.out.println(line);
       }
-      catch(IOException ex)
-      {
-        System.out.println("Error reading file.");
-  */
-  }
 
+      br.close();
+    } catch (IOException ex) {
+      System.out.println("Error reading file.");
+    }
 
+/*
     // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
@@ -115,7 +110,8 @@ public class Provider {
 
     }
 
-
+*/
+/*
     public int writeout_provider_directory(String name, String id, String address, String city, String state, String zip){
 
       return 0;
@@ -130,7 +126,8 @@ public class Provider {
 
       return 0;
     }
+*/
+
 
   }
-
-
+}

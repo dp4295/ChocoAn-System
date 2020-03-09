@@ -36,7 +36,7 @@ public class Main {
             case 1: //Admin
                 //admin interface
                 //user_admin.adminUI();
-                //user_member.writeout();
+                user_member.appendToFile();
                 break;
             case 2:
                 //provider interface

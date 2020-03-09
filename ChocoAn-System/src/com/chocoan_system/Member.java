@@ -20,8 +20,7 @@ public class Member {
 
     Scanner input = new Scanner(System.in);
 
-    protected int member_UI()
-    {
+    protected int member_UI() {
         int id;
 
         System.out.println("Enter your member ID to log in: ");
@@ -39,17 +38,16 @@ public class Member {
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
 
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name +date + ".txt";
-        try{
-            File file  = new File(filename);
-            if(file.createNewFile()) {
+        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        try {
+            File file = new File(filename);
+            if (file.createNewFile()) {
                 System.out.println("File is created");
 
-            }else
-            {
+            } else {
                 System.out.println("File already exist");
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error occurred while creating a file");
             e.printStackTrace();
         }
@@ -89,6 +87,28 @@ public class Member {
     }
 
 */
+    public void appendToFile() throws IOException {
+            System.out.println("Enter the first name of the member: ");
+            first_name =input.nextLine();
+            input.nextLine();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
+
+        writer.newLine();
+            writer.write(first_name);
+
+
+            System.out.println("Enter the LAST name of the member: ");
+            last_name =input.nextLine();
+            input.nextLine();
+
+            writer.newLine();
+            writer.write(last_name);
+
+            writer.close();
+
+}
+
     public void writeout_member_reports() {
 
         return;
