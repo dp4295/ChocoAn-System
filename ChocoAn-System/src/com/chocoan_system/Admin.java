@@ -12,14 +12,18 @@ public class Admin {
         System.out.println("Please choose an option\n");
         System.out.println("1. Add a member");
         System.out.println("2. Add a provider");
+        System.out.println("3. Delete a member");
+        System.out.println("4. Delete a provider");
         int role = input.nextInt();
         int flag;
         switch (role){
-            case 1: //Member
+            case 1: //Add Member
                 break;
-            case 2: //Provider
+            case 2: //Add Provider
                 break;
-            case 3:
+            case 3: //Delete Member
+                break;
+            case 4: //Delete Provider
                 break;
         }
         return 0;
