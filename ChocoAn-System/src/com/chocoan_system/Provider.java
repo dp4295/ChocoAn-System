@@ -138,6 +138,7 @@ public class Provider {
 
         System.out.println("Enter the 8 digit ID number of the provider: ");
         member_ID = input.nextInt();
+        input.nextLine();
         writer.write(member_ID + "");
 
         writer.write("|");
@@ -162,6 +163,7 @@ public class Provider {
 
         System.out.println("Enter the zip code of the provider's address: ");
         zip = input.nextInt();
+        input.nextLine();
         writer.write(zip + "");
 
         writer.close();

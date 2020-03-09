@@ -105,6 +105,7 @@ public class Member {
 
         System.out.println("Enter the 8 digit ID number of the member: ");
         member_ID = input.nextInt();
+        input.nextLine();
         writer.write(member_ID + "");
 
         writer.write("|");
@@ -129,6 +130,7 @@ public class Member {
 
         System.out.println("Enter the zip code of the member's address: ");
         zip = input.nextInt();
+        input.nextLine();
         writer.write(zip + "");
 
         writer.close();
