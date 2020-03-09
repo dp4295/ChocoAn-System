@@ -121,7 +121,7 @@ public class Provider {
       return 0;
     }
 
-    public int writeout_provider_reports(String ){
+    public int writeout_provider_reports(){
 
       return 0;
     }
