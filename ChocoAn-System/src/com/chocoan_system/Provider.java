@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -13,7 +14,7 @@ public class Provider {
 
     protected String first_name;
     protected String last_name;
-    protected int member_ID;
+    protected int provider_ID;
     protected String street_name;
     protected String city;
     protected String state;
@@ -116,7 +117,14 @@ public class Provider {
     }
 */
 
-      //This function appends to the provider directory text file
+        //random ID generator
+        public static int number_Gen(int n) {
+        int m = (int) Math.pow(10, n - 1);
+        return m + new Random().nextInt(9 * m);
+        }
+
+
+  //This function appends to the provider directory text file
       //The admin can add new providers by using this function
         public void appendTo_providerDirectory() throws IOException {
 
@@ -136,10 +144,9 @@ public class Provider {
 
         writer.write("|");
 
-        System.out.println("Enter the 8 digit ID number of the provider: ");
-        member_ID = input.nextInt();
-        input.nextLine();
-        writer.write(member_ID + "");
+        provider_ID = number_Gen(9);
+        System.out.println("Assigned provider ID: " + provider_ID);
+        writer.write(provider_ID + "");
 
         writer.write("|");
 
