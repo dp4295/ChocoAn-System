@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -14,7 +13,7 @@ public class Provider {
 
     protected String first_name;
     protected String last_name;
-    protected int provider_ID;
+    protected int member_ID;
     protected String street_name;
     protected String city;
     protected String state;
@@ -53,12 +52,12 @@ public class Provider {
         break;
 
       case 2: //view service codes
-          try {
-              display_codes();
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-          break;
+        try {
+          display_codes();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+        break;
 
       case 3:
           //print weekly services
@@ -69,19 +68,6 @@ public class Provider {
     }
   }
 
-/*
-  // Display provider Directory
-  public void display() {
-    System.out.println("\n\n");
-    System.out.println("\tProvider name: " + name);
-    System.out.println("\tService code:" + service_code);
-    System.out.println("\tStreet: " + street);
-    System.out.println("\tState: " + state);
-    System.out.println("\tZip code: " + zip);
-    System.out.println("\n");
-  }
-*/
-
 
   public void display_codes() throws IOException {
 
@@ -91,8 +77,8 @@ public class Provider {
 
       BufferedReader br = new BufferedReader(fr);
 
-        System.out.println("SERVICE CODES");
-        System.out.println("-------------");
+      System.out.println("SERVICE CODES");
+      System.out.println("-------------");
       while ((line = br.readLine()) != null) {
         System.out.println("\t- " + line);
       }
@@ -124,14 +110,7 @@ public class Provider {
     }
 */
 
-        //random ID generator
-        public static int number_Gen(int n) {
-        int m = (int) Math.pow(10, n - 1);
-        return m + new Random().nextInt(9 * m);
-        }
-
-
-  //This function appends to the provider directory text file
+      //This function appends to the provider directory text file
       //The admin can add new providers by using this function
         public void appendTo_providerDirectory() throws IOException {
 
@@ -151,9 +130,10 @@ public class Provider {
 
         writer.write("|");
 
-        provider_ID = number_Gen(9);
-        System.out.println("Assigned provider ID: " + provider_ID);
-        writer.write(provider_ID + "");
+        System.out.println("Enter the 8 digit ID number of the provider: ");
+        member_ID = input.nextInt();
+        input.nextLine();
+        writer.write(member_ID + "");
 
         writer.write("|");
 
