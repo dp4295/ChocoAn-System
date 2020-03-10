@@ -1,5 +1,7 @@
 package com.chocoan_system;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -42,5 +44,37 @@ public class Admin {
 
         return 0;
     }
+
+
+    // Display provider Directory
+    public void display_provider_directory() throws IOException {
+
+        String line = null;
+
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt")) {
+
+            BufferedReader br = new BufferedReader(fr);
+
+            System.out.println("PROVIDER DIRECTORY");
+            System.out.println("------------------");
+            while ((line = br.readLine()) != null) {
+
+                //line.toUpperCase();
+                String[] provider_info = line.split("\\|");
+                //i.e) provider_info[0] = provider name, etc
+
+                System.out.println("\t- " + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase());
+                System.out.println("\t  " + provider_info[2].toUpperCase());
+                System.out.println("\t  " + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+
+                System.out.println();
+            }
+
+            br.close();
+        } catch (IOException ex) {
+            System.out.println("Error reading the provider directory file. Please check with administrator.");
+        }
+    }
+
 }
 
