@@ -2,6 +2,7 @@ package com.chocoan_system;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
@@ -82,6 +83,12 @@ public class Member {
     }
 
 */
+    //creates 9 digit ID
+    public static int number_Gen(int n) {
+        int m = (int) Math.pow(10, n - 1);
+        return m + new Random().nextInt(9 * m);
+    }
+
     //this function appends to the member directory text file located in the member folder
     //This function acts as an add function
     //The admin can use this to add new members to the database
@@ -103,9 +110,8 @@ public class Member {
 
         writer.write("|");
 
-        System.out.println("Enter the 8 digit ID number of the member: ");
-        member_ID = input.nextInt();
-        input.nextLine();
+        member_ID = number_Gen(9);
+        System.out.println("Assigned member ID: " + member_ID);
         writer.write(member_ID + "");
 
         writer.write("|");
@@ -137,6 +143,7 @@ public class Member {
 
         System.out.println("** Member is added to the database. **");
 }
+
 
     public void writeout_member_reports() {
 
