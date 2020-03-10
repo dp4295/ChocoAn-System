@@ -41,6 +41,7 @@ public class Admin {
             case 4: //Delete Provider
                 break;
             case 5:
+                display_member_directory();
                 break;
             case 6:
                 display_provider_directory();
@@ -81,6 +82,34 @@ public class Admin {
             br.close();
         } catch (IOException ex) {
             System.out.println("Error reading the provider directory file. Please check with administrator.");
+        }
+    }
+
+    public void display_member_directory() throws IOException {
+
+        String line = null;
+
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt")) {
+
+            BufferedReader br = new BufferedReader(fr);
+
+            System.out.println("MEMBER DIRECTORY");
+            System.out.println("----------------");
+
+            while ((line = br.readLine()) != null) {
+
+                String[] member_info = line.split("\\|");
+
+                System.out.println("\t- " + member_info[0].toUpperCase() + " | " + member_info[1]);
+                System.out.println("\t  " + member_info[2].toUpperCase());
+                System.out.println("\t  " + member_info[3].toUpperCase() + ", " + member_info[4].toUpperCase() + " " + member_info[5].toUpperCase());
+
+                System.out.println();
+            }
+
+            br.close();
+        } catch (IOException ex) {
+            System.out.println("Error reading the member directory file. Please check with administrator.");
         }
     }
 

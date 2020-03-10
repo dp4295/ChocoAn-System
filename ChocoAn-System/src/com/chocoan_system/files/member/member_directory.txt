@@ -11,7 +11,7 @@ Samuel Long|122212890|126 SE Fowl St|Portland|OR|97208
 Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266
-Deep Patel|98429492|97349huujhafn|OR|OR|982232
-Darika atbayar||71718 jakj |Beaverton|OR|98494
-Darika Batbayar|510705544|17172 SW Whitley Way|Beaverton|OR|97006
+Deep Patel|98429492|97349 huujhafn|Portland|OR|982232
+Darika atbayar||71718 jakj|Beaverton|OR|98494
+Darika Batbayar|510705544|171 SW Whitley Way|Beaverton|OR|97006
 Deep Patel|231828955|739 kakfka|Portland|OR|95099

@@ -1,11 +1,8 @@
 package com.chocoan_system;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
 
 public class Member {
 
@@ -30,6 +27,7 @@ public class Member {
 
         System.out.println("Welcome, your ID is: " + id);
     }
+
 
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
