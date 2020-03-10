@@ -2,6 +2,7 @@ package com.chocoan_system;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.FileWriter;
@@ -98,11 +99,11 @@ public class Member {
 
         writer.newLine();
 
-        System.out.println("Enter the first name of the member: ");
-        first_name = input.nextLine();
-        writer.write(first_name);
+            System.out.println("Enter the first name of the member: ");
+            first_name = input.nextLine();
+            writer.write(first_name);
 
-        writer.write(" ");
+            writer.write(" ");
 
         System.out.println("Enter the LAST name of the member: ");
         last_name = input.nextLine();
@@ -116,7 +117,7 @@ public class Member {
 
         writer.write("|");
 
-        System.out.println("Enter the street address of the member: ");
+        System.out.println("\nEnter the street address of the member: ");
         street_name = input.nextLine();
         writer.write(street_name);
 
@@ -134,10 +135,20 @@ public class Member {
 
         writer.write("|");
 
-        System.out.println("Enter the zip code of the member's address: ");
-        zip = input.nextInt();
-        input.nextLine();
-        writer.write(zip + "");
+        boolean error = false;
+        int x = 0;
+        do {
+            try {
+                System.out.println("Enter the zip code of the member's address: ");
+                zip = input.nextInt();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input. Please enter integers only.");
+                error = true;
+            }
+            input.nextLine();
+            writer.write(zip + "");
+        } while (error);
 
         writer.close();
 

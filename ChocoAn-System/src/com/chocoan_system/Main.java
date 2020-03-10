@@ -1,6 +1,7 @@
 package com.chocoan_system;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -26,10 +27,8 @@ public class Main {
             System.out.println("\t3 - Member (Access Member Interface");
             System.out.println("\t4 - Quit program\n");
             System.out.println("\tEnter the corresponding number to the role of your choice: ");
-
             role = input.nextInt();
             input.nextLine();
-
             //pause for a little bit
             try {
                 Thread.sleep(800);
