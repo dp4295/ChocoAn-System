@@ -20,7 +20,9 @@ public class Admin {
         System.out.println("\t2 - Add a provider");
         System.out.println("\t3 - Delete a member");
         System.out.println("\t4 - Delete a provider");
-        System.out.println("\t5 - Go back to the menu of roles");
+        System.out.println("\t5 - View member directory");
+        System.out.println("\t6 - View provider directory");
+        System.out.println("\t7 - Go back to the menu of roles");
         System.out.println("\n\tEnter the corresponding number to the action of your choice: ");
 
         int role = input.nextInt();
@@ -40,6 +42,11 @@ public class Admin {
                 break;
             case 5:
                 break;
+            case 6:
+                display_provider_directory();
+                break;
+            case 7:
+                break;
         }
 
         return 0;
@@ -48,6 +55,7 @@ public class Admin {
 
     // Display provider Directory
     public void display_provider_directory() throws IOException {
+
 
         String line = null;
 
