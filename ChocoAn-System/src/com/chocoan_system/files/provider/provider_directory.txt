@@ -1,8 +1,4 @@
 Providence group|124789741|4550 SW 10th Terr|Portland|OR|97201
 Kaiser group|239356092|5432 NW 5th Ave|Portland|OR|97004
 Eye Clinic|123654222|1235 NW 6th Ave|Portland|OR|98443
-OHSU akjnnk|98429892||Portland|OR|92832
-anjnfa ahbga|8923974||kjafnkja|uri|8402
-testing testing las|84928||jhbakjbf|OR|993749
-iuabf abfkha|287382||jabj|OR|93749
-OHSU jnajnf|585548451|portland soething|Portland|OR|89332
+OHSU|585548451|1330 SW king ave|Portland|OR|89332
