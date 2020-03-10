@@ -53,8 +53,12 @@ public class Provider {
         break;
 
       case 2: //view service codes
-        //display_codes();
-        break;
+          try {
+              display_codes();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+          break;
 
       case 3:
           //print weekly services
@@ -78,24 +82,27 @@ public class Provider {
   }
 */
 
-/*
+
   public void display_codes() throws IOException {
 
     String line = null;
 
-    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/services_codes.txt")) {
+    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt")) {
 
       BufferedReader br = new BufferedReader(fr);
 
+        System.out.println("SERVICE CODES");
+        System.out.println("-------------");
       while ((line = br.readLine()) != null) {
-        System.out.println(line);
+        System.out.println("\t- " + line);
       }
 
       br.close();
     } catch (IOException ex) {
-      System.out.println("Error reading file.");
+      System.out.println("Error reading the service code file. Please check with administrator.");
     }
-*/
+  }
+
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
