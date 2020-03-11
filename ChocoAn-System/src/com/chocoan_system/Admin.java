@@ -37,8 +37,10 @@ public class Admin {
                 provider_obj.appendTo_providerDirectory();
                 break;
             case 3: //Delete Member
+                member_obj.delete_member();
                 break;
             case 4: //Delete Provider
+                provider_obj.delete_provider();
                 break;
             case 5:
                 display_member_directory();

@@ -1,13 +1,8 @@
 package com.chocoan_system;
 
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
 
 
 public class Provider {
@@ -177,6 +172,58 @@ public class Provider {
 
         System.out.println("** Provider is added to the database. **");
 }
+
+    public void delete_provider() {
+        try {
+            File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
+
+            if (!inputFile.isFile()) {
+                System.out.println("Not an existing file");//check file path
+                return;
+            }
+            //temp file to store info not to be deleted
+            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+            BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+            String line = null;
+
+            System.out.println("Enter the FIRST name of the provider: ");
+            first_name = input.nextLine();
+
+            System.out.println("Enter the LAST name of the provider: ");
+            last_name = input.nextLine();
+
+            while ((line = br.readLine()) != null) {
+                if (!line.startsWith(first_name + " " + last_name)) {
+                    pw.println(line);
+                    pw.flush();
+                }
+            }
+            pw.close();
+            br.close();
+
+
+            //Delete original file
+            if (!inputFile.delete()) {
+                System.out.println("Could not delete file");
+                return;
+            }
+
+            //Rename temp file to the original file name.
+            if (!tempFile.renameTo(inputFile))
+                System.out.println("Could not rename file");
+
+            System.out.println("The provider has been removed successfully.");
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
 
     public int writeout_provider_reports(){
 
