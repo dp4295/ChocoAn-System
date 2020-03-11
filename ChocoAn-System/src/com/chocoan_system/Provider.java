@@ -187,10 +187,10 @@ public class Provider {
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
             String line = null;
 
-            System.out.println("Enter the FIRST name of the provider: ");
+            System.out.println("Enter the FIRST name of the provider to be removed: ");
             first_name = input.nextLine();
 
-            System.out.println("Enter the LAST name of the provider: ");
+            System.out.println("Enter the LAST name of the provider to be removed: ");
             last_name = input.nextLine();
 
             while ((line = br.readLine()) != null) {

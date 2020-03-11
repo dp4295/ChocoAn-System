@@ -157,10 +157,10 @@ public class Member {
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
             String line = null;
 
-            System.out.println("Enter the FIRST name of the member you want to remove: ");
+            System.out.println("Enter the FIRST name of the member to be removed: ");
             first_name = input.nextLine();
 
-            System.out.println("Enter the LAST name of the member you want to remove: ");
+            System.out.println("Enter the LAST name of the member to be removed: ");
             last_name = input.nextLine();
 
             while ((line = br.readLine()) != null) {
