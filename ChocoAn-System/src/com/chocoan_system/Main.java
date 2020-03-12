@@ -7,7 +7,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        commands();
+    }
 
+    public static int commands() throws IOException
+    {
         Scanner input;
         input = new Scanner(System.in);
 
@@ -135,7 +139,10 @@ public class Main {
             } while (role != 4);
         } catch (InputMismatchException e) {
             System.out.println("PLEASE ENTER NUMBERS ONLY!!! \n");
+            commands();
             input.nextLine();
         }
+
+        return 1;
     }
 }
