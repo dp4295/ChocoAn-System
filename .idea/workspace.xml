@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="810" />
+    <option name="myElementSize" value="937" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -265,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584043194717</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Formatting">
+      <created>1584044365133</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1584044365133</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +323,8 @@
     <MESSAGE value="Address in provider list wasn't complete, causing a crash on display" />
     <MESSAGE value="added error handling to main" />
     <MESSAGE value="added error handling to member id function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added error handling to member id function" />
+    <MESSAGE value="Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">
@@ -327,47 +335,47 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="801" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583979951107" />
-    <state x="620" y="94" width="979" height="912" key="CommitChangelistDialog2" timestamp="1584043194206">
+    <state x="620" y="94" width="979" height="912" key="CommitChangelistDialog2" timestamp="1584044364638">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="620" y="94" key="CommitChangelistDialog2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584043194206" />
+    <state x="620" y="94" key="CommitChangelistDialog2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044364638" />
     <state x="465" y="96" width="979" height="912" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1583981094498" />
-    <state width="1881" height="331" key="GridCell.Tab.0.bottom" timestamp="1584044075166">
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom" timestamp="1584046007910">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1881" height="331" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044075166" />
-    <state width="1881" height="331" key="GridCell.Tab.0.center" timestamp="1584044075166">
+    <state width="1878" height="331" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584046007910" />
+    <state width="1878" height="331" key="GridCell.Tab.0.center" timestamp="1584046007910">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1881" height="331" key="GridCell.Tab.0.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044075166" />
-    <state width="1881" height="331" key="GridCell.Tab.0.left" timestamp="1584044075166">
+    <state width="1878" height="331" key="GridCell.Tab.0.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584046007910" />
+    <state width="1878" height="331" key="GridCell.Tab.0.left" timestamp="1584046007909">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1881" height="331" key="GridCell.Tab.0.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044075166" />
-    <state width="1881" height="331" key="GridCell.Tab.0.right" timestamp="1584044075166">
+    <state width="1878" height="331" key="GridCell.Tab.0.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584046007909" />
+    <state width="1878" height="331" key="GridCell.Tab.0.right" timestamp="1584046007910">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1881" height="331" key="GridCell.Tab.0.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044075166" />
-    <state width="616" height="507" key="GridCell.Tab.1.bottom" timestamp="1584041053548">
+    <state width="1878" height="331" key="GridCell.Tab.0.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584046007910" />
+    <state width="1256" height="507" key="GridCell.Tab.1.bottom" timestamp="1584045744146">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="616" height="507" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584041053548" />
-    <state width="616" height="507" key="GridCell.Tab.1.center" timestamp="1584041053548">
+    <state width="1256" height="507" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584045744146" />
+    <state width="1256" height="507" key="GridCell.Tab.1.center" timestamp="1584045744146">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="616" height="507" key="GridCell.Tab.1.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584041053548" />
-    <state width="616" height="507" key="GridCell.Tab.1.left" timestamp="1584041053548">
+    <state width="1256" height="507" key="GridCell.Tab.1.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584045744146" />
+    <state width="1256" height="507" key="GridCell.Tab.1.left" timestamp="1584045744146">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="616" height="507" key="GridCell.Tab.1.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584041053548" />
-    <state width="616" height="507" key="GridCell.Tab.1.right" timestamp="1584041053548">
+    <state width="1256" height="507" key="GridCell.Tab.1.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584045744146" />
+    <state width="1256" height="507" key="GridCell.Tab.1.right" timestamp="1584045744146">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="616" height="507" key="GridCell.Tab.1.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584041053548" />
-    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1584043200327">
+    <state width="1256" height="507" key="GridCell.Tab.1.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584045744146" />
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1584044370878">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="872" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584043200327" />
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584044370878" />
     <state width="1563" height="1438" key="com.intellij.byteCodeViewer.ShowByteCodeAction" timestamp="1584044054019">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -385,15 +393,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ChocoAn_System$Main.ic" NAME="Main Coverage Results" MODIFIED="1584044075146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ChocoAn_System$Main.ic" NAME="Main Coverage Results" MODIFIED="1584046007891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.chocoan_system.*</FILTER>
     </SUITE>
   </component>
