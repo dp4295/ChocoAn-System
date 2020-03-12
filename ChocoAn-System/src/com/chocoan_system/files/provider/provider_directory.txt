@@ -1,3 +1,8 @@
 Providence group|124789741|4550 SW 10th Terr|Portland|OR|97201
 Eye Clinic|123654222|1235 NW 6th Ave|Portland|OR|98443
 OHSU|98429892|13312 SE King Ave|Portland|OR|92832
+Kaiser Permanente Medical Center|200412345|10180 SE Sunnyside Road|Clackamas|OR|97015
+PeaceHealth Southwest Medical Center|200323456|400 NE Mother Joseph|Vancouver|WA|98664
+Legacy Meridian Park Medical Center|409078469|19300 SW 65th Avenue|Tualatin|OR|97062
+Cedar Hills Hospital Contact|748348921|10300 SW Eastridge Street|Portland|OR|97225
+Portland Veterans Affairs Medical Center|983910394|3710 SW US Veterans Hospital Road
