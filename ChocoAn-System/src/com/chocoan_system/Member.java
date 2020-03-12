@@ -28,6 +28,20 @@ public class Member {
         id = input.nextInt();
         input.nextLine();
 
+        //test for id number if valid or not
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
+        String line = null;
+
+        if (line.endsWith(id)){
+            System.out.println("Validated");
+        }
+        else if (!line.endsWith(id)){
+            System.out.println("Invalid Number");
+        }
+        else {
+            System.out.println("Invalid Number");
+        }
+
         System.out.println("Welcome, your ID is: " + id);
 
     }
