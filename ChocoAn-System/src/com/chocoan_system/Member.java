@@ -31,7 +31,7 @@ public class Member {
         //test for id number if valid or not
         File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
         String line = null;
-/*
+
         if (line.endsWith(id)){
             System.out.println("Validated");
         }
@@ -41,50 +41,12 @@ public class Member {
         else {
             System.out.println("Invalid Number");
         }
-*/
+
         System.out.println("Welcome, your ID is: " + id);
 
     }
 
 
-    public void display_member_report() throws IOException {
-
-        String line = null;
-
-        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/test.txt")) {
-
-            BufferedReader br = new BufferedReader(fr);
-
-            System.out.println("PROVIDER REPORT");
-            System.out.println("-----------------------------------------------------------------------------------------------");
-
-            int i = 1;
-            if((line = br.readLine()) != null) {
-
-                String[] provider_info = line.split("\\|");
-
-                //provider name and address
-                System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
-                        provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
-
-                if ((line = br.readLine()) != null) {
-                    System.out.println("\tTOTAL FEE FOR WEEK = $" + line);
-                    System.out.println();
-                    System.out.println();
-                    System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
-                    System.out.println();
-                }
-            }
-
-
-            System.out.println();
-
-            br.close();
-
-        } catch (IOException ex) {
-            System.out.println("Error reading the member service report file. Please check with administrator.");
-        }
-    }
 
     /*
  //this function appends new members to the member directory
