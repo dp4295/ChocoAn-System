@@ -213,7 +213,7 @@ public class Provider {
             if (!tempFile.renameTo(inputFile))
                 System.out.println("Could not rename file");
 
-            System.out.println("The provider has been removed successfully.");
+            System.out.println("The provider directory has been updated successfully.");
 
 
         } catch (FileNotFoundException e) {
