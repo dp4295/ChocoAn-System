@@ -42,6 +42,7 @@ public class Provider {
     System.out.println("\tEnter number the corresponding number to the action of your choice: ");
 
     int option = input.nextInt();
+    int report_option;
 
     switch (option) {
       case 1: //request services
@@ -57,8 +58,12 @@ public class Provider {
         break;
 
       case 3:
+          System.out.println("Which provider report would you like to view/print? ");
+          display_provider_names();
+          System.out.println("Enter the number of your choice: ");
+          report_option = input.nextInt();
           try {
-              display_provider_report();
+              display_provider_report(report_option);
           } catch (IOException e) {
               e.printStackTrace();
           }
@@ -97,7 +102,7 @@ public class Provider {
     }
   }
 
-    public void display_provider_report() throws IOException {
+    public void display_provider_report(int report_option) throws IOException {
 
         String line = null;
         String line2 = null;
@@ -165,6 +170,29 @@ public class Provider {
         }
     }
 
+
+    public void display_provider_names() {
+
+        String line = null;
+
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/weekly_reports/provider_directory.txt")) {
+
+            BufferedReader br = new BufferedReader(fr);
+
+            int i = 1;
+            if((line = br.readLine()) != null) {
+
+                String[] provider_info = line.split("\\|");
+                System.out.println(i + ". ");
+                System.out.println(provider_info[0].toUpperCase());
+
+            }
+        } catch (IOException ex) {
+                System.out.println("Error displaying provider names. Please check with administrator.");
+        }
+
+    }
+
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
@@ -195,7 +223,7 @@ public class Provider {
 
   //This function appends to the provider directory text file
       //The admin can add new providers by using this function
-        public void appendTo_providerDirectory() throws IOException {
+  public void appendTo_providerDirectory() throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt", true));
 
