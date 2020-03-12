@@ -43,6 +43,7 @@ public class Provider {
 
     int option = input.nextInt();
     int report_option;
+    String provider_name;
 
     switch (option) {
       case 1: //request services
@@ -58,12 +59,15 @@ public class Provider {
         break;
 
       case 3:
+
           System.out.println("Which provider report would you like to view/print? ");
           display_provider_names();
           System.out.println("Enter the number of your choice: ");
           report_option = input.nextInt();
+          provider_name = get_provider_name(report_option);
+
           try {
-              display_provider_report(report_option);
+              display_provider_report(provider_name);
           } catch (IOException e) {
               e.printStackTrace();
           }
@@ -102,12 +106,12 @@ public class Provider {
     }
   }
 
-    public void display_provider_report(int report_option) throws IOException {
+    public void display_provider_report(String provider_name) throws IOException {
 
         String line = null;
         String line2 = null;
 
-        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/test.txt")) {
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_name + ".txt")) {
 
             BufferedReader br = new BufferedReader(fr);
 
@@ -175,23 +179,49 @@ public class Provider {
 
         String line = null;
 
-        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/weekly_reports/provider_directory.txt")) {
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt")) {
 
             BufferedReader br = new BufferedReader(fr);
 
             int i = 1;
-            if((line = br.readLine()) != null) {
+            while((line = br.readLine()) != null) {
 
                 String[] provider_info = line.split("\\|");
-                System.out.println(i + ". ");
-                System.out.println(provider_info[0].toUpperCase());
+                System.out.println(i + ". " + provider_info[0].toUpperCase());
+                ++i;
 
             }
+
         } catch (IOException ex) {
                 System.out.println("Error displaying provider names. Please check with administrator.");
         }
 
     }
+
+    public String get_provider_name(int directory_index) {
+
+      int i;
+
+      String line = null;
+
+      try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt")) {
+
+            BufferedReader br = new BufferedReader(fr);
+
+        for(i = 1; i <= directory_index; ++directory_index) {
+            line = br.readLine();
+        }
+
+      } catch (IOException ex) {
+          System.out.println("Error accessing the provider directory. Please check with administrator.");
+      }
+
+      String[] provider_name = line.split("\\|");
+      System.out.println(provider_name[0]);
+      return provider_name[0];
+
+    }
+
 
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
