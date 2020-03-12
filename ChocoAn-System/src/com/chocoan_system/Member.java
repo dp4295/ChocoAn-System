@@ -26,6 +26,7 @@ public class Member {
         input.nextLine();
 
         System.out.println("Welcome, your ID is: " + id);
+
     }
 
 

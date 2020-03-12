@@ -115,7 +115,7 @@ public class Main {
                             e.printStackTrace();
                         }
 
-                        System.out.println("\nWould you like to stay in the Provider Interface? ");
+                        System.out.println("\nWould you like to stay in the Member Interface? ");
                         System.out.println("1 - Yes");
                         System.out.println("2 - No, go back to the menu of roles.");
                         System.out.println("\nEnter your decision here: ");
