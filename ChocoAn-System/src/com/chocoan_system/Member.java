@@ -19,32 +19,52 @@ public class Member {
 
     Scanner input = new Scanner(System.in);
 
-    protected void member_UI() {
-        int id;
+    protected void member_UI() throws IOException{
+        String id;
 
         System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
         System.out.println("\tEnter your member ID to log in: ");
         System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
-        id = input.nextInt();
-        input.nextLine();
+        id = input.nextLine();
 
         //test for id number if valid or not
-        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
-        String line = null;
-
-        if (line.endsWith(id)){
-            System.out.println("Validated");
-        }
-        else if (!line.endsWith(id)){
-            System.out.println("Invalid Number");
-        }
-        else {
-            System.out.println("Invalid Number");
-        }
-
-        System.out.println("Welcome, your ID is: " + id);
+        check_ID(id);
+        //member_report() function goes here
+        //will continue to loop back until report function is placed.
 
     }
+
+    public void check_ID(String id) throws IOException {
+
+            File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
+            if (!inputFile.isFile()) {
+                System.out.println("Not an existing file");//check file path
+                return;
+            }
+            BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
+            String line = null;
+
+            while ((line = br.readLine()) != null) {
+
+                if (!line.contains(id)) {
+                    if (line.endsWith("suspended")) {
+                        System.out.println("Member Suspended");
+                        return;
+                    } else {
+                        System.out.println("Validated");
+                        System.out.println("Welcome, your ID is: " + id);
+                        return;
+                    }
+                }
+                else {
+                    System.out.println("Invalid Number");
+                    return;}
+                }
+
+            }
+
+
+
 
 
 
