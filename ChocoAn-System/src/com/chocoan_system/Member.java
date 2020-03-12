@@ -183,7 +183,7 @@ public class Member {
             if (!tempFile.renameTo(inputFile))
                 System.out.println("Could not rename file");
 
-            System.out.println("The member has been removed successfully.");
+            System.out.println("The member directory has been updated successfully.");
 
 
         } catch (FileNotFoundException e) {
