@@ -34,41 +34,41 @@ public class Member {
             check_ID(id);
             //member_report() function goes here
             //will continue to loop back until report function is placed.
-    } catch (NumberFormatException e) {
-        System.out.println("PLEASE ENTER NUMBERS ONLY!!! \n");
-        member_UI();
-    }
+        } catch (NumberFormatException e) {
+            System.out.println("PLEASE ENTER NUMBERS ONLY!!! \n");
+            member_UI();
+        }
 
     }
 
     public void check_ID(String id) throws IOException {
 
-            File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
-            if (!inputFile.isFile()) {
-                System.out.println("Not an existing file");//check file path
-                return;
-            }
-            BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
-            String line = null;
-
-            while ((line = br.readLine()) != null) {
-
-                if (line.contains(id)==true) {
-                    if (line.endsWith("suspended")) {
-                        System.out.println("Member Suspended");
-                        return;
-                    } else {
-                        System.out.println("Validated");
-                        System.out.println("Welcome, your ID is: " + id);
-                        return;
-                    }
-                }
-                }
-
-            System.out.println("Invalid Number");
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
+        if (!inputFile.isFile()) {
+            System.out.println("Not an existing file");//check file path
             return;
+        }
+        BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
+        String line = null;
 
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains(id)==true) {
+                if (line.endsWith("suspended")) {
+                    System.out.println("Member Suspended");
+                    return;
+                } else {
+                    System.out.println("Validated");
+                    System.out.println("Welcome, your ID is: " + id);
+                    return;
+                }
             }
+        }
+
+        System.out.println("Invalid Number");
+        return;
+
+    }
 
 
 
@@ -165,7 +165,7 @@ public class Member {
         writer.close();
 
         System.out.println("** Member is added to the database. **");
-}
+    }
 
     public void delete_member() {
 
