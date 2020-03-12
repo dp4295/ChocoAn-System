@@ -56,8 +56,8 @@ public class Main {
                         }
 
                         System.out.println("\nWould you like to stay in the Admin Interface? ");
-                        System.out.println("1 - Yes");
-                        System.out.println("2 - No, go back to the menu of roles.");
+                        System.out.println("\t1 - Yes");
+                        System.out.println("\t2 - No, go back to the menu of roles.");
                         System.out.println("\nEnter your decision here: ");
 
                         stay = input.nextInt();

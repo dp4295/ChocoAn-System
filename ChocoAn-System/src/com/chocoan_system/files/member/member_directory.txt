@@ -1,21 +1,11 @@
-John Doe|111111111|1604 SE Clay St|Portland|OR|97201
-Anna Jay|222222222|1564 SE Jefferson St|Portland|OR|97345
-Deep Patel|129445991|1604 SW Clay St #201|Portland|OR|97102
 Srini Lakha|495124543|1604 SW Clay St #402|Portland|OR|97102
 Leila Peterson|121212121|1607 SW Clay St #102|Portland|OR|97102
 Lilya Morrison|123123981|1607 SW Clay St #202|Portland|OR|97102
-Theo Lee|122122137|1607 SW Clay St #303|Portland|OR|97102
 Cameron Trio|122111239|1638 SE Stephen St|Portland|OR|97220
 Teetee He|121232129|127 SE Fowl St|Portland|OR|97208
 Samuel Long|122212890|126 SE Fowl St|Portland|OR|97208
 Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266
-Deep Patel|98429492|97349huujhafn|OR|OR|982232
-Darika atbayar||71718 jakj |Beaverton|OR|98494
-Darika Batbayar|510705544|17172 SW Whitley Way|Beaverton|OR|97006
-Deep Patel|231828955|739 kakfka|Portland|OR|95099
-Darika Batbayar|955786526|17172 SW WHitley Way|Beaverton|OR|97006
-Darika Batbayar|108961697|17172|jhdskfa|OR|034849
-Darika Batbayar|169773046||gugu|skg|05454
-Deep Patel|155134688|Some street|Portland|OR|098493
+Darika atbayar||71718 jakj|Beaverton|OR|98494
+Darika Batbayar|510705544|171 SW Whitley Way|Beaverton|OR|97006

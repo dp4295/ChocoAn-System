@@ -1,13 +1,8 @@
 package com.chocoan_system;
 
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.BufferedWriter;
 
 
 public class Provider {
@@ -53,7 +48,11 @@ public class Provider {
         break;
 
       case 2: //view service codes
-        //display_codes();
+          try {
+              display_codes();
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
         break;
 
       case 3:
@@ -65,37 +64,33 @@ public class Provider {
     }
   }
 
-/*
-  // Display provider Directory
-  public void display() {
-    System.out.println("\n\n");
-    System.out.println("\tProvider name: " + name);
-    System.out.println("\tService code:" + service_code);
-    System.out.println("\tStreet: " + street);
-    System.out.println("\tState: " + state);
-    System.out.println("\tZip code: " + zip);
-    System.out.println("\n");
-  }
-*/
 
-/*
   public void display_codes() throws IOException {
 
     String line = null;
 
-    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/services_codes.txt")) {
+    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt")) {
 
       BufferedReader br = new BufferedReader(fr);
 
+        System.out.println("SERVICE CODES");
+        System.out.println("-------------");
+
       while ((line = br.readLine()) != null) {
-        System.out.println(line);
+
+          String[] service_code_info = line.split("\\|");
+
+          System.out.println("\t" + service_code_info[1].toUpperCase() + " - "
+                  + service_code_info[0].toUpperCase() + " (Fee $" + service_code_info[2] + ")");
+
       }
 
       br.close();
     } catch (IOException ex) {
-      System.out.println("Error reading file.");
+      System.out.println("Error reading the service code file. Please check with administrator.");
     }
-*/
+  }
+
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
 
@@ -177,6 +172,58 @@ public class Provider {
 
         System.out.println("** Provider is added to the database. **");
 }
+
+    public void delete_provider() {
+        try {
+            File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
+
+            if (!inputFile.isFile()) {
+                System.out.println("Not an existing file");//check file path
+                return;
+            }
+            //temp file to store info not to be deleted
+            File tempFile = new File(inputFile.getAbsolutePath() + ".tmp");
+            BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+            String line = null;
+
+            System.out.println("Enter the FIRST name of the provider to be removed: ");
+            first_name = input.nextLine();
+
+            System.out.println("Enter the LAST name of the provider to be removed: ");
+            last_name = input.nextLine();
+
+            while ((line = br.readLine()) != null) {
+                if (!line.startsWith(first_name + " " + last_name)) {
+                    pw.println(line);
+                    pw.flush();
+                }
+            }
+            pw.close();
+            br.close();
+
+
+            //Delete original file
+            if (!inputFile.delete()) {
+                System.out.println("Could not delete file");
+                return;
+            }
+
+            //Rename temp file to the original file name.
+            if (!tempFile.renameTo(inputFile))
+                System.out.println("Could not rename file");
+
+            System.out.println("The provider has been removed successfully.");
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
 
     public int writeout_provider_reports(){
 
