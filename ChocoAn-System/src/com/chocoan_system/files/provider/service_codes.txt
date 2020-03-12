@@ -1,7 +1,7 @@
-counseling|999999
-physical therapy|123123
-massage therapy|222222
-spa|444444
-grief counseling|555555
-nutritional counseling|888888
-cognitive behavioral therapy|333333
+counseling|999999|30.00
+physical therapy|123123|30.00
+massage therapy|222222|30.00
+spa|444444|30.00
+grief counseling|555555|30.00
+nutritional counseling|888888|30.00
+cognitive behavioral therapy|333333|30.00
