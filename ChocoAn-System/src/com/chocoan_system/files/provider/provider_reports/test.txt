@@ -1,48 +1,16 @@
-/*
-FORMAT OF PROVIDER DIRECTORY
----------------------------------------------------------------------------------------------------------
-Provider name|Provider number|Provider street address|Provider city|Provider state|Provider zip code
-Total fee for the week (up to $99,999.99)
-/
-Date of service (MM-DD-YYYY)
-Date and time data were received by the computer (MM-DD-YYYY HH:MM:SS)
-Member name|Member number
-Fee to be paid
-Total number of consultations with members (3 digits)
-/
-Date of service (MM-DD-YYYY)
-Date and time data were received by the computer (MM-DD-YYYY HH:MM:SS)
-Member name|Member number
-Fee to be paid
-Total number of consultations with members (3 digits)
-/
----------------------------------------------------------------------------------------------------------
-*/
-
 Kaiser group|239356092|5432 NW 5th Ave|Portland|OR|97004
 140
 /
 03-07-2020
 03-07-2020 | 12:36:18
 John Doe|111111111
-222222
-70
+222222|massage therapy
+30
 2
 /
-03-06-2020
-03-06-2020 | 10:05:00
-Leila Peterson|121212121
-444444
-70
-3
-/
-
-
-
-
-
-
-
-
-
-
+02-21-2020
+02-21-2020 | 11:12:48
+John Doe|111111111
+222222|massage therapy
+30
+2
