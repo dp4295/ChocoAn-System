@@ -1,3 +1,4 @@
+John Doe|111111111|1600 SW Clay St #305|Portland|OR|97103|active
 Srini Lakha|495124543|1604 SW Clay St #402|Portland|OR|97102|suspended
 Leila Peterson|121212121|1607 SW Clay St #102|Portland|OR|97102|active
 Lilya Morrison|123123981|1607 SW Clay St #202|Portland|OR|97102|suspended
