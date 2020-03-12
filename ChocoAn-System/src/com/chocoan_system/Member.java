@@ -23,7 +23,7 @@ public class Member {
         String id;
 
         System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
-        System.out.println("\tEnter your member ID to log in: ");
+        System.out.println("\tEnter your 9 digit member ID to log in: ");
         System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
         id = input.nextLine();
 
@@ -46,7 +46,7 @@ public class Member {
 
             while ((line = br.readLine()) != null) {
 
-                if (!line.contains(id)) {
+                if (line.contains(id)==true) {
                     if (line.endsWith("suspended")) {
                         System.out.println("Member Suspended");
                         return;
@@ -56,15 +56,12 @@ public class Member {
                         return;
                     }
                 }
-                else {
-                    System.out.println("Invalid Number");
-                    return;}
                 }
 
+            System.out.println("Invalid Number");
+            return;
+
             }
-
-
-
 
 
 
