@@ -216,20 +216,20 @@ public class Member {
 
     // This function will return the name of the member based on id
     // Node: String variable to catch the name
-    public String return_member_name(int number ) throws IOException {
+    public void return_member_name(String number) throws IOException {
 
         String name = new String();
 
         Scanner scanner = null;
         try {
 
-            scanner  = new Scanner(new File("ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/member_directory.txt"));
+            scanner  = new Scanner(new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
 
             // Check if there is another line of input
             while (scanner.hasNextLine()) {
                 String str = scanner.nextLine();
                 // parse each line using delimiter
-                name = parseData(str, number);
+                parseData(str, number);
             }
 
         } catch (IOException exp) {
@@ -238,32 +238,32 @@ public class Member {
             if (scanner != null)
                 scanner.close();
         }
-
-        return name;
     }
 
 
-    public static String parseData(String str, int match_id ) {
+    public void parseData(String str, String match_id ) {
         String name = new String();
-        String address, city, state, zip;
-        int id;
+        String address, city, state, zip, id;
+
         Scanner lineScanner = new Scanner(str);
         lineScanner.useDelimiter("\\|");
         while (lineScanner.hasNext()) {
             name = lineScanner.next();
-            id = lineScanner.nextInt();
+            id = lineScanner.next();
             address = lineScanner.next();
             city = lineScanner.next();
             state = lineScanner.next();
             zip = lineScanner.next();
 
-            if(id == match_id) {
-                return name;
+            if(id.equals(match_id)) {
+                System.out.println("name: " + name + " id:  " + id +
+                        " address:  " + address + city + state + zip);
+                lineScanner.close();
             }
         }
+
         lineScanner.close();
 
-        return name;
     }
 
 

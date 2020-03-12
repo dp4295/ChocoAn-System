@@ -32,7 +32,7 @@ public class Provider {
 
 
   //PROVIDER UI
-  protected void providerUI() {
+  protected void providerUI() throws IOException {
     System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
     System.out.println("\tChoose an option:");
     System.out.println("\t1 - Member is requesting health services");
@@ -42,10 +42,23 @@ public class Provider {
     System.out.println("\tEnter number the corresponding number to the action of your choice: ");
 
     int option = input.nextInt();
+    input.nextLine();
+
+      Member m_object = new Member();
+    String member_ID;
 
     switch (option) {
       case 1: //request services
           //add a service
+          System.out.println("\nSwipe member ID card...");
+          System.out.println("[Use the example of John Doe whose member ID is 112233445]");
+          System.out.println("\nEnter member ID: ");
+          member_ID = input.nextLine();
+          //input.nextLine();
+          System.out.println("Member ID is: " + member_ID);
+
+          m_object.return_member_name(member_ID);
+
         break;
 
       case 2: //view service codes
