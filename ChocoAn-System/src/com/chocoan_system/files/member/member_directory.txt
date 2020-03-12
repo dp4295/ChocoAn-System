@@ -8,5 +8,6 @@ Samuel Long|122212890|126 SE Fowl St|Portland|OR|97208|active
 Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266|suspended
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266|active
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266|active
-Darika atbayar||71718 jakj|Beaverton|OR|98494|active
 Darika Batbayar|510705544|171 SW Whitley Way|Beaverton|OR|97006|active
+a a|951214640|a|a|1|12
+a a|998413465|23|32|as|987

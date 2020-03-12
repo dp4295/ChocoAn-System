@@ -19,34 +19,56 @@ public class Member {
 
     Scanner input = new Scanner(System.in);
 
-    protected void member_UI() {
-        int id;
+    protected void member_UI() throws IOException{
+        String id;
 
-        System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
-        System.out.println("\tEnter your member ID to log in: ");
-        System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
-        id = input.nextInt();
-        input.nextLine();
+        try {
+            System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
+            System.out.println("\tEnter your 9 digit member ID to log in: ");
+            System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
+            id = input.nextLine();
 
-        //test for id number if valid or not
-        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
-        String line = null;
-
-        if (line.endsWith(id)){
-            System.out.println("Validated");
+            int d = Integer.parseInt(id);
+            if(id.length() > 9)
+                throw new IllegalArgumentException();
+            //test for id number if valid or not
+            check_ID(id);
+            //member_report() function goes here
+            //will continue to loop back until report function is placed.
+        } catch (NumberFormatException e) {
+            System.out.println("Error: ID number to long or Invalid input!!\n");
+            member_UI();
         }
-        else if (!line.endsWith(id)){
-            System.out.println("Invalid Number");
+        catch(IllegalArgumentException i) {
+            System.out.println("Error: ID number too long \n");
+            member_UI();
         }
-        else {
-            System.out.println("Invalid Number");
-        }
-
-        System.out.println("Welcome, your ID is: " + id);
-
     }
 
+    public void check_ID(String id) throws IOException {
 
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
+        if (!inputFile.isFile()) {
+            System.out.println("Not an existing file");//check file path
+            return;
+        }
+        BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
+        String line = null;
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains(id) == true) {
+                if (line.endsWith("suspended")) {
+                    System.out.println("Member Suspended");
+                } else {
+                    System.out.println("Validated");
+                    System.out.println("Welcome, your ID is: " + id);
+                }
+                return;
+            }
+        }
+        return;
+    }
 
     /*
  //this function appends new members to the member directory
@@ -95,53 +117,69 @@ public class Member {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
 
-        writer.newLine();
+        try {
+            writer.newLine();
 
-        System.out.println("Enter the first name of the member: ");
-        first_name = input.nextLine();
-        writer.write(first_name);
+            System.out.println("Enter the first name of the member: ");
+            first_name = input.nextLine();
+            if (first_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(first_name);
+            writer.write(" ");
 
-        writer.write(" ");
+            System.out.println("Enter the LAST name of the member: ");
+            last_name = input.nextLine();
+            if (last_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(last_name);
+            writer.write("|");
 
-        System.out.println("Enter the LAST name of the member: ");
-        last_name = input.nextLine();
-        writer.write(last_name);
+            member_ID = number_Gen(9);
+            System.out.println("Assigned member ID: " + member_ID);
+            writer.write(member_ID + "");
 
-        writer.write("|");
+            writer.write("|");
 
-        member_ID = number_Gen(9);
-        System.out.println("Assigned member ID: " + member_ID);
-        writer.write(member_ID + "");
+            System.out.println("Enter the street address of the member: ");
+            street_name = input.nextLine();
+            writer.write(street_name);
 
-        writer.write("|");
+            writer.write("|");
 
-        System.out.println("Enter the street address of the member: ");
-        street_name = input.nextLine();
-        writer.write(street_name);
+            System.out.println("Enter the CITY of the member's address: ");
+            city = input.nextLine();
+            if (city.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(city);
+            writer.write("|");
 
-        writer.write("|");
+            System.out.println("Enter the STATE abbreviation of the member's address: ");
+            state = input.nextLine();
+            if (state.matches("[0-9]"))
+                throw new NumberFormatException();
+            if (state.length() > 2)
+                throw new IllegalArgumentException();
+            writer.write(state);
+            writer.write("|");
 
-        System.out.println("Enter the CITY of the member's address: ");
-        city = input.nextLine();
-        writer.write(city);
+            System.out.println("Enter the zip code of the member's address: ");
+            zip = input.nextInt();
+            input.nextLine();
+            writer.write(zip + "");
+            writer.close();
 
-        writer.write("|");
+            System.out.println("** Member is added to the database. **");
 
-        System.out.println("Enter the STATE abbreviation of the member's address: ");
-        state = input.nextLine();
-        writer.write(state);
-
-        writer.write("|");
-
-        System.out.println("Enter the zip code of the member's address: ");
-        zip = input.nextInt();
-        input.nextLine();
-        writer.write(zip + "");
-
-        writer.close();
-
-        System.out.println("** Member is added to the database. **");
+        }catch (NumberFormatException e) {
+                System.out.println("Error: Invalid state ID\n");
+                appendTo_memberDirectory();
+            }
+        catch (IllegalArgumentException i) {
+            System.out.println("Error: Invalid input\nPlease restart the addition of a new member\n");
+            appendTo_memberDirectory();
+        }
 }
+
 
     public void delete_member() {
 
@@ -199,20 +237,20 @@ public class Member {
 
     // This function will return the name of the member based on id
     // Node: String variable to catch the name
-    public String return_member_name(int number ) throws IOException {
+    public void return_member_name(String number) throws IOException {
 
         String name = new String();
 
         Scanner scanner = null;
         try {
 
-            scanner  = new Scanner(new File("ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/member_directory.txt"));
+            scanner  = new Scanner(new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
 
             // Check if there is another line of input
             while (scanner.hasNextLine()) {
                 String str = scanner.nextLine();
                 // parse each line using delimiter
-                name = parseData(str, number);
+                parseData(str, number);
             }
 
         } catch (IOException exp) {
@@ -221,32 +259,32 @@ public class Member {
             if (scanner != null)
                 scanner.close();
         }
-
-        return name;
     }
 
 
-    public static String parseData(String str, int match_id ) {
+    public void parseData(String str, String match_id ) {
         String name = new String();
-        String address, city, state, zip;
-        int id;
+        String address, city, state, zip, id;
+
         Scanner lineScanner = new Scanner(str);
         lineScanner.useDelimiter("\\|");
         while (lineScanner.hasNext()) {
             name = lineScanner.next();
-            id = lineScanner.nextInt();
+            id = lineScanner.next();
             address = lineScanner.next();
             city = lineScanner.next();
             state = lineScanner.next();
             zip = lineScanner.next();
 
-            if(id == match_id) {
-                return name;
+            if(id.equals(match_id)) {
+                System.out.println("name: " + name + " id:  " + id +
+                        " address:  " + address + city + state + zip);
+                lineScanner.close();
             }
         }
+
         lineScanner.close();
 
-        return name;
     }
 
 
