@@ -46,10 +46,10 @@ public class Admin {
                         provider_obj.delete_provider();
                         break;
                     case 5:
-                        //display_member_directory();
+                        display_member_directory();
                         break;
                     case 6:
-                        //display_provider_directory();
+                        display_provider_directory();
                         break;
                     case 7:
                         break;

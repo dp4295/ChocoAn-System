@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65881770-4731-47ad-ab46-5e2d69a00a79" name="Default Changelist" comment="">
+    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="Commented out functions to attempt a build">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="507" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -23,8 +25,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Yg8hnWy608jFt71nsipwpgdV5B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -40,19 +43,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -287,6 +281,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="update john" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="872" y="378" key="#Project_Structure/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584035198877" />
     <state x="801" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583979951107">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -295,9 +293,38 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="465" y="96" width="979" height="912" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1583981094498" />
+    <state width="1887" height="1028" key="GridCell.Tab.0.bottom" timestamp="1584036758793">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1887" height="1028" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
+    <state width="1887" height="1028" key="GridCell.Tab.0.center" timestamp="1584036758793">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1887" height="1028" key="GridCell.Tab.0.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
+    <state width="1887" height="1028" key="GridCell.Tab.0.left" timestamp="1584036758793">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1887" height="1028" key="GridCell.Tab.0.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
+    <state width="1887" height="1028" key="GridCell.Tab.0.right" timestamp="1584036758793">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1887" height="1028" key="GridCell.Tab.0.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1584036832446">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036832446" />
+    <state x="1089" y="637" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584036822114">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1089" y="637" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036822114" />
     <state x="623" y="257" key="search.everywhere.popup" timestamp="1583980494071">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="623" y="257" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583980494071" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ChocoAn_System$Main.ic" NAME="Main Coverage Results" MODIFIED="1584036758769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.chocoan_system.*</FILTER>
+    </SUITE>
   </component>
 </project>
