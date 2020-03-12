@@ -1,6 +1,9 @@
 package com.chocoan_system;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -30,23 +33,6 @@ public class Member {
     }
 
 
-    // This function will useful to create
-    public void create_File(String name, String date) throws IOException {
-
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
-        try {
-            File file = new File(filename);
-            if (file.createNewFile()) {
-                System.out.println("File is created");
-
-            } else {
-                System.out.println("File already exist");
-            }
-        } catch (IOException e) {
-            System.out.println("Error occurred while creating a file");
-            e.printStackTrace();
-        }
-    }
 
     /*
  //this function appends new members to the member directory
@@ -194,6 +180,95 @@ public class Member {
 
         }
     }
+
+
+
+    // This function will return the name of the member based on id
+    // Node: String variable to catch the name
+    public String return_member_name(int number ) throws IOException {
+
+        String name = new String();
+
+        Scanner scanner = null;
+        try {
+
+            scanner  = new Scanner(new File("ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/member_directory.txt"));
+
+            // Check if there is another line of input
+            while (scanner.hasNextLine()) {
+                String str = scanner.nextLine();
+                // parse each line using delimiter
+                name = parseData(str, number);
+            }
+
+        } catch (IOException exp) {
+            exp.printStackTrace();
+        } finally {
+            if (scanner != null)
+                scanner.close();
+        }
+
+        return name;
+    }
+
+
+    public static String parseData(String str, int match_id ) {
+        String name = new String();
+        String address, city, state, zip;
+        int id;
+        Scanner lineScanner = new Scanner(str);
+        lineScanner.useDelimiter("\\|");
+        while (lineScanner.hasNext()) {
+            name = lineScanner.next();
+            id = lineScanner.nextInt();
+            address = lineScanner.next();
+            city = lineScanner.next();
+            state = lineScanner.next();
+            zip = lineScanner.next();
+
+            if(id == match_id) {
+                return name;
+            }
+        }
+        lineScanner.close();
+
+        return name;
+    }
+
+
+    // This function will create a folder based on the name
+    // This function will call every time when new member has been added to the
+    // member directory
+    public void create_folder(String name) throws IOException {
+        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
+        Path path = Paths.get(filename);
+        if (!Files.exists(path)) {
+            Files.createDirectories(path);
+            System.out.println("Folder was created !");
+        } else {
+            System.out.println("Folder is exist");
+        }
+    }
+
+
+    // This function will useful to create
+    public void create_File(String name, String date) throws IOException {
+
+        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        try {
+            File file = new File(filename);
+            if (file.createNewFile()) {
+                System.out.println("File is created");
+
+            } else {
+                System.out.println("File already exist");
+            }
+        } catch (IOException e) {
+            System.out.println("Error occurred while creating a file");
+            e.printStackTrace();
+        }
+    }
+
 
 
     public void writeout_member_reports() {
