@@ -1,13 +1,11 @@
 package com.chocoan_system;
 
 import java.io.*;
-import java.lang.invoke.MethodHandle;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Member {
 
@@ -31,11 +29,8 @@ public class Member {
             id = input.nextLine();
 
             int d = Integer.parseInt(id);
-
             if(id.length() > 9)
-            {
                 throw new IllegalArgumentException();
-            }
             //test for id number if valid or not
             check_ID(id);
             //member_report() function goes here
@@ -48,37 +43,32 @@ public class Member {
             System.out.println("Error: ID number too long \n");
             member_UI();
         }
-
     }
 
     public void check_ID(String id) throws IOException {
 
-            File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
-            if (!inputFile.isFile()) {
-                System.out.println("Not an existing file");//check file path
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
+        if (!inputFile.isFile()) {
+            System.out.println("Not an existing file");//check file path
+            return;
+        }
+        BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
+        String line = null;
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains(id) == true) {
+                if (line.endsWith("suspended")) {
+                    System.out.println("Member Suspended");
+                } else {
+                    System.out.println("Validated");
+                    System.out.println("Welcome, your ID is: " + id);
+                }
                 return;
             }
-            BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
-            String line = null;
-
-            while ((line = br.readLine()) != null) {
-
-                if (line.contains(id) == true) {
-                    if (line.endsWith("suspended")) {
-                        System.out.println("Member Suspended");
-                        return;
-                    } else {
-                        System.out.println("Validated");
-                        System.out.println("Welcome, your ID is: " + id);
-                        return;
-                    }
-                }
-            }
-            System.out.println("Invalid Number");
-            return;
+        }
+        return;
     }
-
-
 
     /*
  //this function appends new members to the member directory
@@ -127,53 +117,69 @@ public class Member {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt", true));
 
-        writer.newLine();
+        try {
+            writer.newLine();
 
-        System.out.println("Enter the first name of the member: ");
-        first_name = input.nextLine();
-        writer.write(first_name);
+            System.out.println("Enter the first name of the member: ");
+            first_name = input.nextLine();
+            if (first_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(first_name);
+            writer.write(" ");
 
-        writer.write(" ");
+            System.out.println("Enter the LAST name of the member: ");
+            last_name = input.nextLine();
+            if (last_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(last_name);
+            writer.write("|");
 
-        System.out.println("Enter the LAST name of the member: ");
-        last_name = input.nextLine();
-        writer.write(last_name);
+            member_ID = number_Gen(9);
+            System.out.println("Assigned member ID: " + member_ID);
+            writer.write(member_ID + "");
 
-        writer.write("|");
+            writer.write("|");
 
-        member_ID = number_Gen(9);
-        System.out.println("Assigned member ID: " + member_ID);
-        writer.write(member_ID + "");
+            System.out.println("Enter the street address of the member: ");
+            street_name = input.nextLine();
+            writer.write(street_name);
 
-        writer.write("|");
+            writer.write("|");
 
-        System.out.println("Enter the street address of the member: ");
-        street_name = input.nextLine();
-        writer.write(street_name);
+            System.out.println("Enter the CITY of the member's address: ");
+            city = input.nextLine();
+            if (city.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(city);
+            writer.write("|");
 
-        writer.write("|");
+            System.out.println("Enter the STATE abbreviation of the member's address: ");
+            state = input.nextLine();
+            if (state.matches("[0-9]"))
+                throw new NumberFormatException();
+            if (state.length() > 2)
+                throw new IllegalArgumentException();
+            writer.write(state);
+            writer.write("|");
 
-        System.out.println("Enter the CITY of the member's address: ");
-        city = input.nextLine();
-        writer.write(city);
+            System.out.println("Enter the zip code of the member's address: ");
+            zip = input.nextInt();
+            input.nextLine();
+            writer.write(zip + "");
+            writer.close();
 
-        writer.write("|");
+            System.out.println("** Member is added to the database. **");
 
-        System.out.println("Enter the STATE abbreviation of the member's address: ");
-        state = input.nextLine();
-        writer.write(state);
+        }catch (NumberFormatException e) {
+                System.out.println("Error: Invalid state ID\n");
+                appendTo_memberDirectory();
+            }
+        catch (IllegalArgumentException i) {
+            System.out.println("Error: Invalid input\nPlease restart the addition of a new member\n");
+            appendTo_memberDirectory();
+        }
+}
 
-        writer.write("|");
-
-        System.out.println("Enter the zip code of the member's address: ");
-        zip = input.nextInt();
-        input.nextLine();
-        writer.write(zip + "");
-
-        writer.close();
-
-        System.out.println("** Member is added to the database. **");
-    }
 
     public void delete_member() {
 
