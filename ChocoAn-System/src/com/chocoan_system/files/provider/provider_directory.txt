@@ -5,4 +5,4 @@ Kaiser Permanente Medical Center|200412345|10180 SE Sunnyside Road|Clackamas|OR|
 PeaceHealth Southwest Medical Center|200323456|400 NE Mother Joseph|Vancouver|WA|98664
 Legacy Meridian Park Medical Center|409078469|19300 SW 65th Avenue|Tualatin|OR|97062
 Cedar Hills Hospital Contact|748348921|10300 SW Eastridge Street|Portland|OR|97225
-Portland Veterans Affairs Medical Center|983910394|3710 SW US Veterans Hospital Road
+Portland Veterans Affairs Medical Center|983910394|3710 SW US Veterans Hospital Road|Portland|97134

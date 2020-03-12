@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="Commented out functions to attempt a build">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="507" />
+    <option name="myElementSize" value="508" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -231,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584023855363</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added back functions to test">
+      <created>1584036860865</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1584036860865</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +283,8 @@
     <MESSAGE value="added display function to display the provider directory from the adminUI" />
     <MESSAGE value="updated adminUI: display provider directory &amp; added additional options to menu" />
     <MESSAGE value="update john" />
-    <option name="LAST_COMMIT_MESSAGE" value="update john" />
+    <MESSAGE value="Added back functions to test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added back functions to test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">
@@ -289,30 +295,47 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="801" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583979951107" />
-    <state x="465" y="96" width="979" height="912" key="CommitChangelistDialog2" timestamp="1583981094498">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="620" y="94" width="979" height="912" key="CommitChangelistDialog2" timestamp="1584036860326">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="620" y="94" key="CommitChangelistDialog2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036860326" />
     <state x="465" y="96" width="979" height="912" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1583981094498" />
-    <state width="1887" height="1028" key="GridCell.Tab.0.bottom" timestamp="1584036758793">
+    <state width="1258" height="507" key="GridCell.Tab.0.bottom" timestamp="1584039724700">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1887" height="1028" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
-    <state width="1887" height="1028" key="GridCell.Tab.0.center" timestamp="1584036758793">
+    <state width="1258" height="507" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039724700" />
+    <state width="1258" height="507" key="GridCell.Tab.0.center" timestamp="1584039724700">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1887" height="1028" key="GridCell.Tab.0.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
-    <state width="1887" height="1028" key="GridCell.Tab.0.left" timestamp="1584036758793">
+    <state width="1258" height="507" key="GridCell.Tab.0.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039724700" />
+    <state width="1258" height="507" key="GridCell.Tab.0.left" timestamp="1584039724699">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1887" height="1028" key="GridCell.Tab.0.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
-    <state width="1887" height="1028" key="GridCell.Tab.0.right" timestamp="1584036758793">
+    <state width="1258" height="507" key="GridCell.Tab.0.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039724699" />
+    <state width="1258" height="507" key="GridCell.Tab.0.right" timestamp="1584039724700">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1887" height="1028" key="GridCell.Tab.0.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036758793" />
-    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1584036832446">
+    <state width="1258" height="507" key="GridCell.Tab.0.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039724700" />
+    <state width="1258" height="507" key="GridCell.Tab.1.bottom" timestamp="1584039717299">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="872" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036832446" />
+    <state width="1258" height="507" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039717299" />
+    <state width="1258" height="507" key="GridCell.Tab.1.center" timestamp="1584039717299">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1258" height="507" key="GridCell.Tab.1.center/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039717299" />
+    <state width="1258" height="507" key="GridCell.Tab.1.left" timestamp="1584039717299">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1258" height="507" key="GridCell.Tab.1.left/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039717299" />
+    <state width="1258" height="507" key="GridCell.Tab.1.right" timestamp="1584039717299">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="1258" height="507" key="GridCell.Tab.1.right/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584039717299" />
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1584036865662">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="872" y="453" key="Vcs.Push.Dialog.v2/0.0.2560.1440/2560.116.1920.1080@0.0.2560.1440" timestamp="1584036865662" />
     <state x="1089" y="637" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584036822114">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -323,7 +346,7 @@
     <state x="623" y="257" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1583980494071" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ChocoAn_System$Main.ic" NAME="Main Coverage Results" MODIFIED="1584036758769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ChocoAn_System$Main.ic" NAME="Main Coverage Results" MODIFIED="1584039579258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.chocoan_system.*</FILTER>
     </SUITE>
   </component>
