@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Member {
 
@@ -22,15 +23,21 @@ public class Member {
     protected void member_UI() throws IOException{
         String id;
 
-        System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
-        System.out.println("\tEnter your 9 digit member ID to log in: ");
-        System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
-        id = input.nextLine();
+        try {
+            System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
+            System.out.println("\tEnter your 9 digit member ID to log in: ");
+            System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
+            id = input.nextLine();
 
-        //test for id number if valid or not
-        check_ID(id);
-        //member_report() function goes here
-        //will continue to loop back until report function is placed.
+            int d = Integer.parseInt(id);
+            //test for id number if valid or not
+            check_ID(id);
+            //member_report() function goes here
+            //will continue to loop back until report function is placed.
+    } catch (NumberFormatException e) {
+        System.out.println("PLEASE ENTER NUMBERS ONLY!!! \n");
+        member_UI();
+    }
 
     }
 

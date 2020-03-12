@@ -30,8 +30,6 @@ public class Admin {
 
                 int role = input.nextInt();
 
-                int flag;
-
                 switch (role) {
                     case 1: //Add Member
                         member_obj.appendTo_memberDirectory();
