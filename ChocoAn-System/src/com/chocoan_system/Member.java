@@ -240,7 +240,7 @@ public class Member {
     // This function will call every time when new member has been added to the
     // member directory
     public void create_folder(String name) throws IOException {
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
             Files.createDirectories(path);
@@ -254,7 +254,7 @@ public class Member {
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
 
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {

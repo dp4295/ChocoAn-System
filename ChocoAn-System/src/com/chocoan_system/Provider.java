@@ -60,6 +60,11 @@ public class  Provider {
                 String name = m_object.check_ID(member_ID);
                 String member_name = name.split("\\|")[0];
 
+                System.out.println("\nName: " + member_name);
+                m_object.create_folder(member_name);
+
+
+
                 break;
 
             case 2: //view service codes
