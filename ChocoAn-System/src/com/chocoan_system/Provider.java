@@ -37,9 +37,9 @@ public class  Provider {
         try {
             System.out.println("\tEnter your 9 digit provider ID to log in: ");
             System.out.println("   (for testing purposes, please pretend you are Providence group - Provider ID: 124789741)");
-            String id = null;
+            String id;
             id = input.nextLine();
-            if (id.length() > 9)
+            if (id.length() != 9)
                 throw new IllegalArgumentException();
             check_ID(id);
         }
@@ -48,7 +48,7 @@ public class  Provider {
             providerUI();
         }
         catch(IllegalArgumentException i) {
-            System.out.println("Error: ID number too long \n");
+            System.out.println("Error: ID number too long or too short \n");
             providerUI();
         }
 
@@ -68,20 +68,30 @@ public class  Provider {
         switch (option) {
             case 1: //request services
                 //add a service
-                System.out.println("\nSwipe member ID card...");
-                System.out.println("[Use the example of John Doe whose member ID is 112233445]");
-                System.out.println("\nEnter member ID: ");
-                member_ID = input.nextLine();
+                try {
+                    System.out.println("\nSwipe member ID card...");
+                    System.out.println("[Use the example of John Doe whose member ID is 112233445]");
+                    System.out.println("\nEnter 9 digit member ID: ");
+                    member_ID = input.nextLine();
 
-                if(member_ID.length() > 9)
-                    throw new IllegalArgumentException();
-                String name = m_object.check_ID(member_ID);
-                String member_name = name.split("\\|")[0];
+                    if (member_ID.length() != 9)
+                        throw new IllegalArgumentException();
+                    String name = m_object.check_ID(member_ID);
+                    String member_name = name.split("\\|")[0];
 
-                System.out.println("\nName: " + member_name);
-                m_object.create_folder(member_name);
+                    System.out.println("\nName: " + member_name);
+                    m_object.create_folder(member_name);
 
 
+                }
+                catch (NumberFormatException e) {
+                System.out.println("Error: ID number too long or Invalid input!!\n");
+                providerUI();
+                }
+                catch(IllegalArgumentException i) {
+                System.out.println("Error: ID number too long or too short \n");
+                providerUI();
+                }
 
                 break;
 
