@@ -1,6 +1,7 @@
 John Doe|111111111|1600 SW Clay St #305|Portland|OR|97103|active
-Srini Lakha|495124543|1604 SW Clay St #402|Portland|OR|97102|suspended
-Leila Peterson|121212121|1607 SW Clay St #102|Portland|OR|97102|active
+Alicia Hermann|495124543|261 Goodwin Avenue|Hatton|WA|99344|suspended
+Joseph August|121212121|3790 Friendship Lane|San Martin|CA|95046|active
+Luke Dominy|510705544|2296 Rinehart Road|Miami|FL|33131|active
 Lilya Morrison|123123981|1607 SW Clay St #202|Portland|OR|97102|suspended
 Cameron Trio|122111239|1638 SE Stephen St|Portland|OR|97220|active
 Teetee He|121232129|127 SE Fowl St|Portland|OR|97208|active
@@ -8,6 +9,3 @@ Samuel Long|122212890|126 SE Fowl St|Portland|OR|97208|active
 Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266|suspended
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266|active
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266|active
-Darika Batbayar|510705544|171 SW Whitley Way|Beaverton|OR|97006|active
-a a|951214640|a|a|1|12
-a a|998413465|23|32|as|987
