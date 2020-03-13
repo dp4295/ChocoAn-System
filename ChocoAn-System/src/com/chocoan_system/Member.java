@@ -28,8 +28,7 @@ public class Member {
             System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
             id = input.nextLine();
 
-            //int d = Integer.parseInt(id);
-            if(id.length() > 9)
+            if(id.length() != 9)
                 throw new IllegalArgumentException();
             //test for id number if valid or not
             String name = check_ID(id);
@@ -41,7 +40,7 @@ public class Member {
             member_UI();
         }
         catch(IllegalArgumentException i) {
-            System.out.println("Error: ID number too long \n");
+            System.out.println("Error: ID number too long or too short \n");
             member_UI();
         }
     }
@@ -302,12 +301,13 @@ public class Member {
         System.out.println("******************************************************************************************************");
 
         File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
-        String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
-        // had trouble making this a try/catch block so I used an if/else block instead
-        if (fileList == null) {
-            System.out.println("Member does not have any service report history.");
+        if(!f.exists()) {
+            System.out.println("Member does not have any service history. ");
         } else {
+
+            String[] fileList = f.list(); //array of all file names in the path: /provider reports
+
             int number_of_files = fileList.length;  //number of files in the directory
 
             for (int j = 0; j < number_of_files; ++j) {
@@ -339,7 +339,7 @@ public class Member {
                     br.close();
 
                 } catch (IOException ex) {
-                    System.out.println("Error reading the member report file. Please check with administrator.");
+                    System.out.println("Error reading the member report file OR a service file does not exist. Please check with administrator if you think this is a mistake.");
                 }
             }
         }
