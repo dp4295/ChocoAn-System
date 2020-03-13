@@ -339,7 +339,7 @@ public class Member {
                     br.close();
 
                 } catch (IOException ex) {
-                    System.out.println("Error reading the member report file. Please check with administrator.");
+                    System.out.println("Error reading the member report file OR a service file does not exist. Please check with administrator if you think this is a mistake.");
                 }
             }
         }
