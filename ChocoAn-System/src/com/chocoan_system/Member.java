@@ -28,7 +28,7 @@ public class Member {
             System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
             id = input.nextLine();
 
-            int d = Integer.parseInt(id);
+            //int d = Integer.parseInt(id);
             if(id.length() > 9)
                 throw new IllegalArgumentException();
             //test for id number if valid or not
@@ -60,14 +60,16 @@ public class Member {
 
             if (line.contains(id) == true) {
                 if (line.endsWith("suspended")) {
-                    System.out.println("Member Suspended");
+                    System.out.println("\nMember Suspended");
                 } else {
-                    System.out.println("Validated");
-                    System.out.println("Welcome, your ID is: " + id);
+                    System.out.println("\nValidated");
+                    System.out.println("\nWelcome, your ID is: " + id+"\n");
                 }
                 return line;
             }
         }
+        System.out.println("\nInvalid Number. Please try again.\n");
+        member_UI();
         return null;
     }
 

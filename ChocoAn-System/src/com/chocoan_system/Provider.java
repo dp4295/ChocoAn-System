@@ -34,6 +34,24 @@ public class  Provider {
     //PROVIDER UI
     protected void providerUI() throws IOException {
         System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
+        try {
+            System.out.println("\tEnter your 9 digit provider ID to log in: ");
+            System.out.println("   (for testing purposes, please pretend you are Providence group - Provider ID: 124789741)");
+            String id = null;
+            id = input.nextLine();
+            if (id.length() > 9)
+                throw new IllegalArgumentException();
+            check_ID(id);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Error: ID number too long or Invalid input!!\n");
+            providerUI();
+        }
+        catch(IllegalArgumentException i) {
+            System.out.println("Error: ID number too long \n");
+            providerUI();
+        }
+
         System.out.println("\tChoose an option:");
         System.out.println("\t1 - Member is requesting health services");
         System.out.println("\t2 - Display service codes");
@@ -83,6 +101,29 @@ public class  Provider {
                 break;
         }
     }
+
+    public void check_ID(String id) throws IOException {
+
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
+        if (!inputFile.isFile()) {
+            System.out.println("Not an existing file");//check file path
+            return;
+        }
+        BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt"));
+        String line = null;
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains(id) == true) {
+                    System.out.println("\nValidated \n");
+                    System.out.println("Welcome, your ID is: " + id + "\n");
+                    return;
+                }
+            }
+        System.out.println("\nInvalid Number. Please try again.\n");
+        providerUI();
+        }
+
 
 
     public void display_codes() throws IOException {
