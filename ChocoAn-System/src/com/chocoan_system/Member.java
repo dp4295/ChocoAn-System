@@ -28,8 +28,7 @@ public class Member {
             System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
             id = input.nextLine();
 
-            //int d = Integer.parseInt(id);
-            if(id.length() > 9)
+            if(id.length() != 9)
                 throw new IllegalArgumentException();
             //test for id number if valid or not
             String name = check_ID(id);
@@ -41,7 +40,7 @@ public class Member {
             member_UI();
         }
         catch(IllegalArgumentException i) {
-            System.out.println("Error: ID number too long \n");
+            System.out.println("Error: ID number too long or too short \n");
             member_UI();
         }
     }
