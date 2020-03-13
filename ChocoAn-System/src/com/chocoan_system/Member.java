@@ -36,7 +36,6 @@ public class Member {
 
             //member_report() function goes here
             display_member_report(name);
-            //will continue to loop back until report function is placed.
         } catch (NumberFormatException e) {
             System.out.println("Error: ID number to long or Invalid input!!\n");
             member_UI();
@@ -236,12 +235,12 @@ public class Member {
     }
 
 
-
+/*
     // This function will return the name of the member based on id
     // Node: String variable to catch the name
-    public void return_member_name(String number) throws IOException {
+    public void return_member_name(String str) throws IOException {
 
-        String name = new String();
+        //String name = null;
 
         Scanner scanner = null;
         try {
@@ -249,10 +248,10 @@ public class Member {
             scanner  = new Scanner(new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
 
             // Check if there is another line of input
-            while (scanner.hasNextLine()) {
+            while(scanner.hasNextLine()){
                 String str = scanner.nextLine();
                 // parse each line using delimiter
-                parseData(str, number);
+                parseData(str);
             }
 
         } catch (IOException exp) {
@@ -264,10 +263,10 @@ public class Member {
     }
 
 
-    public void parseData(String str, String match_id ) {
-        String name = new String();
-        String address, city, state, zip, id;
+    public String parseData(String str) {
+        // String name = new String();
 
+        String name = null, id = null, address = null, city = null, state = null, zip = null, status = null;
         Scanner lineScanner = new Scanner(str);
         lineScanner.useDelimiter("\\|");
         while (lineScanner.hasNext()) {
@@ -277,17 +276,23 @@ public class Member {
             city = lineScanner.next();
             state = lineScanner.next();
             zip = lineScanner.next();
+            status = lineScanner.next();
+            lineScanner.close();
 
+            /*
             if(id.equals(match_id)) {
                 System.out.println("name: " + name + " id:  " + id +
                         " address:  " + address + city + state + zip);
                 lineScanner.close();
             }
+
         }
 
         lineScanner.close();
-
+        return name;
     }
+
+*/
 
 
     // This function will create a folder based on the name
