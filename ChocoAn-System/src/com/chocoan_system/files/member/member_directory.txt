@@ -9,3 +9,4 @@ Samuel Long|122212890|126 SE Fowl St|Portland|OR|97208|active
 Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266|suspended
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266|active
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266|active
+Theo Lee|305572807|13467 S Irian Jaya Way|Portland|OR|97222|active
