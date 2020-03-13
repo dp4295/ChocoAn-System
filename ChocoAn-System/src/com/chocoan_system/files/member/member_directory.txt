@@ -10,3 +10,32 @@ Peter Chow|121234543|18905 SE Lincoln St|Portland|OR|97266|suspended
 Abara Smith|121343333|12099 SE Saig Ave|Portland|OR|97266|active
 York Hernandez|213334339|12000 SE 140th Ave|Portland|OR|97266|active
 Theo Lee|305572807|13467 S Irian Jaya Way|Portland|OR|97222|active
+Brandon Howes|893819203|38 San Pablo Road|Oakland Gardens|NY|11364|active
+Michael Hindhough|893819204|9272 Sherman St.|Bridgewater|NJ|08807|active
+Chuck Schable|893819205|736 Country St.|Crawfordsville|IN|47933|active
+Greg Sherwin|893819206|9509 Bank Rd.|Delray Beach|FL|33445|active
+Keith Cleveringa|893819207|796 Creek Lane|Burke|VA|22015|active
+Nemo Nemeyer|893819208|9 Bay Meadows St.|Tuckerton|NJ|08087|suspended
+Mubina Raza|893819209|958 Ridge St.|San Francisco|CA|94112|active
+Neal Andrade|893819210|474 Squaw Creek Dr.|Anaheim|CA|92805|active
+Nikki Underwood|893819211|82 Rose Street|National City|CA|91950|active
+Patrick Kingsley|893819212|8980 East Central Ave.|Oakland|CA|94601|active
+Roy Grande|893819213|7399 Hill Field Lane|Hayward|CA|94544|active
+Steve Laufer|893819214|440 Dunbar Ave.|Hawthorne|CA|90250|active
+Taylor Dawson|893819215|46 Oakland Street|Boynton Beach|FL|33437|active
+Terry Bruce|893819216|31 NE. Oak Street|Sarasota|FL|34231|active
+Jane Doe|893819217|89 Center Rd.|Lake Worth|FL|33461|suspended
+Meredith Grey|893819218|9836 Glendale Street|Clermont|FL|34711|active
+Alex Karev|893819219|80 Cypress Lane|Saint Petersburg|FL|33702|active
+Miranda Baily|893819220|421 Cedar Swamp St.|Fort Lauderdale|FL|33312|suspended
+Richard Webber|893819221|945 Whitemarsh Rd.|Joliet|IL|60435|active
+Owen Hunt|893819222|20 Oak Meadow St.|Oconomowoc|WI|53066|active
+Teddy Altman|893819223|9914 Willow St.|Corpus Christi|TX|78418|suspended
+Jackson Avery|893819224|877 Myers Road|Clifton|NJ|07011|active
+Jo Wilson|893819225|8483 Albany St.|Charlottesville|VA|22901|active
+Amelia Shepherd|893819226|8307 Grove St.|Westfield|MA|01085|active
+Maggie Pierce|893819227|9482 Lyme Drive|New Hyde Park|NY|11040|active
+Andrew Deluca|893819228|9742 NW. St Margarets Ave.|Seattle|WA|98144|active
+Atticus Lincoln|893819229|7633 Olive Dr.|Hamden|CT|06514|suspended
+Levi Schmitt|893819230|8294 Sunbeam Drive|Griffin|GA|30223|active
+Tom Koracick|893819231|8987 Green Lake St.|Flemington|NJ|08822|active
