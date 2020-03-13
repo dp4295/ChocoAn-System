@@ -16,7 +16,6 @@ public class Member {
     protected String city;
     protected String state;
     protected int zip;
-    protected String response; // ask if member is active or not
 
     Scanner input = new Scanner(System.in);
 
@@ -34,7 +33,6 @@ public class Member {
             //test for id number if valid or not
             String name = check_ID(id);
 
-            //member_report() function goes here
             display_member_report(name);
         } catch (NumberFormatException e) {
             System.out.println("Error: ID number too long or Invalid input!!\n");
@@ -168,34 +166,20 @@ public class Member {
             System.out.println("Enter the zip code of the member's address: ");
             zip = input.nextInt();
             input.nextLine();
-            int ziplength = (int) (Math.log10(zip) + 1);
-            if (ziplength != 5)
-                throw new IndexOutOfBoundsException();
-            writer.write(zip);
-            writer.write("|");
-
-            System.out.println("Is the member active? [Y/N]: ");
-            response = input.nextLine();
-            input.nextLine();
-            if (response.length() > 1)
-                throw new IllegalArgumentException();
-            else if (response.matches("[yY]"))
-                writer.write("active");
-            else
-                writer.write("suspended");
+            writer.write(zip + "");
             writer.close();
 
             System.out.println("** Member is added to the database. **");
 
         }catch (NumberFormatException e) {
-                System.out.println("Error: Invalid state ID\n");
-                appendTo_memberDirectory();
-            }
+            System.out.println("Error: Invalid state ID\n");
+            appendTo_memberDirectory();
+        }
         catch (IllegalArgumentException i) {
             System.out.println("Error: Invalid input\nPlease restart the addition of a new member\n");
             appendTo_memberDirectory();
         }
-}
+    }
 
 
     public void delete_member() {
@@ -262,15 +246,17 @@ public class Member {
             Files.createDirectories(path);
             System.out.println("Folder was created !");
         } else {
-            System.out.println("Folder is exist");
+            System.out.println("Folder exists");
         }
     }
 
 
-    // This function will useful to create
-    public void create_File(String name, String date) throws IOException {
+    public String create_File(String name, String date) throws IOException {
 
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        String first_name = name.split(" ")[0];
+        String last_name = name.split(" ")[1];
+
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/"+first_name+"_"+last_name+"/"+first_name+"_"+last_name+"_"+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
@@ -283,14 +269,9 @@ public class Member {
             System.out.println("Error occurred while creating a file");
             e.printStackTrace();
         }
+        return filename;
     }
 
-
-
-    public void writeout_member_reports() {
-
-        return;
-    }
 
     public void display_member_report(String name) throws IOException {
 

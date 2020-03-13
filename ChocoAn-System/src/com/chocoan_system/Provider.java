@@ -1,6 +1,9 @@
 package com.chocoan_system;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,6 +17,11 @@ public class  Provider {
     protected String city;
     protected String state;
     protected int zip;
+    protected String id;
+    protected String service_fee;
+    protected String service_name;
+    protected int counter = 0;
+    protected int total_fee =0;
 
     Scanner input = new Scanner(System.in);
 
@@ -21,6 +29,9 @@ public class  Provider {
     protected String time;
     protected int num_consult;
     protected String service_code;
+    protected String comment;
+    protected String current_time;
+    protected String current_date;
 
     public final int name_size = 25;
     public final int ID_size = 9;
@@ -28,20 +39,24 @@ public class  Provider {
     public final int city_size = 14;
     public final int zip_size = 5;
 
-    public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
+    //public final double service_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
 
     //PROVIDER UI
     protected void providerUI() throws IOException {
         System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
-        try {
-            System.out.println("\tEnter your 9 digit provider ID to log in: ");
-            System.out.println("   (for testing purposes, please pretend you are Providence group - Provider ID: 124789741)");
-            String id;
-            id = input.nextLine();
-            if (id.length() != 9)
-                throw new IllegalArgumentException();
-            check_ID(id);
+        //try {
+        System.out.println("   (for testing purposes, please pretend you are Providence group - Provider ID: 124789741)");
+        System.out.println("\nEnter your 9 digit provider ID to log in: ");
+        id = input.nextLine();
+        if (id.length() != 9){
+            System.out.println("Error: ID number too long or too short or invalid input. Try again! \n");
+            providerUI();}
+        //throw new IllegalArgumentException();
+        String line = check_ID(id);
+        String [] provider_values = line.split("\\|");
+        String provider_name = provider_values[0];
+        /*
         }
         catch (NumberFormatException e) {
             System.out.println("Error: ID number too long or Invalid input!!\n");
@@ -51,10 +66,11 @@ public class  Provider {
             System.out.println("Error: ID number too long or too short \n");
             providerUI();
         }
+        */
 
         System.out.println("\tChoose an option:");
-        System.out.println("\t1 - Member is requesting health services");
-        System.out.println("\t2 - Display service codes");
+        System.out.println("\t1 - Member is requesting health care services");
+        System.out.println("\t2 - Display service names and corresponding service codes and fees");
         System.out.println("\t3 - Print weekly service report");
         System.out.println("\t4 - Go back to the menu of roles");
         System.out.println("\tEnter number the corresponding number to the action of your choice: ");
@@ -70,28 +86,90 @@ public class  Provider {
                 //add a service
                 try {
                     System.out.println("\nSwipe member ID card...");
-                    System.out.println("[Use the example of John Doe whose member ID is 112233445]");
+                    System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
                     System.out.println("\nEnter 9 digit member ID: ");
                     member_ID = input.nextLine();
 
                     if (member_ID.length() != 9)
                         throw new IllegalArgumentException();
                     String name = m_object.check_ID(member_ID);
-                    String member_name = name.split("\\|")[0];
+                    //String member_name = name.split("\\|")[0];
+                    String [] member_values = name.split("\\|");
+                    String member_name = member_values[0];
 
                     System.out.println("\nName: " + member_name);
                     m_object.create_folder(member_name);
 
+                    //************
+
+                    System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
+                    date = input.nextLine();
+                    //if string length no match call function again
+
+
+                    int response = 0;
+                    while(response != 1) {
+
+                        service_code = null;
+                        display_codes();
+                        System.out.println("\nPlease key in the service code for the service provided using the service list above and press enter: ");
+                        service_code = input.nextLine();
+                        input.nextLine();
+
+                        //display service name or print error message if wrong/does not exist
+                        String service = check_service(service_code);
+                        String [] service_values = service.split("\\|");
+                        service_name = service_values[0];
+                        service_fee = service_values[2];
+
+                        System.out.println("The service corresponding to the code entered in is: "+service_name+"\n");
+                        System.out.println("Is this the service you meant to enter? Please enter 1 for yes or any other key for no to reenter in the correct service: ");
+                        response = input.nextInt();
+
+                    }
+                    //look up the fee to be paid for that service and display it on the provider’s terminal.
+                    //print fee
+
+                    System.out.println("The fee to be paid for the service "+service_name+" is: "+service_fee);
+                    System.out.println("\nEnter in any comments about the service provided. Limit to 100 characters. (Note: this is optional) : ");
+                    comment = input.nextLine();
+                    input.nextLine();
+
+                    System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
+                    current_date = input.nextLine();
+                    System.out.println("\nEnter in the current time using the format HH:MM:SS :");
+                    current_time = input.nextLine();
+
+                    /*
+                    //calc toal fee
+                    counter+= 1;//number of consultations*30=total fee
+                    total_fee += (30*counter);
+                    */
+
+                    //write functions below
+                    //provider form aka archive
+                    writeout_archive(current_date, current_time, comment, service_code, date, member_ID, id); //write to archive.txt
+                    String member_file_name = m_object.create_File(member_name, current_date );
+                    writeout_member_reports(member_file_name, member_values, date, provider_name, service_name);
+
+
+                    create_folder(provider_name);
+                    String provider_file_name = create_File(provider_name, current_date);
+                    writeout_provider_reports(provider_file_name, provider_values, service_fee, member_name, current_date, current_time, service_code, date, member_ID);
+                    writeout_EFT(service_fee, provider_name, id);
+                    // after provider report write to EFT.txt
+
 
                 }
                 catch (NumberFormatException e) {
-                System.out.println("Error: ID number too long or Invalid input!!\n");
-                providerUI();
+                    System.out.println("Error: ID number too long or Invalid input!!\n");
+                    providerUI();
                 }
                 catch(IllegalArgumentException i) {
-                System.out.println("Error: ID number too long or too short \n");
-                providerUI();
+                    System.out.println("Error: ID number too long or too short \n");
+                    providerUI();
                 }
+
 
                 break;
 
@@ -117,12 +195,88 @@ public class  Provider {
         }
     }
 
-    public void check_ID(String id) throws IOException {
+    public String check_service(String service_code) throws IOException {
+        File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt");
+        if (!inputFile.isFile()) {
+            System.out.println("Not an existing file");//check file path
+            return null;
+        }
+        BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt"));
+        String line = null;
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains(service_code) == true) {
+                return line;
+            }
+        }
+        System.out.println("\nInvalid Number. Please try again.\n");
+        providerUI();
+        return null;
+
+    }
+
+    public void writeout_member_reports(String member_file_name, String [] member_values, String date, String provider_name, String service_name) throws IOException {
+
+        //BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/archive.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(member_file_name, true));
+        writer.newLine();
+
+        writer.write(member_values[0]);
+        writer.write("|");
+        writer.write(member_values[1]);
+        writer.write("|");
+        writer.write(member_values[2]);
+        writer.write("|");
+        writer.write(member_values[3]);
+        writer.write("|");
+        writer.write(member_values[4]);
+        writer.write("|");
+        writer.write(member_values[5]);
+        writer.write("|");
+        writer.write(date);
+        writer.write("|");
+        writer.write(provider_name);
+        writer.write("|");
+        writer.write(service_name);
+
+        writer.close();
+
+        System.out.println("\n** Member reports updated. **\n");
+
+    }
+
+    public void writeout_archive(String current_date, String current_time, String comment, String service_code, String date, String member_ID, String id) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/archive.txt", true));
+        writer.newLine();
+
+        writer.write(current_date);
+        writer.write(" ");
+        writer.write(current_time);
+        writer.write("|");
+        writer.write(date);
+        writer.write("|");
+        writer.write(id);
+        writer.write("|");
+        writer.write(member_ID);
+        writer.write("|");
+        writer.write(service_code);
+        writer.write("|");
+        writer.write(comment);
+        writer.write("|");
+
+        writer.close();
+
+        System.out.println("\n** Record written to disk. **\n");
+
+    }
+
+    public String check_ID(String id) throws IOException {
 
         File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
         if (!inputFile.isFile()) {
             System.out.println("Not an existing file");//check file path
-            return;
+            return null;
         }
         BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt"));
         String line = null;
@@ -130,14 +284,15 @@ public class  Provider {
         while ((line = br.readLine()) != null) {
 
             if (line.contains(id) == true) {
-                    System.out.println("\nValidated \n");
-                    System.out.println("Welcome, your ID is: " + id + "\n");
-                    return;
-                }
+                System.out.println("\nValidated \n");
+                System.out.println("Welcome, your ID is: " + id + "\n");
+                return line;
             }
+        }
         System.out.println("\nInvalid Number. Please try again.\n");
         providerUI();
-        }
+        return null;
+    }
 
 
 
@@ -245,26 +400,6 @@ public class  Provider {
         }
     }
 
-/*    // This function will be used to create a provider file
-    public void create_File(String name, String date) throws IOException {
-
-      String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + name +date + ".txt";
-
-      try{
-        File file  = new File(filename);
-        if(file.createNewFile()) {
-          System.out.println("File is created");
-        }else
-        {
-          System.out.println("File already exist");
-        }
-      }catch (IOException e){
-        System.out.println("Error occurred while creating a file");
-        e.printStackTrace();
-      }
-
-    }
-*/
 
     //random ID generator
     public static int number_Gen(int n) {
@@ -378,8 +513,9 @@ public class  Provider {
             }
 
             //Rename temp file to the original file name.
-            if (!tempFile.renameTo(inputFile))
+            if (!tempFile.renameTo(inputFile)){
                 System.out.println("Could not rename file");
+                return;}
 
             System.out.println("The provider directory has been updated successfully.");
 
@@ -393,14 +529,95 @@ public class  Provider {
     }
 
 
-    public int writeout_provider_reports(){
+    public void writeout_provider_reports(String provider_file_name, String [] provider_values, String service_fee, String member_name, String current_date, String current_time, String service_code, String date, String member_ID) throws IOException {
 
-        return 0;
+        BufferedWriter writer = new BufferedWriter(new FileWriter(provider_file_name, true));
+        writer.newLine();
+
+        writer.write(provider_values[0]);
+        writer.write("|");
+        writer.write(provider_values[1]);
+        writer.write("|");
+        writer.write(provider_values[2]);
+        writer.write("|");
+        writer.write(provider_values[3]);
+        writer.write("|");
+        writer.write(provider_values[4]);
+        writer.write("|");
+        writer.write(provider_values[5]);
+        writer.write("|");
+        writer.write(date);
+        writer.write("|");
+        writer.write(current_date);
+        writer.write(" ");
+        writer.write(current_time);
+        writer.write("|");
+        writer.write(member_name);
+        writer.write("|");
+        writer.write(member_ID);
+        writer.write("|");
+        writer.write(service_code);
+        writer.write("|");
+        writer.write(service_fee);
+        //Total number of consultations with members
+        //Total fee for the week
+
+        writer.close();
+
+        System.out.println("\n** Provider reports updated. **\n");
     }
 
-    public int writeout_EFT(){
+    public void writeout_EFT(String service_fee, String provider_name, String id) throws IOException {
 
-        return 0;
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/EFT.txt", true));
+        writer.newLine();
+
+        writer.write(provider_name);
+        writer.write("|");
+        writer.write(id);
+        writer.write("|");
+        writer.write(service_fee);
+
+        writer.close();
+
+        System.out.println("\n** EFT data updated. **\n");
+
+    }
+
+    // This function will create a folder based on the name
+    // This function will call every time when new provider has been added to the
+    // provider directory
+    public void create_folder(String name) throws IOException {
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + name;
+        Path path = Paths.get(filename);
+        if (!Files.exists(path)) {
+            Files.createDirectories(path);
+            System.out.println("Folder was created !");
+        } else {
+            System.out.println("Folder exists");
+        }
+    }
+
+
+    public String create_File(String name, String date) throws IOException {
+
+        String first_name = name.split(" ")[0];
+        String last_name = name.split(" ")[1];
+
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+first_name+"_"+last_name+"/"+first_name+"_"+last_name+"_"+date+".txt";
+        try {
+            File file = new File(filename);
+            if (file.createNewFile()) {
+                System.out.println("File is created");
+
+            } else {
+                System.out.println("File already exist");
+            }
+        } catch (IOException e) {
+            System.out.println("Error occurred while creating a file");
+            e.printStackTrace();
+        }
+        return filename;
     }
 
 
