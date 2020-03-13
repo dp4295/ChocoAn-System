@@ -302,14 +302,12 @@ public class Member {
         System.out.println("******************************************************************************************************");
 
         File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
+        String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
         // had trouble making this a try/catch block so I used an if/else block instead
-        if (f == null) {
+        if (fileList == null) {
             System.out.println("Member does not have any service report history.");
         } else {
-
-            String[] fileList = f.list(); //array of all file names in the path: /provider reports
-
             int number_of_files = fileList.length;  //number of files in the directory
 
             for (int j = 0; j < number_of_files; ++j) {
