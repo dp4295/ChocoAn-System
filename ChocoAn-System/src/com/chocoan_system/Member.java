@@ -303,9 +303,8 @@ public class Member {
 
         File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
 
-        // had trouble making this a try/catch block so I used an if/else block instead
-        if (f == null) {
-            System.out.println("Member does not have any service report history.");
+        if(!f.exists()) {
+            System.out.println("Member does not have any service history. ");
         } else {
 
             String[] fileList = f.list(); //array of all file names in the path: /provider reports
