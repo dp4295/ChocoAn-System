@@ -37,7 +37,7 @@ public class Member {
             //member_report() function goes here
             display_member_report(name);
         } catch (NumberFormatException e) {
-            System.out.println("Error: ID number to long or Invalid input!!\n");
+            System.out.println("Error: ID number too long or Invalid input!!\n");
             member_UI();
         }
         catch(IllegalArgumentException i) {
@@ -234,65 +234,6 @@ public class Member {
         }
     }
 
-
-/*
-    // This function will return the name of the member based on id
-    // Node: String variable to catch the name
-    public void return_member_name(String str) throws IOException {
-
-        //String name = null;
-
-        Scanner scanner = null;
-        try {
-
-            scanner  = new Scanner(new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
-
-            // Check if there is another line of input
-            while(scanner.hasNextLine()){
-                String str = scanner.nextLine();
-                // parse each line using delimiter
-                parseData(str);
-            }
-
-        } catch (IOException exp) {
-            exp.printStackTrace();
-        } finally {
-            if (scanner != null)
-                scanner.close();
-        }
-    }
-
-
-    public String parseData(String str) {
-        // String name = new String();
-
-        String name = null, id = null, address = null, city = null, state = null, zip = null, status = null;
-        Scanner lineScanner = new Scanner(str);
-        lineScanner.useDelimiter("\\|");
-        while (lineScanner.hasNext()) {
-            name = lineScanner.next();
-            id = lineScanner.next();
-            address = lineScanner.next();
-            city = lineScanner.next();
-            state = lineScanner.next();
-            zip = lineScanner.next();
-            status = lineScanner.next();
-            lineScanner.close();
-
-            /*
-            if(id.equals(match_id)) {
-                System.out.println("name: " + name + " id:  " + id +
-                        " address:  " + address + city + state + zip);
-                lineScanner.close();
-            }
-
-        }
-
-        lineScanner.close();
-        return name;
-    }
-
-*/
 
 
     // This function will create a folder based on the name

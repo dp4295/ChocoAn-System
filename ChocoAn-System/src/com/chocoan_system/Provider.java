@@ -58,20 +58,7 @@ public class  Provider {
                 if(member_ID.length() > 9)
                     throw new IllegalArgumentException();
                 String name = m_object.check_ID(member_ID);
-                System.out.println(name+"TESTING");
                 String member_name = name.split("\\|")[0];
-               // String[] member_name = name.split("\\|");
-                //String member_name = m_object.return_member_name((name);
-                System.out.println(member_name+"TESTING");
-
-
-
-
-
-                //input.nextLine();
-                //System.out.println("Member ID is: " + member_ID);
-
-                //m_object.return_member_name(member_ID);
 
                 break;
 
