@@ -111,7 +111,7 @@ public class Admin {
                     System.out.println("\t- " + member_info[0].toUpperCase() + " | " + member_info[1]);
                     System.out.println("\t  " + member_info[2].toUpperCase());
                     System.out.println("\t  " + member_info[3].toUpperCase() + ", " + member_info[4].toUpperCase() + " " + member_info[5].toUpperCase());
-
+                    System.out.println("\t  " + "MEMBER STATUS: " + member_info[6].toUpperCase());
                     System.out.println();
                 }
 

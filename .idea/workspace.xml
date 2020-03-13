@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/alicia_hermann/alicia_hermann_02-14-2020.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/alicia_hermann/alicia_hermann_03-05-2020.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john_doe/john_doe_03-02-2020.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john_doe/john_doe_03-02-2020.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john_doe/john_doe_03-07-2020.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john_doe/john_doe_03-07-2020.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="12" selection-start-line="1" selection-end-line="2" />
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -61,20 +56,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="354" column="94" selection-start-line="354" selection-start-column="94" selection-end-line="354" selection-end-column="94" />
+            <state relative-caret-position="4981">
+              <caret line="366" column="46" lean-forward="true" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="112" column="153" lean-forward="true" selection-start-line="108" selection-start-column="20" selection-end-line="112" selection-end-column="153" />
+            <state relative-caret-position="327">
+              <caret line="112" column="83" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -113,6 +108,7 @@
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/alicia_hermann/alicia_hermann_03-05-2020.txt" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/alicia_hermann/alicia_hermann_02-14-2020.txt" />
         <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" />
+        <option value="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java" />
       </list>
     </option>
   </component>
@@ -495,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584058646285</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added display function to display the member report&#10;edited tenzing's check_id() function to return a string (to return the member's name) - which is utilized in the display member function to display the files for the correct member">
+      <created>1584062414835</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1584062414835</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -515,7 +518,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3796034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1756374" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -617,7 +620,8 @@
     <MESSAGE value="Removed redundant code, fixed errors" />
     <MESSAGE value="Added error checking to creating members" />
     <MESSAGE value="created a provider report for ohsu.&#10;finalized provider report display to display *ALL PROVIDER REPORT TXT FILES IN THE PROVIDER REPORT DIRECTORY*" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a provider report for ohsu.&#10;finalized provider report display to display *ALL PROVIDER REPORT TXT FILES IN THE PROVIDER REPORT DIRECTORY*" />
+    <MESSAGE value="added display function to display the member report&#10;edited tenzing's check_id() function to return a string (to return the member's name) - which is utilized in the display member function to display the files for the correct member" />
+    <option name="LAST_COMMIT_MESSAGE" value="added display function to display the member report&#10;edited tenzing's check_id() function to return a string (to return the member's name) - which is utilized in the display member function to display the files for the correct member" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">
@@ -744,20 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="112" column="153" lean-forward="true" selection-start-line="108" selection-start-column="20" selection-end-line="112" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -774,8 +764,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="354" column="94" selection-start-line="354" selection-start-column="94" selection-end-line="354" selection-end-column="94" />
+        <state relative-caret-position="4981">
+          <caret line="366" column="46" lean-forward="true" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="112" column="83" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
         </state>
       </provider>
     </entry>

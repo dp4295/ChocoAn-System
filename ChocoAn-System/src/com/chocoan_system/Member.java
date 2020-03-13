@@ -345,6 +345,7 @@ public class Member {
         String last_name = name_parsed[1];
 
         //display member name and address
+        System.out.println();
         System.out.println("******************************************************************************************************");
         System.out.println("MEMBER REPORT: " + member_info[0].toUpperCase());
         System.out.println("               " + member_info[2].toUpperCase());
