@@ -29,7 +29,7 @@ public class Main {
                 System.out.println("\tChoose your role:");
                 System.out.println("\t1 - Admin (Operator/Manager at ChocAn Data Center)");
                 System.out.println("\t2 - Provider (Access Provider Interface)");
-                System.out.println("\t3 - Member (Access Member Interface");
+                System.out.println("\t3 - Member (Access Member Interface)");
                 System.out.println("\t4 - Quit program\n");
                 System.out.println("\tEnter the corresponding number to the role of your choice: ");
 

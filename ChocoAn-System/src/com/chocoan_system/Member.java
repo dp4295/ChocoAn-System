@@ -242,7 +242,7 @@ public class Member {
     // This function will call every time when new member has been added to the
     // member directory
     public void create_folder(String name) throws IOException {
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
             Files.createDirectories(path);
@@ -256,7 +256,7 @@ public class Member {
     // This function will useful to create
     public void create_File(String name, String date) throws IOException {
 
-        String filename = "ChocoAn-System/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name + date + ".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
@@ -298,43 +298,51 @@ public class Member {
         System.out.println("MEMBER REPORT: " + member_info[0].toUpperCase());
         System.out.println("               " + member_info[2].toUpperCase());
         System.out.println("               " + member_info[3].toUpperCase() + ", " + member_info[4].toUpperCase() + " " + member_info[5].toUpperCase());
+        System.out.println("               " + member_info[6].toUpperCase());
         System.out.println("******************************************************************************************************");
 
         File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
-        String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
-        int number_of_files = fileList.length;  //number of files in the directory
+        // had trouble making this a try/catch block so I used an if/else block instead
+        if (f == null) {
+            System.out.println("Error: File does not exist");
+        } else {
 
-        for(int j = 0; j < number_of_files; ++j) {
-            try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name + "/" + fileList[j])) {
+            String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
-                BufferedReader br = new BufferedReader(fr);
+            int number_of_files = fileList.length;  //number of files in the directory
 
-                while ((br.readLine() != null)) {
+            for (int j = 0; j < number_of_files; ++j) {
+                try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name + "/" + fileList[j])) {
 
-                    if ((line2 = br.readLine()) != null)
-                        System.out.println("\t" + "DATE OF SERVICE: " + line2);
+                    BufferedReader br = new BufferedReader(fr);
 
-                    if ((line2 = br.readLine()) != null) {
-                        String[] member_name_id = line2.split("\\|");
-                        System.out.println("\t" + "PROVDER NAME: " + line2);
+                    while ((br.readLine() != null)) {
+
+                        if ((line2 = br.readLine()) != null)
+                            System.out.println("\t" + "DATE OF SERVICE: " + line2);
+
+                        if ((line2 = br.readLine()) != null) {
+                            String[] member_name_id = line2.split("\\|");
+                            System.out.println("\t" + "PROVDER NAME: " + line2);
+                        }
+
+                        if ((line2 = br.readLine()) != null) {
+                            String[] service_code_name = line2.split("\\|");
+                            System.out.println("\t" + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                        }
+
+                        System.out.println("\t-------------------------------------------------");
+
                     }
 
-                    if ((line2 = br.readLine()) != null) {
-                        String[] service_code_name = line2.split("\\|");
-                        System.out.println("\t" + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
-                    }
+                    System.out.println();
 
-                    System.out.println("\t-------------------------------------------------");
+                    br.close();
 
+                } catch (IOException ex) {
+                    System.out.println("Error reading the member report file. Please check with administrator.");
                 }
-
-                System.out.println();
-
-                br.close();
-
-            } catch (IOException ex) {
-                System.out.println("Error reading the member report file. Please check with administrator.");
             }
         }
     }
