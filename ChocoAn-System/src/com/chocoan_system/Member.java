@@ -32,8 +32,10 @@ public class Member {
             if(id.length() > 9)
                 throw new IllegalArgumentException();
             //test for id number if valid or not
-            check_ID(id);
+            String name = check_ID(id);
+
             //member_report() function goes here
+            display_member_report(name);
             //will continue to loop back until report function is placed.
         } catch (NumberFormatException e) {
             System.out.println("Error: ID number to long or Invalid input!!\n");
@@ -45,12 +47,12 @@ public class Member {
         }
     }
 
-    public void check_ID(String id) throws IOException {
+    public String check_ID(String id) throws IOException {
 
         File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt");
         if (!inputFile.isFile()) {
             System.out.println("Not an existing file");//check file path
-            return;
+            return null;
         }
         BufferedReader br = new BufferedReader(new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt"));
         String line = null;
@@ -64,10 +66,10 @@ public class Member {
                     System.out.println("Validated");
                     System.out.println("Welcome, your ID is: " + id);
                 }
-                return;
+                return line;
             }
         }
-        return;
+        return null;
     }
 
     /*
@@ -326,5 +328,65 @@ public class Member {
     public void writeout_member_reports() {
 
         return;
+    }
+
+    public void display_member_report(String name) throws IOException {
+
+        String line = null;
+        String line2 = null;
+
+        //parse the member info for just the member's full name
+        String [] member_info = name.split("\\|");
+        String full_name = member_info[0].toLowerCase();
+
+        //parse the full name into the first and last name
+        String [] name_parsed = full_name.split(" ");
+        String first_name = name_parsed[0];
+        String last_name = name_parsed[1];
+
+        //display member name and address
+        System.out.println("******************************************************************************************************");
+        System.out.println("MEMBER REPORT: " + member_info[0].toUpperCase());
+        System.out.println("               " + member_info[2].toUpperCase());
+        System.out.println("               " + member_info[3].toUpperCase() + ", " + member_info[4].toUpperCase() + " " + member_info[5].toUpperCase());
+        System.out.println("******************************************************************************************************");
+
+        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
+        String[] fileList = f.list(); //array of all file names in the path: /provider reports
+
+        int number_of_files = fileList.length;  //number of files in the directory
+
+        for(int j = 0; j < number_of_files; ++j) {
+            try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name + "/" + fileList[j])) {
+
+                BufferedReader br = new BufferedReader(fr);
+
+                while ((br.readLine() != null)) {
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t" + "DATE OF SERVICE: " + line2);
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] member_name_id = line2.split("\\|");
+                        System.out.println("\t" + "PROVDER NAME: " + line2);
+                    }
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] service_code_name = line2.split("\\|");
+                        System.out.println("\t" + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                    }
+
+                    System.out.println("\t-------------------------------------------------");
+
+                }
+
+                System.out.println();
+
+                br.close();
+
+            } catch (IOException ex) {
+                System.out.println("Error reading the member report file. Please check with administrator.");
+            }
+        }
     }
 }
