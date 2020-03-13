@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Provider {
+public class  Provider {
 
     protected String first_name;
     protected String last_name;
@@ -15,81 +15,178 @@ public class Provider {
     protected String state;
     protected int zip;
 
-  Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-  protected String date;
-  protected String time;
-  protected int num_consult;
-  protected String service_code;
+    protected String date;
+    protected String time;
+    protected int num_consult;
+    protected String service_code;
 
-  public final int name_size = 25;
-  public final int ID_size = 9;
-  public final int street_size = 25;
-  public final int city_size = 14;
-  public final int zip_size = 5;
+    public final int name_size = 25;
+    public final int ID_size = 9;
+    public final int street_size = 25;
+    public final int city_size = 14;
+    public final int zip_size = 5;
 
-  public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
+    public final double unit_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
 
-  //PROVIDER UI
-  protected void providerUI() {
-    System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
-    System.out.println("\tChoose an option:");
-    System.out.println("\t1 - Member is requesting health services");
-    System.out.println("\t2 - Display service codes");
-    System.out.println("\t3 - Print weekly service report");
-    System.out.println("\t4 - Go back to the menu of roles");
-    System.out.println("\tEnter number the corresponding number to the action of your choice: ");
+    //PROVIDER UI
+    protected void providerUI() throws IOException {
+        System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
+        System.out.println("\tChoose an option:");
+        System.out.println("\t1 - Member is requesting health services");
+        System.out.println("\t2 - Display service codes");
+        System.out.println("\t3 - Print weekly service report");
+        System.out.println("\t4 - Go back to the menu of roles");
+        System.out.println("\tEnter number the corresponding number to the action of your choice: ");
 
-    int option = input.nextInt();
+        int option = input.nextInt();
+        input.nextLine();
 
-    switch (option) {
-      case 1: //request services
-        break;
+        Member m_object = new Member();
+        String member_ID;
 
-      case 2: //view service codes
-          try {
-              display_codes();
-          } catch (IOException e) {
-              e.printStackTrace();
-          }
-        break;
+        switch (option) {
+            case 1: //request services
+                //add a service
+                System.out.println("\nSwipe member ID card...");
+                System.out.println("[Use the example of John Doe whose member ID is 112233445]");
+                System.out.println("\nEnter member ID: ");
+                member_ID = input.nextLine();
+                //input.nextLine();
+                System.out.println("Member ID is: " + member_ID);
 
-      case 3:
-          //print weekly services
-        break;
+                m_object.return_member_name(member_ID);
 
-      case 4:
-        break;
+                break;
+
+            case 2: //view service codes
+                try {
+                    display_codes();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 3:
+                try {
+                    display_provider_report();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //print weekly services
+                break;
+
+            case 4:
+                break;
+        }
     }
-  }
 
 
-  public void display_codes() throws IOException {
+    public void display_codes() throws IOException {
 
-    String line = null;
+        String line = null;
 
-    try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt")) {
+        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt")) {
 
-      BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(fr);
 
-        System.out.println("SERVICE CODES");
-        System.out.println("-------------");
+            System.out.println("SERVICE CODES");
+            System.out.println("-------------");
 
-      while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
 
-          String[] service_code_info = line.split("\\|");
+                String[] service_code_info = line.split("\\|");
 
-          System.out.println("\t" + service_code_info[1].toUpperCase() + " - "
-                  + service_code_info[0].toUpperCase() + " (Fee $" + service_code_info[2] + ")");
+                System.out.println("\t" + service_code_info[1].toUpperCase() + " - "
+                        + service_code_info[0].toUpperCase() + " (Fee $" + service_code_info[2] + ")");
 
-      }
+            }
 
-      br.close();
-    } catch (IOException ex) {
-      System.out.println("Error reading the service code file. Please check with administrator.");
+            br.close();
+        } catch (IOException ex) {
+            System.out.println("Error reading the service code file. Please check with administrator.");
+        }
     }
-  }
+
+    public void display_provider_report() throws IOException {
+
+        String line = null;
+        String line2 = null;
+
+        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"); //folder path
+
+        String[] fileList = f.list(); //array of all file names in the path: /provider reports
+
+        int number_of_files = fileList.length;  //number of files in the directory
+
+        for(int j = 0; j < number_of_files; ++j) {
+            try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + fileList[j])) {
+
+                BufferedReader br = new BufferedReader(fr);
+
+                System.out.println("******************************************************************************************************");
+                System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
+                System.out.println("******************************************************************************************************");
+
+                int i = 1;
+                if ((line = br.readLine()) != null) {
+
+                    String[] provider_info = line.split("\\|");
+
+                    //provider name and address
+                    System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
+                            provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+
+                    if ((line2 = br.readLine()) != null) {
+                        System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
+                        System.out.println();
+                        System.out.println();
+                        System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
+                        System.out.println();
+                    }
+                }
+
+                while ((br.readLine() != null)) {
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   " + "DATE OF SERVICE: " + line2);
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] member_name_id = line2.split("\\|");
+                        System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
+                    }
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] service_code_name = line2.split("\\|");
+                        System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                    }
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   CHARGED FEE: $" + line2);
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
+
+                    System.out.println("\t   -------------------------------------------------");
+
+                    ++i;
+                }
+
+
+                System.out.println();
+
+                br.close();
+
+            } catch (IOException ex) {
+                System.out.println("Error reading the weekly provider report file. Please check with administrator.");
+            }
+        }
+    }
 
 /*    // This function will be used to create a provider file
     public void create_File(String name, String date) throws IOException {
@@ -112,66 +209,80 @@ public class Provider {
     }
 */
 
-        //random ID generator
-        public static int number_Gen(int n) {
+    //random ID generator
+    public static int number_Gen(int n) {
         int m = (int) Math.pow(10, n - 1);
         return m + new Random().nextInt(9 * m);
-        }
+    }
 
 
-  //This function appends to the provider directory text file
-      //The admin can add new providers by using this function
-        public void appendTo_providerDirectory() throws IOException {
+    //This function appends to the provider directory text file
+    //The admin can add new providers by using this function
+    public void appendTo_providerDirectory() throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt", true));
+        try{
+            writer.newLine();
 
-        writer.newLine();
+            System.out.println("Enter the FIRST name of the provider: ");
+            first_name = input.nextLine();
+            if (first_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(first_name);
+            writer.write(" ");
 
-        System.out.println("Enter the FIRST name of the provider: ");
-        first_name = input.nextLine();
-        writer.write(first_name);
+            System.out.println("Enter the LAST name of the provider: ");
+            last_name = input.nextLine();
+            if (last_name.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(last_name);
+            writer.write("|");
 
-        writer.write(" ");
+            provider_ID = number_Gen(9);
+            System.out.println("Assigned provider ID: " + provider_ID);
+            writer.write(provider_ID + "");
+            writer.write("|");
 
-        System.out.println("Enter the LAST name of the provider: ");
-        last_name = input.nextLine();
-        writer.write(last_name);
+            System.out.println("Enter the STREET address of the provider: ");
+            street_name = input.nextLine();
+            writer.write(street_name);
+            writer.write("|");
 
-        writer.write("|");
+            System.out.println("Enter the CITY of the provider's address: ");
+            city = input.nextLine();
+            if (city.matches("[0-9]"))
+                throw new IllegalArgumentException();
+            writer.write(city);
+            writer.write("|");
 
-        provider_ID = number_Gen(9);
-        System.out.println("Assigned provider ID: " + provider_ID);
-        writer.write(provider_ID + "");
+            System.out.println("Enter the STATE abbreviation of the provider's address: ");
+            state = input.nextLine();
+            if (state.matches("[0-9]"))
+                throw new NumberFormatException();
+            if (state.length() > 2)
+                throw new IllegalArgumentException();
+            writer.write(state);
+            writer.write("|");
 
-        writer.write("|");
+            System.out.println("Enter the zip code of the provider's address: ");
+            zip = input.nextInt();
 
-        System.out.println("Enter the STREET address of the provider: ");
-        street_name = input.nextLine();
-        writer.write(street_name);
+            input.nextLine();
+            writer.write(zip + "");
 
-        writer.write("|");
+            writer.close();
 
-        System.out.println("Enter the CITY of the provider's address: ");
-        city = input.nextLine();
-        writer.write(city);
+            System.out.println("** Provider is added to the database. **");
 
-        writer.write("|");
-
-        System.out.println("Enter the STATE abbreviation of the provider's address: ");
-        state = input.nextLine();
-        writer.write(state);
-
-        writer.write("|");
-
-        System.out.println("Enter the zip code of the provider's address: ");
-        zip = input.nextInt();
-        input.nextLine();
-        writer.write(zip + "");
-
-        writer.close();
-
-        System.out.println("** Provider is added to the database. **");
-}
+        }catch (NumberFormatException e) {
+            System.out.println("Error: Invalid state ID\n");
+            appendTo_providerDirectory();
+        }
+        catch (IllegalArgumentException i) {
+            System.out.println("Error: Invalid input\nPlease restart the addition of a new member\n");
+            appendTo_providerDirectory();
+        }
+    }
 
     public void delete_provider() {
         try {
@@ -227,15 +338,14 @@ public class Provider {
 
     public int writeout_provider_reports(){
 
-      return 0;
+        return 0;
     }
 
     public int writeout_EFT(){
 
-      return 0;
+        return 0;
     }
 
 
-
-  }
+}
 
