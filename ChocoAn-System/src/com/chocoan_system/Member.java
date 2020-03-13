@@ -304,7 +304,7 @@ public class Member {
 
         // had trouble making this a try/catch block so I used an if/else block instead
         if (f == null) {
-            System.out.println("Error: File does not exist");
+            System.out.println("Member does not have any service report history.");
         } else {
 
             String[] fileList = f.list(); //array of all file names in the path: /provider reports
