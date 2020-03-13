@@ -6,3 +6,4 @@ PeaceHealth Southwest Medical Center|200323456|400 NE Mother Joseph|Vancouver|WA
 Legacy Meridian Park Medical Center|409078469|19300 SW 65th Avenue|Tualatin|OR|97062
 Cedar Hills Hospital Contact|748348921|10300 SW Eastridge Street|Portland|OR|97225
 Portland Veterans Affairs Medical Center|983910394|3710 SW US Veterans Hospital Road|Portland|OR|97134
+Bravo Dental |968625736|3452 NW 134th Terr|Portland|OR|98123
