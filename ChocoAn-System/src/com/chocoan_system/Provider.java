@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class Provider {
+public class  Provider {
 
     protected String first_name;
     protected String last_name;
@@ -115,66 +115,76 @@ public class Provider {
         String line = null;
         String line2 = null;
 
-        try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/test.txt")) {
+        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"); //folder path
 
-            BufferedReader br = new BufferedReader(fr);
+        String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
-            System.out.println("PROVIDER REPORT");
-            System.out.println("-----------------------------------------------------------------------------------------------");
+        int number_of_files = fileList.length;  //number of files in the directory
 
-            int i = 1;
-            if((line = br.readLine()) != null) {
+        for(int j = 0; j < number_of_files; ++j) {
+            try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + fileList[j])) {
 
-                String[] provider_info = line.split("\\|");
+                BufferedReader br = new BufferedReader(fr);
 
-                //provider name and address
-                System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
-                        provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+                System.out.println("******************************************************************************************************");
+                System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
+                System.out.println("******************************************************************************************************");
 
-                if ((line2 = br.readLine()) != null) {
-                    System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
-                    System.out.println();
-                    System.out.println();
-                    System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
-                    System.out.println();
+                int i = 1;
+                if ((line = br.readLine()) != null) {
+
+                    String[] provider_info = line.split("\\|");
+
+                    //provider name and address
+                    System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
+                            provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+
+                    if ((line2 = br.readLine()) != null) {
+                        System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
+                        System.out.println();
+                        System.out.println();
+                        System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
+                        System.out.println();
+                    }
                 }
+
+                while ((br.readLine() != null)) {
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   " + "DATE OF SERVICE: " + line2);
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] member_name_id = line2.split("\\|");
+                        System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
+                    }
+
+                    if ((line2 = br.readLine()) != null) {
+                        String[] service_code_name = line2.split("\\|");
+                        System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                    }
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   CHARGED FEE: $" + line2);
+
+                    if ((line2 = br.readLine()) != null)
+                        System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
+
+                    System.out.println("\t   -------------------------------------------------");
+
+                    ++i;
+                }
+
+
+                System.out.println();
+
+                br.close();
+
+            } catch (IOException ex) {
+                System.out.println("Error reading the weekly provider report file. Please check with administrator.");
             }
-
-            while((br.readLine() != null)) {
-
-                if ((line2 = br.readLine()) != null)
-                    System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
-
-                if ((line2 = br.readLine()) != null)
-                    System.out.println("\t   " + "DATE OF SERVICE: " + line2);
-
-                if ((line2 = br.readLine()) != null) {
-                    String[] member_name_id = line2.split("\\|");
-                    System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
-                }
-
-                if ((line2 = br.readLine()) != null) {
-                    String[] service_code_name = line2.split("\\|");
-                    System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
-                }
-
-                if ((line2 = br.readLine()) != null)
-                    System.out.println("\t   CHARGED FEE: $" + line2);
-
-                if ((line2 = br.readLine()) != null)
-                    System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
-
-                System.out.println("--------------------------------------------------------------------");
-
-                ++i;
-            }
-
-            System.out.println();
-
-            br.close();
-
-        } catch (IOException ex) {
-            System.out.println("Error reading the weekly provider report file. Please check with administrator.");
         }
     }
 
