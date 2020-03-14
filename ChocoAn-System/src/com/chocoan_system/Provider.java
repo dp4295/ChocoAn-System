@@ -586,13 +586,13 @@ public class  Provider {
         writer.write(provider_values[4]);
         writer.write("|");
         writer.write(provider_values[5]);
-        writer.write("\n");
+        writer.write("|");
         writer.write(date);
-        writer.write("\n");
+        writer.write("|");
         writer.write(current_date);
         writer.write(" ");
         writer.write(current_time);
-        writer.write("\n");
+        writer.write("|");
         writer.write(member_name);
         writer.write("|");
         writer.write(member_ID);
@@ -600,10 +600,11 @@ public class  Provider {
         writer.write(service_code);
         writer.write("|");
         writer.write(service_fee);
+        writer.write("|");
         int files = file_count(member_name);
         writer.write(files); //Total number of consultations with members
+        writer.write("|");
         int total_fee = 30*files;
-        writer.write("\n");
         writer.write(total_fee);
         //Total fee for the week
 
