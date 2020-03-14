@@ -89,6 +89,20 @@ public class  Provider {
 
                     System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
                     date = input.nextLine();
+
+                    boolean date_format = false;
+                    while(date_format == false) {
+                        if (date.matches("^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$")) {
+                            System.out.println("format ok");
+                            date_format = true;
+                        }
+                        else {
+                            date_format = false;
+                            System.out.println("Enter date in the format MM-DD-YYYY");
+                            date = input.nextLine();
+                        }
+                    }
+
                     //if string length no match call function again
 
 
@@ -122,6 +136,15 @@ public class  Provider {
 
                     System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
                     current_date = input.nextLine();
+                    date_format = false;
+                    while(date_format == false) {
+                        if (current_date.matches("(0?[1-9]|[12][0-9]|3[01])[-](0?[1-9]|1[012])[-]{4}"))
+                            System.out.println("format ok");
+                        else {
+                            date_format = false;
+                            System.out.println("Enter date in the format MM-DD-YYYY");
+                        }
+                    }
                     System.out.println("\nEnter in the current time using the format HH:MM:SS :");
                     current_time = input.nextLine();
 
