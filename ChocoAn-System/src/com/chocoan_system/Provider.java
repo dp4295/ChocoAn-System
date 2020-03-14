@@ -597,11 +597,13 @@ public class  Provider {
         writer.write(service_code);
         writer.write("|");
         writer.write(service_fee);
-        writer.write("|");
-        int files = file_count(member_name);
+        int file = file_count(member_name);
+        String files = Integer.toString(file);
+        writer.write("\n");
         writer.write(files); //Total number of consultations with members
-        writer.write("|");
-        int total_fee = 30*files;
+        int fee = 30*file;
+        String total_fee = Integer.toString(fee);
+        writer.write("\n");
         writer.write(total_fee);
         //Total fee for the week
 
