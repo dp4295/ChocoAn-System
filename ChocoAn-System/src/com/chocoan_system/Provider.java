@@ -553,13 +553,13 @@ public class  Provider {
         writer.write(provider_values[4]);
         writer.write("|");
         writer.write(provider_values[5]);
-        writer.write("|");
+        writer.write("\n");
         writer.write(date);
-        writer.write("|");
+        writer.write("\n");
         writer.write(current_date);
         writer.write(" ");
         writer.write(current_time);
-        writer.write("|");
+        writer.write("\n");
         writer.write(member_name);
         writer.write("|");
         writer.write(member_ID);
