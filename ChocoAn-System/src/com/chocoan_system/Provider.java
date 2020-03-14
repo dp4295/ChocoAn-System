@@ -33,12 +33,6 @@ public class  Provider {
     protected String current_time;
     protected String current_date;
 
-    public final int name_size = 25;
-    public final int ID_size = 9;
-    public final int street_size = 25;
-    public final int city_size = 14;
-    public final int zip_size = 5;
-
 
 
     //PROVIDER UI
@@ -102,8 +96,6 @@ public class  Provider {
                             date = input.nextLine();
                         }
                     }
-
-                    //if string length no match call function again
 
 
                     int response = 0;
