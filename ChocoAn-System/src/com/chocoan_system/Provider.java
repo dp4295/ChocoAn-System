@@ -405,13 +405,13 @@ public class  Provider {
                     System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
                     System.out.println("******************************************************************************************************");
 
-                    while ((line2 = (br.readLine())) != null) {
+                    if ((line2 = (br.readLine())) != null) {
 
                         String[] provider_info = line2.split("\\|");
 
                         //provider name and address
                         System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
-                                provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+                                provider_info[2].toUpperCase() + ", " + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
 
                         //System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
                         System.out.println();
@@ -421,14 +421,13 @@ public class  Provider {
                         System.out.println("\t   SERVICE REQUESTED ON: " + provider_info[6].toUpperCase());
                         System.out.println("\t   DATE OF SERVICE: " + provider_info[7].toUpperCase());
                         System.out.println("\t   MEMBER NAME: " + provider_info[8].toUpperCase() + " | " + provider_info[9]);
-                        //System.out.println("\t   PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
-                        //System.out.println("\t   CHARGED FEE: $" + line2);
-                        //System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
+                        System.out.println("\t   PROVIDED SERVICE: " + provider_info[10].toUpperCase());
+                        System.out.println("\t   CHARGED FEE: $" + provider_info[11].toUpperCase());
+                        System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + provider_info[12].toUpperCase());
 
                         System.out.println("\t   -------------------------------------------------");
 
                     }
-
 
                     System.out.println();
 
