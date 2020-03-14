@@ -238,7 +238,7 @@ public class  Provider {
         writer.write(date);
         writer.write("\n");
         writer.write(provider_name);
-        writer.write("|");
+        writer.write("\n");
         writer.write(service_name);
 
         writer.close();
