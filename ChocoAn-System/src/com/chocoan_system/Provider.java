@@ -606,7 +606,7 @@ public class  Provider {
         String total_fee = Integer.toString(fee);
         writer.write("\n");
         writer.write(total_fee);
-        //Total fee for the week
+        //Total fee for the week!
 
         writer.close();
 
