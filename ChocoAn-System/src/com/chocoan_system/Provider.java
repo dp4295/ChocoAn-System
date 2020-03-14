@@ -218,10 +218,7 @@ public class  Provider {
 
     public void writeout_member_reports(String member_file_name, String [] member_values, String date, String provider_name, String service_name) throws IOException {
 
-        //BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/archive.txt", true));
         BufferedWriter writer = new BufferedWriter(new FileWriter(member_file_name, true));
-        writer.newLine();
-
         writer.write(member_values[0]);
         writer.write("|");
         writer.write(member_values[1]);
@@ -233,9 +230,9 @@ public class  Provider {
         writer.write(member_values[4]);
         writer.write("|");
         writer.write(member_values[5]);
-        writer.write("|");
+        writer.write("\n");
         writer.write(date);
-        writer.write("|");
+        writer.write("\n");
         writer.write(provider_name);
         writer.write("|");
         writer.write(service_name);
@@ -248,8 +245,6 @@ public class  Provider {
 
     public void writeout_archive(String current_date, String current_time, String comment, String service_code, String date, String member_ID, String id) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/archive.txt", true));
-        writer.newLine();
-
         writer.write(current_date);
         writer.write(" ");
         writer.write(current_time);
@@ -547,8 +542,6 @@ public class  Provider {
     public void writeout_provider_reports(String provider_file_name, String [] provider_values, String service_fee, String member_name, String current_date, String current_time, String service_code, String date, String member_ID) throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(provider_file_name, true));
-        writer.newLine();
-
         writer.write(provider_values[0]);
         writer.write("|");
         writer.write(provider_values[1]);
