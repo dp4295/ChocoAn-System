@@ -71,40 +71,6 @@ public class Member {
         return null;
     }
 
-    /*
- //this function appends new members to the member directory
-    public void writeout_member_directory() throws IOException {
-        try {
-            File file = new File("./files/member/member_directory.txt");
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            System.out.println("Enter the first name of the member: ");
-            first_name = input.nextLine();
-            input.nextLine();
-
-            fw.write(first_name);
-
-            System.out.println("Enter the LAST name of the member: ");
-            last_name = input.nextLine();
-            input.nextLine();
-
-            fw.write(last_name);
-
-            System.out.println("Enter the ");
-            last_name = input.nextLine();
-            input.nextLine();
-
-            fw.close();
-
-        } catch (IOException e) {
-            System.out.println("Error!");
-            e.printStackTrace();
-        }
-
-    }
-
-*/
     //creates 9 digit ID
     public static int number_Gen(int n) {
         int m = (int) Math.pow(10, n - 1);

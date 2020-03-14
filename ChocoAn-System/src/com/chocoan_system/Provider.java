@@ -39,34 +39,20 @@ public class  Provider {
     public final int city_size = 14;
     public final int zip_size = 5;
 
-    //public final double service_fee = 69.69; // let's hard code the service fee for testing purposes first; this might belong in a different class
 
 
     //PROVIDER UI
     protected void providerUI() throws IOException {
         System.out.println("** YOU ARE IN THE PROVIDER INTERFACE **");
-        //try {
         System.out.println("   (for testing purposes, please pretend you are Providence group - Provider ID: 124789741)");
         System.out.println("\nEnter your 9 digit provider ID to log in: ");
         id = input.nextLine();
         if (id.length() != 9){
             System.out.println("Error: ID number too long or too short or invalid input. Try again! \n");
             providerUI();}
-        //throw new IllegalArgumentException();
         String line = check_ID(id);
         String [] provider_values = line.split("\\|");
         String provider_name = provider_values[0];
-        /*
-        }
-        catch (NumberFormatException e) {
-            System.out.println("Error: ID number too long or Invalid input!!\n");
-            providerUI();
-        }
-        catch(IllegalArgumentException i) {
-            System.out.println("Error: ID number too long or too short \n");
-            providerUI();
-        }
-        */
 
         System.out.println("\tChoose an option:");
         System.out.println("\t1 - Member is requesting health care services");
@@ -100,7 +86,6 @@ public class  Provider {
                     System.out.println("\nName: " + member_name);
                     m_object.create_folder(member_name);
 
-                    //************
 
                     System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
                     date = input.nextLine();
