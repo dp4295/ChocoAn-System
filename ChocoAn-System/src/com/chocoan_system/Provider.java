@@ -101,10 +101,9 @@ public class  Provider {
                     int response = 0;
                     while (response != 1) {
 
-                        service_code = null;
+                        //service_code = null;
                         display_codes();
                         System.out.println("\nPlease key in the service code for the service provided using the service list above and press enter: \n");
-                        input.nextLine();
                         service_code = input.nextLine();
 
                         //display service name or print error message if wrong/does not exist
@@ -116,6 +115,7 @@ public class  Provider {
                         System.out.println("The service corresponding to the code entered in is: " + service_name + "\n");
                         System.out.println("Is this the service you meant to enter? Please enter 1 for yes or any other key for no to reenter in the correct service: ");
                         response = input.nextInt();
+                        input.nextLine();
 
                     }
                     //look up the fee to be paid for that service and display it on the provider’s terminal.
