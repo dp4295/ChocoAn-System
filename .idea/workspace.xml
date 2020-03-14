@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="DISPLAY PATH FILES UPDATED">
+    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="display provider report updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/EFT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/EFT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/archive.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/archive.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/weekly_reports/test.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +25,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+            <state relative-caret-position="222">
+              <caret line="378" column="19" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
               <folding>
-                <element signature="e#13234#13235#0" expanded="true" />
-                <element signature="e#13288#13289#0" expanded="true" />
+                <element signature="e#14845#14846#0" expanded="true" />
+                <element signature="e#14899#14900#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,15 +38,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="4828">
               <caret line="289" column="140" selection-start-line="289" selection-start-column="140" selection-end-line="289" selection-end-column="140" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john doe/john doe_02-02-2020.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -82,6 +80,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,6 +131,26 @@
               <item name="files" type="462c0819:PsiDirectoryNode" />
               <item name="member" type="462c0819:PsiDirectoryNode" />
               <item name="member_reports" type="462c0819:PsiDirectoryNode" />
+              <item name="alex karev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChocoAn-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChocoAn-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="chocoan_system" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="member_reports" type="462c0819:PsiDirectoryNode" />
+              <item name="alicia hermann" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChocoAn-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChocoAn-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="chocoan_system" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="member" type="462c0819:PsiDirectoryNode" />
+              <item name="member_reports" type="462c0819:PsiDirectoryNode" />
               <item name="john doe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -142,30 +161,10 @@
               <item name="files" type="462c0819:PsiDirectoryNode" />
               <item name="provider" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ChocoAn-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChocoAn-System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chocoan_system" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-              <item name="provider_reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChocoAn-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChocoAn-System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="chocoan_system" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-              <item name="provider_reports" type="462c0819:PsiDirectoryNode" />
-              <item name="eye clinic" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,14 +477,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584151581720</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="display provider report updated">
+      <created>1584160992925</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1584160992925</updated>
+    </task>
+    <task id="LOCAL-00036" summary="display provider report updated">
+      <created>1584161716578</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1584161716578</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -550,7 +563,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added bounds check for ID (int)" />
     <MESSAGE value="added test for checking date format [got JDK error when tried to build- are we all using the same Java JDK version?]" />
     <MESSAGE value="commented out Tenzing edits to readFile due to compile error, added comment_MAX (History_node comment size limit)" />
     <MESSAGE value="modified add_service function in Member class" />
@@ -575,7 +587,8 @@
     <MESSAGE value="added display function to display the member report&#10;edited tenzing's check_id() function to return a string (to return the member's name) - which is utilized in the display member function to display the files for the correct member" />
     <MESSAGE value="display format" />
     <MESSAGE value="DISPLAY PATH FILES UPDATED" />
-    <option name="LAST_COMMIT_MESSAGE" value="DISPLAY PATH FILES UPDATED" />
+    <MESSAGE value="display provider report updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="display provider report updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">
@@ -646,26 +659,25 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/eye clinic/eye clinic_03-03-2020.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john doe/john doe_02-02-2020.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/eye clinic/eye clinic_03-03-2020.txt" />
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/john doe/john doe_02-02-2020.txt" />
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="4828">
           <caret line="289" column="140" selection-start-line="289" selection-start-column="140" selection-end-line="289" selection-end-column="140" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/provider/weekly_reports/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Provider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="94" column="42" lean-forward="true" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+        <state relative-caret-position="222">
+          <caret line="378" column="19" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
           <folding>
-            <element signature="e#13234#13235#0" expanded="true" />
-            <element signature="e#13288#13289#0" expanded="true" />
+            <element signature="e#14845#14846#0" expanded="true" />
+            <element signature="e#14899#14900#0" expanded="true" />
           </folding>
         </state>
       </provider>
