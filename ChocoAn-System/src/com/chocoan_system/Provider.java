@@ -324,17 +324,16 @@ public class  Provider {
 
         int num_of_provider_folders = provider_folder_list.length;
 
-        System.out.println("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[0]);
 
         for(int h = 0; h < num_of_provider_folders; ++h) {
 
-            File f = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[h]); //folder path
+            File f = new File("" + provider_folder_list[h] + ""); //folder path
             String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
             int number_of_files = fileList.length;  //number of files in the directory
 
             for (int j = 0; j < number_of_files; ++j) {
-                try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[h] + "/" + fileList[j])) {
+                try (FileReader fr = new FileReader(provider_folder_list[h] + "/" + fileList[j])) {
 
                     BufferedReader br = new BufferedReader(fr);
 

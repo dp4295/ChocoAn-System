@@ -276,7 +276,7 @@ public class Member {
         System.out.println("               " + member_info[6].toUpperCase());
         System.out.println("******************************************************************************************************");
 
-        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name); //folder path
+        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + " " + last_name); //folder path
 
         if(!f.exists()) {
             System.out.println("Member does not have any service history. ");
@@ -287,7 +287,7 @@ public class Member {
             int number_of_files = fileList.length;  //number of files in the directory
 
             for (int j = 0; j < number_of_files; ++j) {
-                try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + "_" + last_name + "/" + fileList[j])) {
+                try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + first_name + " " + last_name + "/" + fileList[j])) {
 
                     BufferedReader br = new BufferedReader(fr);
 
