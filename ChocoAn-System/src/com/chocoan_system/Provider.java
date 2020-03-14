@@ -385,12 +385,11 @@ public class  Provider {
                 return h.isDirectory();
             }
         });
-        System.out.println("Folders count: " + provider_folder_list.length);
 
         int num_of_provider_folders = provider_folder_list.length;
 
 
-        for (int h = 0; h < num_of_provider_folders; ++h) {
+        for(int h = 0; h < num_of_provider_folders; ++h) {
 
             File f = new File("" + provider_folder_list[h] + ""); //folder path
             String[] fileList = f.list(); //array of all file names in the path: /provider reports
@@ -406,51 +405,30 @@ public class  Provider {
                     System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
                     System.out.println("******************************************************************************************************");
 
-                    int i = 1;
-                    if ((line = br.readLine()) != null) {
+                    while ((line2 = (br.readLine())) != null) {
 
-                        String[] provider_info = line.split("\\|");
+                        String[] provider_info = line2.split("\\|");
 
                         //provider name and address
                         System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
                                 provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
 
-                        if ((line2 = br.readLine()) != null) {
-                            System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
-                            System.out.println();
-                            System.out.println();
-                            System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
-                            System.out.println();
-                        }
-                    }
+                        // System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
+                        System.out.println();
+                        System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
+                        System.out.println();
 
-                    while ((br.readLine() != null)) {
+                        //Eye Clinic|123654222|1235 NW 6th Ave|Portland|OR|98443|03-03-2020|03-03-2020 03:03:03|John Doe|111111111||30.00
 
-                        if ((line2 = br.readLine()) != null)
-                            System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
-
-                        if ((line2 = br.readLine()) != null)
-                            System.out.println("\t   " + "DATE OF SERVICE: " + line2);
-
-                        if ((line2 = br.readLine()) != null) {
-                            String[] member_name_id = line2.split("\\|");
-                            System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
-                        }
-
-                        if ((line2 = br.readLine()) != null) {
-                            String[] service_code_name = line2.split("\\|");
-                            System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
-                        }
-
-                        if ((line2 = br.readLine()) != null)
-                            System.out.println("\t   CHARGED FEE: $" + line2);
-
-                        if ((line2 = br.readLine()) != null)
-                            System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
+                        System.out.println("\t   SERVICE REQUESTED ON: " + provider_info[6].toUpperCase());
+                        System.out.println("\t   DATE OF SERVICE: " + provider_info[7].toUpperCase());
+                        System.out.println("\t   MEMBER NAME: " + provider_info[8].toUpperCase() + " | " + provider_info[9]);
+                        //System.out.println("\t   PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                        //System.out.println("\t   CHARGED FEE: $" + line2);
+                        //System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
 
                         System.out.println("\t   -------------------------------------------------");
 
-                        ++i;
                     }
 
 
