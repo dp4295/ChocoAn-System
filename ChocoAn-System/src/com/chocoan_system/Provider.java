@@ -25,11 +25,30 @@ public class  Provider {
 
     protected String date;
     protected String time;
-    protected int num_consult;
+    //protected int num_consult;
     protected String service_code;
     protected String comment;
     protected String current_time;
     protected String current_date;
+
+
+    // series of tests to check that the date format is entered properly
+
+    // 1) check if the 3rd and 6th chars are dashes "__-__-____"
+    protected boolean contains_dashes(String test) {
+        char[] temp = test.toCharArray();
+        if (temp[2] == '-' && temp[5] == '-')
+            return true;
+        return false;
+    }
+
+    // 2) check if the remaining chars are non-alphabetic, not thoroughly tested
+    protected boolean is_numeric(String test) {
+        if (test.matches("[0-9-]+"))
+            return true;
+        return false;
+    }
+
 
 
     //PROVIDER UI
@@ -78,17 +97,16 @@ public class  Provider {
                     System.out.println("\nName: " + member_name);
                     m_object.create_folder(member_name);
 
-
+                    boolean date_format = false;
                     System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
                     date = input.nextLine();
                     if (date.length() != 10) {
                         throw new IllegalArgumentException();
                     }
 
-                    /*
-                    boolean date_format = false;
                     while(date_format == false) {
-                        if (date.matches("^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$")) {
+                        if (contains_dashes(date) && is_numeric(date)) {
+                            date_format = true;
                             System.out.println("format ok");
                             date_format = true;
                         }
@@ -98,7 +116,7 @@ public class  Provider {
                             date = input.nextLine();
                         }
                     }
-                    */
+
 
 
                     int response = 0;
@@ -139,17 +157,21 @@ public class  Provider {
                     if (current_date.length() != 10) {
                         throw new IllegalArgumentException();
                     }
-                    /*
+
                     date_format = false;
                     while(date_format == false) {
-                        if (current_date.matches("(0?[1-9]|[12][0-9]|3[01])[-](0?[1-9]|1[012])[-]{4}"))
+                        if (contains_dashes(date) && is_numeric(date)) {
+                            date_format = true;
                             System.out.println("format ok");
+                            date_format = true;
+                        }
                         else {
                             date_format = false;
                             System.out.println("Enter date in the format MM-DD-YYYY");
+                            date = input.nextLine();
                         }
                     }
-                    */
+
                     System.out.println("\nEnter in the current time using the format HH:MM:SS :");
                     current_time = input.nextLine();
                     if (current_time.length() != 8) {
@@ -157,7 +179,7 @@ public class  Provider {
                     }
 
                     /*
-                    //calc toal fee
+                    //calc total fee
                     counter+= 1;//number of consultations*30=total fee
                     total_fee += (30*counter);
                     */
