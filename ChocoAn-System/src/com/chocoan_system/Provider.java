@@ -131,9 +131,10 @@ public class  Provider {
                     //print fee
 
                     System.out.println("The fee to be paid for the service "+service_name+" is: "+service_fee);
-                    System.out.println("\nEnter in any comments about the service provided. Limit to 100 characters. (Note: this is optional) : ");
-                    comment = input.nextLine();
+                    System.out.println("\nEnter in any comments about the service provided. Limit to 100 characters. (Note: this is optional) : \n");
                     input.nextLine();
+                    comment = input.nextLine();
+                    //input.nextLine();
 
                     System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
                     current_date = input.nextLine();
@@ -146,7 +147,7 @@ public class  Provider {
                     total_fee += (30*counter);
                     */
 
-                    //write functions below
+                    //WRITE functions below
                     //provider form aka archive
                     writeout_archive(current_date, current_time, comment, service_code, date, member_ID, id); //write to archive.txt
                     String member_file_name = m_object.create_File(member_name, current_date );
@@ -601,10 +602,8 @@ public class  Provider {
 
     public String create_File(String name, String date) throws IOException {
 
-        String first_name = name.split(" ")[0];
-        String last_name = name.split(" ")[1];
 
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+first_name+"_"+last_name+"/"+first_name+"_"+last_name+"_"+date+".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+name+"/"+name+" "+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {

@@ -253,10 +253,8 @@ public class Member {
 
     public String create_File(String name, String date) throws IOException {
 
-        String first_name = name.split(" ")[0];
-        String last_name = name.split(" ")[1];
 
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/"+first_name+"_"+last_name+"/"+first_name+"_"+last_name+"_"+date+".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/"+name+"/"+name+" "+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
