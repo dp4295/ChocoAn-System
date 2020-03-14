@@ -220,7 +220,7 @@ public class  Provider {
     public void create_folder(String provider_name) throws IOException {
 
         provider_name = provider_name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/" + provider_name;
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports" + provider_name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
             Files.createDirectories(path);
@@ -235,7 +235,7 @@ public class  Provider {
     public String create_File(String provider_name, String current_date) throws IOException {
 
         provider_name = provider_name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/" + provider_name + "/" + provider_name + " " + current_date + ".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports" + provider_name + "/" + provider_name + " " + current_date + ".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
@@ -314,7 +314,7 @@ public class  Provider {
         writer.write(service_code);
         writer.write("|");
         writer.write(comment);
-        writer.write("|");
+        writer.newLine();
 
         writer.close();
 
