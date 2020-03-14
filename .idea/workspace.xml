@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="modified add_member function in Member.java to include active/suspended status">
-      <change afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_reports/alex_karev/alex_karev_03-06-2020.txt" afterDir="false" />
+    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/files/member/member_directory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/member/member_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/member/member_directory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/provider_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/provider_directory.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,9 +45,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
