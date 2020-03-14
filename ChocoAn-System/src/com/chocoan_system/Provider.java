@@ -312,75 +312,91 @@ public class  Provider {
         String line = null;
         String line2 = null;
 
-        File f = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"); //folder path
+        File g = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/");
 
-        String[] fileList = f.list(); //array of all file names in the path: /provider reports
+        File[] provider_folder_list = g.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File h) {
+                return h.isDirectory();
+            }
+        });
+        System.out.println("Folders count: " + provider_folder_list.length);
 
-        int number_of_files = fileList.length;  //number of files in the directory
+        int num_of_provider_folders = provider_folder_list.length;
 
-        for(int j = 0; j < number_of_files; ++j) {
-            try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + fileList[j])) {
+        System.out.println("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[0]);
 
-                BufferedReader br = new BufferedReader(fr);
+        for(int h = 0; h < num_of_provider_folders; ++h) {
 
-                System.out.println("******************************************************************************************************");
-                System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
-                System.out.println("******************************************************************************************************");
+            File f = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[h]); //folder path
+            String[] fileList = f.list(); //array of all file names in the path: /provider reports
 
-                int i = 1;
-                if ((line = br.readLine()) != null) {
+            int number_of_files = fileList.length;  //number of files in the directory
 
-                    String[] provider_info = line.split("\\|");
+            for (int j = 0; j < number_of_files; ++j) {
+                try (FileReader fr = new FileReader("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + provider_folder_list[h] + "/" + fileList[j])) {
 
-                    //provider name and address
-                    System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
-                            provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+                    BufferedReader br = new BufferedReader(fr);
 
-                    if ((line2 = br.readLine()) != null) {
-                        System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
-                        System.out.println();
+                    System.out.println("******************************************************************************************************");
+                    System.out.println("PROVIDER REPORT: " + fileList[j].toUpperCase());
+                    System.out.println("******************************************************************************************************");
+
+                    int i = 1;
+                    if ((line = br.readLine()) != null) {
+
+                        String[] provider_info = line.split("\\|");
+
+                        //provider name and address
+                        System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
+                                provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
+
+                        if ((line2 = br.readLine()) != null) {
+                            System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
+                            System.out.println();
+                            System.out.println();
+                            System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
+                            System.out.println();
+                        }
                     }
+
+                    while ((br.readLine() != null)) {
+
+                        if ((line2 = br.readLine()) != null)
+                            System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
+
+                        if ((line2 = br.readLine()) != null)
+                            System.out.println("\t   " + "DATE OF SERVICE: " + line2);
+
+                        if ((line2 = br.readLine()) != null) {
+                            String[] member_name_id = line2.split("\\|");
+                            System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
+                        }
+
+                        if ((line2 = br.readLine()) != null) {
+                            String[] service_code_name = line2.split("\\|");
+                            System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
+                        }
+
+                        if ((line2 = br.readLine()) != null)
+                            System.out.println("\t   CHARGED FEE: $" + line2);
+
+                        if ((line2 = br.readLine()) != null)
+                            System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
+
+                        System.out.println("\t   -------------------------------------------------");
+
+                        ++i;
+                    }
+
+
+                    System.out.println();
+
+                    br.close();
+
+                } catch (IOException ex) {
+                    System.out.println("Error reading the weekly provider report file. Please check with administrator.");
                 }
-
-                while ((br.readLine() != null)) {
-
-                    if ((line2 = br.readLine()) != null)
-                        System.out.println("\t" + i + ". SERVICE REQUESTED ON: " + line2);
-
-                    if ((line2 = br.readLine()) != null)
-                        System.out.println("\t   " + "DATE OF SERVICE: " + line2);
-
-                    if ((line2 = br.readLine()) != null) {
-                        String[] member_name_id = line2.split("\\|");
-                        System.out.println("\t   " + "MEMBER NAME: " + member_name_id[0].toUpperCase() + " | " + member_name_id[1]);
-                    }
-
-                    if ((line2 = br.readLine()) != null) {
-                        String[] service_code_name = line2.split("\\|");
-                        System.out.println("\t   " + "PROVIDED SERVICE: " + service_code_name[1].toUpperCase());
-                    }
-
-                    if ((line2 = br.readLine()) != null)
-                        System.out.println("\t   CHARGED FEE: $" + line2);
-
-                    if ((line2 = br.readLine()) != null)
-                        System.out.println("\t   TOTAL NUMBER OF CONSULTATIONS WITH MEMBER: " + line2);
-
-                    System.out.println("\t   -------------------------------------------------");
-
-                    ++i;
-                }
-
-
-                System.out.println();
-
-                br.close();
-
-            } catch (IOException ex) {
-                System.out.println("Error reading the weekly provider report file. Please check with administrator.");
             }
         }
     }
@@ -573,6 +589,7 @@ public class  Provider {
     // This function will call every time when new provider has been added to the
     // provider directory
     public void create_folder(String name) throws IOException {
+        name = name.toLowerCase();
         String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
@@ -586,8 +603,8 @@ public class  Provider {
 
     public String create_File(String name, String date) throws IOException {
 
-
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+name+"/"+name+" "+date+".txt";
+        name = name.toLowerCase();
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+name+"/"+name+"_"+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
