@@ -132,7 +132,22 @@ public class Member {
             System.out.println("Enter the zip code of the member's address: ");
             zip = input.nextInt();
             input.nextLine();
-            writer.write(zip + "");
+            int ziplength = (int) (Math.log10(zip) + 1);
+            if (ziplength != 5)
+                throw new IndexOutOfBoundsException();
+            writer.write(zip);
+            writer.write("|");
+
+            // check if member is active
+            System.out.println("Is the member active? [Y/N]: ");
+            String response = input.nextLine();
+            input.nextLine();
+            if (response.length() > 1)
+                throw new IllegalArgumentException();
+            else if (response.matches("[yY]"))
+                writer.write("active");
+            else
+                writer.write("suspended");
             writer.close();
 
             System.out.println("** Member is added to the database. **");
