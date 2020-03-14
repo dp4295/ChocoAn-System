@@ -81,6 +81,9 @@ public class  Provider {
 
                     System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
                     date = input.nextLine();
+                    if (date.length() != 10) {
+                        throw new IllegalArgumentException();
+                    }
 
                     /*
                     boolean date_format = false;
@@ -105,6 +108,9 @@ public class  Provider {
                         display_codes();
                         System.out.println("\nPlease key in the service code for the service provided using the service list above and press enter: \n");
                         service_code = input.nextLine();
+                        if (service_code.length() != 6) {
+                            throw new IllegalArgumentException();
+                        }
 
                         //display service name or print error message if wrong/does not exist
                         String service = check_service(service_code);
@@ -125,9 +131,14 @@ public class  Provider {
                     System.out.println("\nEnter in any comments about the service provided. Limit to 100 characters. (Note: this is optional) : \n");
                     input.nextLine();
                     comment = input.nextLine();
-
-                    System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
+                    if (comment.length() > 100) {
+                        throw new IllegalArgumentException();
+                    }
+                    System.out.println("Enter in the current date using the format MM-DD-YYYY : ");
                     current_date = input.nextLine();
+                    if (current_date.length() != 10) {
+                        throw new IllegalArgumentException();
+                    }
                     /*
                     date_format = false;
                     while(date_format == false) {
@@ -141,6 +152,9 @@ public class  Provider {
                     */
                     System.out.println("\nEnter in the current time using the format HH:MM:SS :");
                     current_time = input.nextLine();
+                    if (current_time.length() != 8) {
+                        throw new IllegalArgumentException();
+                    }
 
                     /*
                     //calc toal fee
@@ -600,11 +614,11 @@ public class  Provider {
         writer.write(service_fee);
         int file = file_count(member_name);
         String files = Integer.toString(file);
-        writer.write("\n");
+        writer.write("|");
         writer.write(files); //Total number of consultations with members
         int fee = 30*file;
         String total_fee = Integer.toString(fee);
-        writer.write("\n");
+        writer.write("|");
         writer.write(total_fee);
         //Total fee for the week!
 
