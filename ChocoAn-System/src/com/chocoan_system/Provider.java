@@ -372,10 +372,12 @@ public class  Provider {
 
     public void display_provider_report() throws IOException {
 
-        String line = null;
         String line2 = null;
-
-        File g = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/");
+        File g;
+        if(!(g = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/")).exists()) {
+            System.out.println("No provider reports exist. ");
+            return;
+        }
 
         File[] provider_folder_list = g.listFiles(new FileFilter() {
             @Override
