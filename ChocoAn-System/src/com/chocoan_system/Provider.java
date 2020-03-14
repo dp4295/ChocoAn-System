@@ -66,7 +66,7 @@ public class  Provider {
                 //add a service
                 try {
                     System.out.println("\nSwipe member ID card...");
-                    System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
+                    System.out.println("   (for testing purposes, please pretend you are john doe - Member ID: 111111111)");
                     System.out.println("\nEnter 9 digit member ID: ");
                     member_ID = input.nextLine();
 

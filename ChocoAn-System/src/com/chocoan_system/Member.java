@@ -25,7 +25,7 @@ public class Member {
         try {
             System.out.println("** YOU ARE IN THE MEMBER INTERFACE **");
             System.out.println("\tEnter your 9 digit member ID to log in: ");
-            System.out.println("   (for testing purposes, please pretend you are John Doe - Member ID: 111111111)");
+            System.out.println("   (for testing purposes, please pretend you are john doe - Member ID: 111111111)");
             id = input.nextLine();
 
             if(id.length() != 9)
