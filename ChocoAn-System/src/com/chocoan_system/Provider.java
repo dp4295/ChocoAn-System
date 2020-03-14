@@ -97,9 +97,9 @@ public class  Provider {
 
                         service_code = null;
                         display_codes();
-                        System.out.println("\nPlease key in the service code for the service provided using the service list above and press enter: ");
-                        service_code = input.nextLine();
+                        System.out.println("\nPlease key in the service code for the service provided using the service list above and press enter: \n");
                         input.nextLine();
+                        service_code = input.nextLine();
 
                         //display service name or print error message if wrong/does not exist
                         String service = check_service(service_code);
@@ -119,7 +119,6 @@ public class  Provider {
                     System.out.println("\nEnter in any comments about the service provided. Limit to 100 characters. (Note: this is optional) : \n");
                     input.nextLine();
                     comment = input.nextLine();
-                    //input.nextLine();
 
                     System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
                     current_date = input.nextLine();
