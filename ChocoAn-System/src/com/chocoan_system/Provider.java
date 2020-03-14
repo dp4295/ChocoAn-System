@@ -622,9 +622,9 @@ public class  Provider {
         writer.write(service_code);
         writer.write("|");
         writer.write(service_fee);
-        //Total number of consultations with members
-        //int files = file_count(member_name);
-        //total_fee = 30*files
+        int files = file_count(member_name);
+        writer.write(files); //Total number of consultations with members
+        total_fee = 30*files;
         //Total fee for the week
 
         writer.close();
