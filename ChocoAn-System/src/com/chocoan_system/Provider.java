@@ -20,8 +20,6 @@ public class  Provider {
     protected String id;
     protected String service_fee;
     protected String service_name;
-    protected int counter = 0;
-    protected int total_fee = 0;
 
     Scanner input = new Scanner(System.in);
 
@@ -220,7 +218,7 @@ public class  Provider {
     public void create_folder(String provider_name) throws IOException {
 
         provider_name = provider_name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports" + provider_name;
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/weekly_reports/"+provider_name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
             Files.createDirectories(path);
@@ -235,7 +233,7 @@ public class  Provider {
     public String create_File(String provider_name, String current_date) throws IOException {
 
         provider_name = provider_name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports" + provider_name + "/" + provider_name + " " + current_date + ".txt";
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/weekly_reports/"+provider_name +"/"+provider_name+ " " + current_date +".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
@@ -602,7 +600,9 @@ public class  Provider {
         writer.write(service_fee);
         int files = file_count(member_name);
         writer.write(files); //Total number of consultations with members
-        total_fee = 30*files;
+        int total_fee = 30*files;
+        writer.write("\n");
+        writer.write(total_fee);
         //Total fee for the week
 
         writer.close();
