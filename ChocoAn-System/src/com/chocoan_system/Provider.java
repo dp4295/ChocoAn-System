@@ -284,11 +284,11 @@ public class  Provider {
         writer.write(member_values[4]);
         writer.write("|");
         writer.write(member_values[5]);
-        writer.write("\n");
+        writer.write("|");
         writer.write(date);
-        writer.write("\n");
+        writer.write("|");
         writer.write(provider_name);
-        writer.write("\n");
+        writer.write("|");
         writer.write(service_name);
 
         writer.close();
@@ -413,12 +413,10 @@ public class  Provider {
                         System.out.println("\t" + provider_info[0].toUpperCase() + " | " + provider_info[1].toUpperCase() +
                                 provider_info[2].toUpperCase() + provider_info[3].toUpperCase() + ", " + provider_info[4].toUpperCase() + " " + provider_info[5].toUpperCase());
 
-                        // System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
+                        //System.out.println("\tTOTAL FEE FOR WEEK = $" + line2);
                         System.out.println();
                         System.out.println("\tLIST OF MEMBERS THAT RECEIVED SERVICES: ");
                         System.out.println();
-
-                        //Eye Clinic|123654222|1235 NW 6th Ave|Portland|OR|98443|03-03-2020|03-03-2020 03:03:03|John Doe|111111111||30.00
 
                         System.out.println("\t   SERVICE REQUESTED ON: " + provider_info[6].toUpperCase());
                         System.out.println("\t   DATE OF SERVICE: " + provider_info[7].toUpperCase());
