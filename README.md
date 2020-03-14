@@ -9,4 +9,4 @@ which are located at:
 
 ChocoAn-System\ChocoAn-System\src\com\chocoan_system\files\member\member_directory.txt 
 
-ChocoAn-System\ChocoAn-System\src\com\chocoan_system\files\providerer\provider_directory.txt
+ChocoAn-System\ChocoAn-System\src\com\chocoan_system\files\provider\provider_directory.txt
