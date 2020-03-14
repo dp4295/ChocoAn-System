@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="">
+    <list default="true" id="cdf551c6-56cd-49bd-ab88-bf7648044ee8" name="Default Changelist" comment="added back zip code bounds check and active/suspended status input in Member.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChocoAn-System/src/com/chocoan_system/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/member/member_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/member/member_directory.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/provider_directory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChocoAn-System/com/chocoan_system/files/provider/provider_directory.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -394,7 +392,10 @@
     <MESSAGE value="created a provider report for ohsu.&#10;finalized provider report display to display *ALL PROVIDER REPORT TXT FILES IN THE PROVIDER REPORT DIRECTORY*" />
     <MESSAGE value="added display function to display the member report&#10;edited tenzing's check_id() function to return a string (to return the member's name) - which is utilized in the display member function to display the files for the correct member" />
     <MESSAGE value="display format" />
-    <option name="LAST_COMMIT_MESSAGE" value="display format" />
+    <MESSAGE value="added back zip code bounds check and active/suspended status input in Member.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added back zip code bounds check and active/suspended status input in Member.java" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="378" key="#Project_Structure" timestamp="1584035198877">

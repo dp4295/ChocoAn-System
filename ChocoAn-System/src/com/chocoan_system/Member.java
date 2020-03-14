@@ -138,6 +138,7 @@ public class Member {
             writer.write(zip);
             writer.write("|");
 
+            // check if member is active
             System.out.println("Is the member active? [Y/N]: ");
             String response = input.nextLine();
             input.nextLine();
