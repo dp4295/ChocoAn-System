@@ -221,7 +221,7 @@ public class Member {
     // This function will call every time when new member has been added to the
     // member directory
     public void create_folder(String name) throws IOException {
-        name = name.toLowerCase();
+        //name = name.toLowerCase();
         String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/" + name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
@@ -235,8 +235,8 @@ public class Member {
 
     public String create_File(String name, String date) throws IOException {
 
-        name = name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/"+name+"/"+name+"_"+date+".txt";
+        //name = name.toLowerCase();
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/member/member_reports/"+name+"/"+name+" "+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
