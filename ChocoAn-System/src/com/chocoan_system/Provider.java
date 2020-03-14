@@ -84,6 +84,7 @@ public class  Provider {
                     System.out.println("Enter in the date the service was provided using the format MM-DD-YYYY: \n");
                     date = input.nextLine();
 
+                    /*
                     boolean date_format = false;
                     while(date_format == false) {
                         if (date.matches("^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$")) {
@@ -96,6 +97,7 @@ public class  Provider {
                             date = input.nextLine();
                         }
                     }
+                    */
 
 
                     int response = 0;
@@ -128,6 +130,7 @@ public class  Provider {
 
                     System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
                     current_date = input.nextLine();
+                    /*
                     date_format = false;
                     while(date_format == false) {
                         if (current_date.matches("(0?[1-9]|[12][0-9]|3[01])[-](0?[1-9]|1[012])[-]{4}"))
@@ -137,6 +140,7 @@ public class  Provider {
                             System.out.println("Enter date in the format MM-DD-YYYY");
                         }
                     }
+                    */
                     System.out.println("\nEnter in the current time using the format HH:MM:SS :");
                     current_time = input.nextLine();
 
@@ -596,7 +600,7 @@ public class  Provider {
     // This function will call every time when new provider has been added to the
     // provider directory
     public void create_folder(String name) throws IOException {
-        name = name.toLowerCase();
+       // name = name.toLowerCase();
         String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/" + name;
         Path path = Paths.get(filename);
         if (!Files.exists(path)) {
@@ -610,8 +614,8 @@ public class  Provider {
 
     public String create_File(String name, String date) throws IOException {
 
-        name = name.toLowerCase();
-        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+name+"/"+name+"_"+date+".txt";
+       // name = name.toLowerCase();
+        String filename = "ChocoAn-System/src/com/chocoan_system/files/provider/provider_reports/"+name+"/"+name+" "+date+".txt";
         try {
             File file = new File(filename);
             if (file.createNewFile()) {
