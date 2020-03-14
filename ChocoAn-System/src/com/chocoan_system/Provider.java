@@ -81,7 +81,7 @@ public class  Provider {
                     String name = m_object.check_ID(member_ID);
                     //String member_name = name.split("\\|")[0];
                     String [] member_values = name.split("\\|");
-                    String member_name = member_values[0];
+                    String member_name = member_values[0].toLowerCase();
 
                     System.out.println("\nName: " + member_name);
                     m_object.create_folder(member_name);
@@ -108,7 +108,8 @@ public class  Provider {
                         service_fee = service_values[2];
 
                         System.out.println("The service corresponding to the code entered in is: "+service_name+"\n");
-                        System.out.println("Is this the service you meant to enter? Please enter 1 for yes or any other key for no to reenter in the correct service: ");
+                        System.out.println("Confirm that this is the service you meant to enter.");
+                        System.out.println("Enter 1 to confirm OR any other key for no: ");
                         response = input.nextInt();
 
                     }
@@ -122,9 +123,32 @@ public class  Provider {
                     //input.nextLine();
 
                     System.out.println("\nEnter in the current date using the format MM-DD-YYYY : ");
-                    current_date = input.nextLine();
+                    boolean checkFormat = false;
+
+                    while(checkFormat == false) {
+                        current_date = input.nextLine();
+
+                        if (current_date.matches("([0-9]{2})-([0-9]{2})-([0-9]{4})"))
+                            checkFormat = true;
+                        else {
+                            checkFormat = false;
+                            System.out.println("Please enter in the date using the format MM-DD-YYYY. ");
+                        }
+                    }
+
+                    checkFormat = false;
                     System.out.println("\nEnter in the current time using the format HH:MM:SS :");
-                    current_time = input.nextLine();
+
+                    while(checkFormat == false) {
+                        current_time = input.nextLine();
+
+                        if (current_time.matches("([0-9]{2}):([0-9]{2}):([0-9]{2})"))
+                            checkFormat = true;
+                        else {
+                            checkFormat = false;
+                            System.out.println("Please enter in the date using the format HH:MM:SS. ");
+                        }
+                    }
 
                     /*
                     //calc toal fee
@@ -136,12 +160,12 @@ public class  Provider {
                     //provider form aka archive
                     writeout_archive(current_date, current_time, comment, service_code, date, member_ID, id); //write to archive.txt
                     String member_file_name = m_object.create_File(member_name, current_date );
-                    writeout_member_reports(member_file_name, member_values, date, provider_name, service_name);
+                    writeout_member_reports(member_file_name, member_values, date, provider_name, service_name, service_code);
 
 
                     create_folder(provider_name);
                     String provider_file_name = create_File(provider_name, current_date);
-                    writeout_provider_reports(provider_file_name, provider_values, service_fee, member_name, current_date, current_time, service_code, date, member_ID);
+                    writeout_provider_reports(provider_file_name, provider_values, service_fee, member_name, current_date, current_time, service_code, service_name, date, member_ID);
                     writeout_EFT(service_fee, provider_name, id);
                     // after provider report write to EFT.txt
 
@@ -202,13 +226,12 @@ public class  Provider {
 
     }
 
-    public void writeout_member_reports(String member_file_name, String [] member_values, String date, String provider_name, String service_name) throws IOException {
+    public void writeout_member_reports(String member_file_name, String [] member_values, String date, String provider_name, String service_name, String service_code) throws IOException {
 
         //BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/archive.txt", true));
         BufferedWriter writer = new BufferedWriter(new FileWriter(member_file_name, true));
-        writer.newLine();
 
-        writer.write(member_values[0]);
+        writer.write(member_values[0]); //name
         writer.write("|");
         writer.write(member_values[1]);
         writer.write("|");
@@ -218,11 +241,13 @@ public class  Provider {
         writer.write("|");
         writer.write(member_values[4]);
         writer.write("|");
-        writer.write(member_values[5]);
-        writer.write("|");
+        writer.write(member_values[5]); //zip
+        writer.newLine();
         writer.write(date);
-        writer.write("|");
+        writer.newLine();
         writer.write(provider_name);
+        writer.newLine();
+        writer.write(service_code);
         writer.write("|");
         writer.write(service_name);
 
@@ -272,6 +297,9 @@ public class  Provider {
             if (line.contains(id) == true) {
                 System.out.println("\nValidated \n");
                 System.out.println("Welcome, your ID is: " + id + "\n");
+                String [] provider_info = line.split("\\|");
+                String provider_name = provider_info[0];
+                System.out.println("You have logged as: " + provider_name.toUpperCase());
                 return line;
             }
         }
@@ -515,12 +543,11 @@ public class  Provider {
     }
 
 
-    public void writeout_provider_reports(String provider_file_name, String [] provider_values, String service_fee, String member_name, String current_date, String current_time, String service_code, String date, String member_ID) throws IOException {
+    public void writeout_provider_reports(String provider_file_name, String [] provider_values, String service_fee, String member_name, String current_date, String current_time, String service_code, String service_name, String date, String member_ID) throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(provider_file_name, true));
-        writer.newLine();
 
-        writer.write(provider_values[0]);
+        writer.write(provider_values[0]); //provider name
         writer.write("|");
         writer.write(provider_values[1]);
         writer.write("|");
@@ -531,22 +558,30 @@ public class  Provider {
         writer.write(provider_values[4]);
         writer.write("|");
         writer.write(provider_values[5]);
-        writer.write("|");
+        writer.newLine();
+
+        //Total fee for the week
+        //writer.newLine();
+
+        writer.write("/");
+        writer.newLine();
         writer.write(date);
-        writer.write("|");
+        writer.newLine();
         writer.write(current_date);
-        writer.write(" ");
+        writer.write(" | ");
         writer.write(current_time);
-        writer.write("|");
+        writer.newLine();
         writer.write(member_name);
         writer.write("|");
         writer.write(member_ID);
-        writer.write("|");
+        writer.newLine();
         writer.write(service_code);
         writer.write("|");
+        writer.write(service_name);
+        writer.newLine();
         writer.write(service_fee);
+
         //Total number of consultations with members
-        //Total fee for the week
 
         writer.close();
 
