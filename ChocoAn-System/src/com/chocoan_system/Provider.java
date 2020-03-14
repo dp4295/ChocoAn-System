@@ -181,6 +181,7 @@ public class  Provider {
         }
     }
 
+    //function will check service code if valid or not
     public String check_service(String service_code) throws IOException {
         File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/service_codes.txt");
         if (!inputFile.isFile()) {
@@ -202,6 +203,7 @@ public class  Provider {
 
     }
 
+    //write new member report
     public void writeout_member_reports(String member_file_name, String [] member_values, String date, String provider_name, String service_name) throws IOException {
 
         //BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/member/archive.txt", true));
@@ -232,6 +234,7 @@ public class  Provider {
 
     }
 
+    //write new provider form/archive
     public void writeout_archive(String current_date, String current_time, String comment, String service_code, String date, String member_ID, String id) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/archive.txt", true));
         writer.newLine();
@@ -257,6 +260,7 @@ public class  Provider {
 
     }
 
+    //checks if id is valid or not for log in
     public String check_ID(String id) throws IOException {
 
         File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
@@ -462,6 +466,7 @@ public class  Provider {
         }
     }
 
+    //deletes provider from list of providers
     public void delete_provider() {
         try {
             File inputFile = new File("./ChocoAn-System/src/com/chocoan_system/files/provider/provider_directory.txt");
@@ -514,7 +519,7 @@ public class  Provider {
         }
     }
 
-
+    //writes new provider report
     public void writeout_provider_reports(String provider_file_name, String [] provider_values, String service_fee, String member_name, String current_date, String current_time, String service_code, String date, String member_ID) throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(provider_file_name, true));
@@ -553,6 +558,7 @@ public class  Provider {
         System.out.println("\n** Provider reports updated. **\n");
     }
 
+    //updates eft data file
     public void writeout_EFT(String service_fee, String provider_name, String id) throws IOException {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("./ChocoAn-System/src/com/chocoan_system/files/provider/EFT.txt", true));
@@ -585,6 +591,7 @@ public class  Provider {
     }
 
 
+    //creates new file to be used for write out functions
     public String create_File(String name, String date) throws IOException {
 
 
